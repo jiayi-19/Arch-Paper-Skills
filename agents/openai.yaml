@@ -1,0 +1,4 @@
+interface:
+  display_name: "Computer Architecture Writing"
+  short_description: "Evidence-led papers for HPCA, ASPLOS, ISCA, and MICRO"
+  default_prompt: "Use $computer-architecture-writing to develop the argument and draft this architecture paper from its code, results, and verified literature."

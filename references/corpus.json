@@ -1,0 +1,952 @@
+[
+  {
+    "id": "asplos-2024-centauri",
+    "title": "Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning",
+    "venue": "ASPLOS",
+    "year": 2024,
+    "recognition": "best_paper",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.asplos-conference.org/asplos2024/best-paper-awards/index.html",
+    "selection_reason": "Official ASPLOS 2024 Best Paper Award; representation-to-search-space and scheduling exemplar.",
+    "paper_url": "https://jf-d.github.io/files/Centauri.pdf",
+    "doi": "10.1145/3620666.3651379",
+    "topics": [
+      "distributed training",
+      "communication",
+      "search spaces",
+      "systems",
+      "codesign"
+    ],
+    "paper_type": "hardware-software system",
+    "sections_read": [
+      "Abstract and Introduction, PDF pp. 1–3",
+      "Section 2.3 motivation and Section 3 overview, PDF p. 4",
+      "Model-level schedule comparison, PDF p. 9"
+    ],
+    "excerpt": {
+      "text": "Appropriately partitioning communication operations can expand the optimization space for communication overlap",
+      "pdf_page": 2,
+      "section": "Introduction",
+      "normalization": "PDF line wrapping and typographic ligatures normalized; words unchanged."
+    },
+    "writing_move": "Explain which representational restriction prevents an existing optimizer from finding the desired schedule.",
+    "analysis": "The introduction contrasts coarse scheduling and local fusion using an execution timeline, then introduces primitive, group, and workload dimensions as the missing partition space. It separates expressing alternatives from selecting their schedule. The overview connects each transformation to a visible dependency or idle interval, and the hierarchical scheduler manages operation, layer, and model decisions.",
+    "transfer_caveat": "A larger search space is not a performance result by itself. Demonstrate legal transformations, affordable search, and measured gains under matched topology and parallel-training conditions.",
+    "authors": [
+      "Chang Chen",
+      "Xiuhong Li",
+      "Qianchao Zhu",
+      "Jiangfei Duan",
+      "Peng Sun",
+      "Xingcheng Zhang",
+      "Chao Yang"
+    ]
+  },
+  {
+    "id": "asplos-2023-tensorir",
+    "title": "TensorIR: An Abstraction for Automatic Tensorized Program Optimization",
+    "venue": "ASPLOS",
+    "year": 2023,
+    "recognition": "notable",
+    "recognition_year": null,
+    "recognition_url": null,
+    "selection_reason": "Selected compiler-abstraction exemplar integrated with Apache TVM; no award label is asserted.",
+    "paper_url": "https://arxiv.org/pdf/2207.04296",
+    "doi": null,
+    "topics": [
+      "compilers",
+      "tensorization",
+      "search spaces",
+      "accelerators",
+      "tools",
+      "codesign"
+    ],
+    "paper_type": "abstraction and compiler",
+    "sections_read": [
+      "Abstract and Introduction, PDF pp. 1–2",
+      "Section 2 Overview, PDF p. 2",
+      "Sections 5.1–5.3 Evaluation, PDF pp. 10–11"
+    ],
+    "excerpt": {
+      "text": "The new abstraction allows us to effectively represent tensorized computations and combine them with loop nests, threading, and memory hierarchy.",
+      "pdf_page": 2,
+      "section": "Introduction",
+      "normalization": "PDF line wrapping and typographic ligatures normalized; words unchanged."
+    },
+    "writing_move": "Derive a new abstraction from the unit of computation that older representations obscure.",
+    "analysis": "The argument connects specialized tensor primitives to a mismatch in loop-centered optimization. Blocks isolate tensor computation while exposing interfaces for outer transformations. The paper then separates operator performance, complete-model performance, hardware portability, and tuning time in evaluation. This prevents a strong kernel result from silently becoming an end-to-end claim.",
+    "transfer_caveat": "The excerpt is from author arXiv v2, dated 2022, for the ASPLOS 2023 work. New compiler or agent systems need their own legality, tuning-cost, and full-model evidence.",
+    "authors": [
+      "Siyuan Feng",
+      "Bohan Hou",
+      "Hongyi Jin",
+      "Wuwei Lin",
+      "Junru Shao",
+      "Ruihang Lai",
+      "Zihao Ye",
+      "Lianmin Zheng",
+      "Cody Hao Yu",
+      "Yong Yu",
+      "Tianqi Chen"
+    ],
+    "publication_url": "https://sigplan-www.sigplan.hosting.acm.org/OpenTOC/asplos23-2.html",
+    "version_note": "Author arXiv v2, 27 October 2022; venue verified against official ASPLOS 2023 program and SIGPLAN OpenTOC."
+  },
+  {
+    "id": "asplos-2015-ghostrider",
+    "title": "GhostRider: A Hardware-Software System for Memory Trace Oblivious Computation",
+    "venue": "ASPLOS",
+    "year": 2015,
+    "recognition": "best_paper",
+    "recognition_year": 2015,
+    "recognition_url": "https://asplos-conference.org/asplos2015/",
+    "selection_reason": "Official ASPLOS 2015 Best Paper Award; scoped security and hardware/software evidence exemplar.",
+    "paper_url": "https://www.cs.umd.edu/~mwh/papers/ghostrider15.pdf",
+    "doi": "10.1145/2694344.2694385",
+    "topics": [
+      "security",
+      "compiler co-design",
+      "memory systems",
+      "memory",
+      "codesign"
+    ],
+    "paper_type": "hardware-software system",
+    "sections_read": [
+      "Abstract and Introduction, PDF pp. 1–2",
+      "Section 2.2 Threat model and 2.3 overview, PDF p. 3",
+      "Section 7 Empirical Evaluation, PDF pp. 11–12"
+    ],
+    "excerpt": {
+      "text": "Analogous side channels such as power consumption are outside the scope of this paper",
+      "pdf_page": 3,
+      "section": "2.2 Threat model",
+      "normalization": "PDF line wrapping and typographic ligatures normalized; words unchanged."
+    },
+    "writing_move": "Define the protected property and attacker observations before interpreting performance.",
+    "analysis": "The paper distinguishes encrypted contents from observable access patterns, then assigns compiler and hardware responsibilities for memory-trace oblivious execution. Its threat model states the secure boundary. Formal security, simulation, and FPGA experiments answer different questions; the evaluation explicitly distinguishes simulated multi-bank configurations from the prototype and tests staged optimizations against a secure baseline.",
+    "transfer_caveat": "A security proof applies to its modeled property and assumptions. FPGA feasibility and simulated configuration gains remain separate evidence; neither establishes protection against excluded channels.",
+    "authors": [
+      "Chang Liu",
+      "Austin Harris",
+      "Martin Maas",
+      "Michael Hicks",
+      "Mohit Tiwari",
+      "Elaine Shi"
+    ]
+  },
+  {
+    "id": "asplos-2014-diannao",
+    "title": "DianNao: A Small-Footprint High-Throughput Accelerator for Ubiquitous Machine-Learning",
+    "venue": "ASPLOS",
+    "year": 2014,
+    "recognition": "test_of_time",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.sigarch.org/benefit/awards/acm-sigarch-sigplan-sigops-asplos-influential-paper-award/",
+    "selection_reason": "2024 ACM SIGARCH/SIGPLAN/SIGOPS ASPLOS Influential Paper Award; physical-evidence and memory-system exemplar.",
+    "paper_url": "https://www.cs.princeton.edu/courses/archive/spring16/cos598F/p269-chen.pdf",
+    "doi": "10.1145/2541940.2541967",
+    "topics": [
+      "accelerators",
+      "memory systems",
+      "physical evaluation",
+      "memory",
+      "codesign"
+    ],
+    "paper_type": "architecture mechanism",
+    "sections_read": [
+      "Abstract and Introduction, PDF pp. 1–2",
+      "Section 6 Experimental Methodology, PDF p. 10",
+      "Sections 7.1–7.2, PDF pp. 10–11"
+    ],
+    "excerpt": {
+      "text": "The accelerator characteristics are obtained after layout at 65nm.",
+      "pdf_page": 1,
+      "section": "Abstract",
+      "normalization": "PDF line wrapping and typographic ligatures normalized; words unchanged."
+    },
+    "writing_move": "Qualify a headline result by implementation stage and measurement scope.",
+    "analysis": "The abstract links a small algorithm family to broad application reach, then identifies memory movement as the design constraint. Its hardware claim names the physical stage. The methodology separates cycle simulation, CAD-derived properties, and a SIMD baseline; the results inspect buffer costs and explain performance differences. This supports a reusable sequence: workload opportunity, omitted cost, mechanism, implementation scope, comparison, causal breakdown.",
+    "transfer_caveat": "Post-layout properties are not fabricated silicon measurements. Its original layer workloads, memory assumptions, and SIMD baseline do not establish a modern full-network result.",
+    "authors": [
+      "Tianshi Chen",
+      "Zidong Du",
+      "Ninghui Sun",
+      "Jia Wang",
+      "Chengyong Wu",
+      "Yunji Chen",
+      "Olivier Temam"
+    ]
+  },
+  {
+    "id": "asplos-2013-paragon",
+    "title": "Paragon: QoS-Aware Scheduling for Heterogeneous Datacenters",
+    "venue": "ASPLOS",
+    "year": 2013,
+    "recognition": "test_of_time",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.sigarch.org/benefit/awards/acm-sigarch-sigplan-sigops-asplos-influential-paper-award/",
+    "selection_reason": "2024 ACM SIGARCH/SIGPLAN/SIGOPS ASPLOS Influential Paper Award; complementary-factor controls and experience-reuse exemplar.",
+    "paper_url": "https://people.csail.mit.edu/delimitrou/papers/2013.asplos.paragon.pdf",
+    "doi": "10.1145/2451116.2451125",
+    "topics": [
+      "datacenters",
+      "scheduling",
+      "experience reuse",
+      "systems"
+    ],
+    "paper_type": "hardware-software system",
+    "sections_read": [
+      "Abstract and Introduction, PDF pp. 1–2",
+      "Section 2 opening and 2.2, PDF pp. 2–3",
+      "Section 4 methodology and Section 5 opening, PDF pp. 7–8"
+    ],
+    "excerpt": {
+      "text": "Instead, we leverage information the system already has about the large number of applications it has previously seen.",
+      "pdf_page": 2,
+      "section": "Introduction",
+      "normalization": "PDF line wrapping and typographic ligatures normalized; words unchanged."
+    },
+    "writing_move": "Turn historical experience into a concrete prediction-and-decision mechanism.",
+    "analysis": "The introduction distinguishes hardware heterogeneity from workload interference and motivates both using the same deployment problem. Collaborative filtering supplies missing workload information before placement. Factor-specific oblivious schedulers explain what each information source contributes; normalized performance distributions expose affected applications as well as aggregate behavior. The experimental setup states server exclusivity and workload conditions.",
+    "transfer_caveat": "Reusing historical application data is not itself persistent agent-policy improvement. Preserve profiling cost, QoS definition, and workload scope when adapting this reasoning.",
+    "authors": [
+      "Christina Delimitrou",
+      "Christos Kozyrakis"
+    ]
+  },
+  {
+    "id": "asplos-2002-simpoint",
+    "title": "Automatically Characterizing Large Scale Program Behavior",
+    "venue": "ASPLOS",
+    "year": 2002,
+    "recognition": "test_of_time",
+    "recognition_year": 2017,
+    "recognition_url": "https://www.sigarch.org/benefit/awards/acm-sigarch-sigplan-sigops-asplos-influential-paper-award/",
+    "selection_reason": "2017 ACM SIGARCH/SIGPLAN/SIGOPS ASPLOS Influential Paper Award; evaluation-methodology exemplar.",
+    "paper_url": "https://cseweb.ucsd.edu/~calder/papers/ASPLOS-02-SimPoint.pdf",
+    "doi": null,
+    "topics": [
+      "methodology",
+      "simulation",
+      "workload characterization",
+      "tools"
+    ],
+    "paper_type": "measurement and methodology",
+    "sections_read": [
+      "Abstract and Introduction, PDF p. 1",
+      "Section 2 Methodology and Section 3.1, PDF p. 2",
+      "Section 5.1 Single Simulation Points, PDF p. 8"
+    ],
+    "excerpt": {
+      "text": "In addition, we validate these simulation points with the IPC, branch, and cache miss rates",
+      "pdf_page": 1,
+      "section": "Introduction",
+      "normalization": "PDF line wrapping and typographic ligatures normalized; words unchanged."
+    },
+    "writing_move": "Connect an inexpensive representation to independent behavioral validation.",
+    "analysis": "The paper first defines a hardware-independent description of execution phases, then explains clustering, and finally applies the representation to choosing simulation intervals. It checks selected intervals against complete execution rather than treating clustering success as simulation accuracy. The comparison includes ad hoc interval-selection alternatives, making representativeness an empirical claim.",
+    "transfer_caveat": "A compact representation needs validation on the claimed workloads and metrics. Representative instruction intervals do not automatically preserve every architectural statistic or modern workload behavior.",
+    "authors": [
+      "Timothy Sherwood",
+      "Erez Perelman",
+      "Greg Hamerly",
+      "Brad Calder"
+    ]
+  },
+  {
+    "id": "hpca-2025-dynamollm",
+    "title": "DynamoLLM: Designing LLM Inference Clusters for Performance and Energy Efficiency",
+    "venue": "HPCA",
+    "year": 2025,
+    "recognition": "best_paper",
+    "recognition_year": 2025,
+    "recognition_url": "https://www.sigarch.org/hpca-2025-trip-report/",
+    "selection_reason": "Society conference report verifies award; recent service-level systems study.",
+    "paper_url": "https://arxiv.org/pdf/2408.00741",
+    "doi": null,
+    "topics": [
+      "LLM serving",
+      "energy",
+      "SLO",
+      "datacenter",
+      "systems"
+    ],
+    "paper_type": "systems",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Resharding and transition costs (p.8)",
+      "Implementation and Section V evaluation (p.9)"
+    ],
+    "excerpt": {
+      "text": "This requires a dynamic approach to resource management.",
+      "pdf_page": 1,
+      "section": "Introduction"
+    },
+    "writing_move": "Derive dynamic control from time-varying workload properties.",
+    "analysis": "The opening enumerates request lengths, model properties, and SLOs as sources of changing operating points. The method accounts for resharding and downtime rather than assuming free reconfiguration. Evaluated baselines isolate pool structure, instance count, tensor parallelism, and frequency control, linking system components to the headline objective.",
+    "transfer_caveat": "The accessible PDF is arXiv v1, not guaranteed identical to the HPCA proceedings. Energy and service-level results depend on latency targets, traces, and transition costs; do not reuse its headline numbers as universal effects.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "hpca-2024-pim-pathfinding",
+    "title": "Pathfinding Future PIM Architectures by Demystifying a Commercial PIM Technology",
+    "venue": "HPCA",
+    "year": 2024,
+    "recognition": "best_paper",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.hpca-conf.org/2024/program/main.php",
+    "selection_reason": "Official conference program marks Best Paper Winner; characterization and design-tool example.",
+    "paper_url": "https://arxiv.org/pdf/2308.00846",
+    "doi": null,
+    "topics": [
+      "PIM",
+      "characterization",
+      "simulation",
+      "memory",
+      "tools"
+    ],
+    "paper_type": "characterization",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Section III framework (p.4)",
+      "Section V case study and Fig.10 (p.8)"
+    ],
+    "excerpt": {
+      "text": "Using uPIMulator, we demystify UPMEM’s PIM design through a detailed characterization study.",
+      "pdf_page": 1,
+      "section": "Abstract"
+    },
+    "writing_move": "Build a tool-to-observation-to-design implication argument.",
+    "analysis": "The abstract orders the contribution as a simulation capability, a characterization, and architectural case studies. The custom linker is justified by a concrete limitation of the original toolchain that would otherwise prevent alternative designs from being studied. Communication breakdowns distinguish kernel acceleration from system scaling.",
+    "transfer_caveat": "The downloaded author preprint is arXiv v3. A characterized commercial machine and simulated future variants are different evidence levels; retain that distinction in new writing.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "hpca-2024-talco",
+    "title": "TALCO: Tiling Genome Sequence Alignment using Convergence of Traceback Pointers",
+    "venue": "HPCA",
+    "year": 2024,
+    "recognition": "best_paper_candidate",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.hpca-conf.org/2024/program/main.php",
+    "selection_reason": "Official program marks Best Paper Nominee; explicit quality-memory tradeoff.",
+    "paper_url": "https://sumit-walia.github.io/assets/paper/TALCO.pdf",
+    "doi": null,
+    "topics": [
+      "bioinformatics",
+      "accelerators",
+      "algorithm hardware codesign",
+      "quality constraints",
+      "codesign"
+    ],
+    "paper_type": "codesign",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Algorithm 1 and pointer convergence (p.5)",
+      "Section V methodology (p.8)"
+    ],
+    "excerpt": {
+      "text": "TALCO also ensures optimal alignments under banding constraints.",
+      "pdf_page": 1,
+      "section": "Abstract"
+    },
+    "writing_move": "Attach the qualification to a correctness or quality claim.",
+    "analysis": "The first figure introduces the accuracy-memory tradeoff before hardware details. A convergence property of traceback paths explains why tiling can preserve the stated alignment quality. The methodology tunes scoring/input settings to match baselines, so increased throughput is not silently purchased by solving a different alignment problem.",
+    "transfer_caveat": "Optimality is under banding constraints, not unrestricted alignment. Algorithmic quality, throughput, and hardware memory claims each require the corresponding comparison.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "hpca-2019-stretch",
+    "title": "Stretch: Balancing QoS and Throughput for Colocated Server Workloads on SMT Cores",
+    "venue": "HPCA",
+    "year": 2019,
+    "recognition": "best_paper",
+    "recognition_year": 2019,
+    "recognition_url": "https://ieeetcca.org/awards/hpca-best-paper-award/",
+    "selection_reason": "Verified best paper; teaches a performance objective under a service constraint.",
+    "paper_url": "https://homepages.inf.ed.ac.uk/bgrot/pubs/STRETCH_HPCA19.pdf",
+    "doi": null,
+    "topics": [
+      "SMT",
+      "QoS",
+      "datacenter",
+      "resource allocation",
+      "processors",
+      "systems"
+    ],
+    "paper_type": "mechanism",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Software control (p.7)",
+      "Section V Methodology (p.8)"
+    ],
+    "excerpt": {
+      "text": "many batch workloads benefit from a large ROB that helps unlock higher ILP and MLP.",
+      "pdf_page": 1,
+      "section": "Introduction"
+    },
+    "writing_move": "Turn asymmetric workload sensitivity into an allocation rule.",
+    "analysis": "The motivation contrasts the two co-runners through their different ROB sensitivity, then uses latency slack to justify reallocating a fixed resource. Software modes and corrective actions connect that observation to a concrete controller. The evaluation fixes core partitioning and explains simulator warmup, rather than treating throughput as independent of QoS.",
+    "transfer_caveat": "The conclusion is conditional on workload load/slack and the QoS target; a throughput-only chart cannot support a claim of preserving tail latency.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "hpca-2003-runahead",
+    "title": "Runahead Execution: An Alternative to Very Large Instruction Windows for Out-of-order Processors",
+    "venue": "HPCA",
+    "year": 2003,
+    "recognition": "test_of_time",
+    "recognition_year": 2021,
+    "recognition_url": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+    "selection_reason": "Processor and memory-latency classic with an explicit semantic contract.",
+    "paper_url": "https://people.inf.ethz.ch/omutlu/pub/mutlu_hpca03.pdf",
+    "doi": null,
+    "topics": [
+      "processors",
+      "memory-level parallelism",
+      "speculation",
+      "correctness",
+      "memory"
+    ],
+    "paper_type": "mechanism",
+    "sections_read": [
+      "Abstract and Introduction (pp.1-2)",
+      "Section 4.3 and Section 5 (p.7)"
+    ],
+    "excerpt": {
+      "text": "except that they do not update architectural state.",
+      "pdf_page": 1,
+      "section": "Introduction"
+    },
+    "writing_move": "State the architectural invariant while explaining speculative execution.",
+    "analysis": "The introduction converts a costly resource increase into a different way of exposing useful future work. Checkpoint, pseudo-retirement, and restoration explain how discarded execution remains useful without committing incorrect state. The methodology states that evaluated traces are selected for memory sensitivity, making the evaluation population inspectable.",
+    "transfer_caveat": "Do not generalize memory-sensitive trace results to all programs. A new speculative mechanism needs its own state/recovery semantics and cost accounting.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "hpca-2001-perceptron",
+    "title": "Dynamic Branch Prediction with Perceptrons",
+    "venue": "HPCA",
+    "year": 2001,
+    "recognition": "test_of_time",
+    "recognition_year": 2019,
+    "recognition_url": "https://ieeetcca.org/awards/hpca-test-of-time-award/",
+    "selection_reason": "Classic predictor paper; official award page uses the variant title Dynamic Branch Predication with Perceptrons.",
+    "paper_url": "https://www.cs.utexas.edu/~lin/papers/hpca01.pdf",
+    "doi": null,
+    "topics": [
+      "branch prediction",
+      "processors",
+      "learning",
+      "attribution"
+    ],
+    "paper_type": "mechanism",
+    "sections_read": [
+      "Abstract and Introduction (PDF p.1)",
+      "Section 3.3-3.5 (p.3)",
+      "Section 5.5 (p.6)"
+    ],
+    "excerpt": {
+      "text": "Our experiments also provide a better understanding of the situations in which traditional predictors do and do not perform well.",
+      "pdf_page": 1,
+      "section": "Abstract"
+    },
+    "writing_move": "Explain why a mechanism works, including its domain of failure.",
+    "analysis": "The opening ties longer history to a linear storage cost. The later attribution test limits both predictors to the same history length and reverses the apparent winner, separating algorithm quality from access to longer histories. A constraint is part of the causal explanation, rather than a footnote after a headline speedup.",
+    "transfer_caveat": "Transfer the controlled comparison, not the neural-network framing or historical performance numbers. The representational limit of linear separability is relevant to the claim and belongs in the explanation.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "isca2024-constable",
+    "title": "Constable: Improving Performance and Power Efficiency by Safely Eliminating Load Execution",
+    "venue": "ISCA",
+    "year": 2024,
+    "recognition": "best_paper",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.iscaconf.org/isca2024/",
+    "selection_reason": "Official ISCA 2024 homepage names Constable as the ISCA Best Paper Award winner. The read author preprint adds “Instruction” to the title.",
+    "paper_url": "https://arxiv.org/pdf/2406.18786",
+    "doi": null,
+    "authors": [
+      "Rahul Bera",
+      "Adithya Ranganathan",
+      "Joydeep Rakshit",
+      "Sujit Mahto",
+      "Anant V. Nori",
+      "Jayesh Gaur",
+      "Ataberk Olgun",
+      "Konstantinos Kanellopoulos",
+      "Mohammad Sadrosadati",
+      "Sreenivas Subramoney",
+      "Onur Mutlu"
+    ],
+    "version_note": "Author preprint arXiv:2406.18786v1, 26 June 2024. Published-program title differs slightly.",
+    "topics": [
+      "processor",
+      "load elimination",
+      "ILP",
+      "power",
+      "processors",
+      "memory"
+    ],
+    "paper_type": "microarchitecture mechanism",
+    "sections_read": [
+      "Abstract (PDF p.1)",
+      "§1 Introduction (PDF pp.1–2)",
+      "§8 Methodology, selected passages (PDF pp.10–11)",
+      "§9.1 performance discussion, selected passages (PDF p.11)"
+    ],
+    "excerpt": {
+      "text": "to verify the speculated load value",
+      "pdf_page": 1,
+      "section": "§1 Introduction, Key limitation paragraph"
+    },
+    "writing_move": "Credit the closest technique, then isolate the remaining physical bottleneck.",
+    "analysis": "The introduction separates load data dependence from competition for pipeline resources, so the gap is a specific unremoved cost. It next states the register and memory conditions that permit safe elimination. The evaluation preserves a baseline with existing optimizations and measures both standalone and combined mechanisms. This sequence connects the proposed distinction to correctness, incremental benefit, and composition.",
+    "transfer_caveat": "Use this structure when the new mechanism removes a cost that a strong existing technique leaves intact. Preserve the measured baseline and execution mode when quoting gains."
+  },
+  {
+    "id": "isca2024-mind-the-gap",
+    "title": "Mind the Gap: Attainable Data Movement and Operational Intensity Bounds for Tensor Algorithms",
+    "venue": "ISCA",
+    "year": 2024,
+    "recognition": "best_paper_candidate",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.iscaconf.org/isca2024/program/",
+    "selection_reason": "Listed in the official ISCA 2024 Best Paper Session; selected as a candidate exemplar, not labeled an award winner.",
+    "paper_url": "https://raw.githubusercontent.com/hqjenny/hqjenny.github.io/master/papers/2024ISCA/2024ISCA_Orojensis.pdf",
+    "doi": null,
+    "authors": [
+      "Qijing Huang",
+      "Po-An Tsai",
+      "Joel S. Emer",
+      "Angshuman Parashar"
+    ],
+    "version_note": "Author-hosted ISCA manuscript. A residual internal slide footer appears inside the Figure 1 image; use the public paper as a writing source, not as a clean artwork template.",
+    "topics": [
+      "analytical bounds",
+      "data movement",
+      "DSE",
+      "tensor algorithms",
+      "memory",
+      "modeling",
+      "methodology"
+    ],
+    "paper_type": "analysis and design methodology",
+    "sections_read": [
+      "Abstract (PDF p.1)",
+      "§I Introduction (PDF pp.1–2)",
+      "§VIII Validation (PDF p.12)",
+      "§IX Runtime Comparison to Mapping-Aware DSE, selected passages (PDF pp.12–13)"
+    ],
+    "excerpt": {
+      "text": "This analysis can inform early high-level design decisions",
+      "pdf_page": 1,
+      "section": "Abstract"
+    },
+    "writing_move": "Expose why a familiar lower bound is uninformative, then define a more decision-relevant bound.",
+    "analysis": "The paper introduces two named gaps using a buffer-capacity versus access-count diagram. It distinguishes a mapping-independent limit from the outcome of one selected mapping. Validation then checks measured GPU accesses and modeled accelerator mappings against the predicted curve, while runtime comparison addresses the cost of obtaining guidance. The argument makes the object being bounded and its intended design use explicit.",
+    "transfer_caveat": "A bound on tensor data movement is not an end-to-end latency guarantee. Carry the storage and algorithm assumptions into the claim and show the validation domain."
+  },
+  {
+    "id": "isca2016-eyeriss",
+    "title": "Eyeriss: A Spatial Architecture for Energy-Efficient Dataflow for Convolutional Neural Networks",
+    "venue": "ISCA",
+    "year": 2016,
+    "recognition": "notable",
+    "recognition_year": null,
+    "recognition_url": null,
+    "selection_reason": "Selected as a prominent accelerator/dataflow exemplar with a clear controlled comparison; no ISCA award is asserted.",
+    "paper_url": "https://d1qx31qr3h6wln.cloudfront.net/publications/ISCA_2016_Eyeriss.pdf",
+    "doi": null,
+    "authors": [
+      "Yu-Hsin Chen",
+      "Joel Emer",
+      "Vivienne Sze"
+    ],
+    "version_note": "NVIDIA-hosted author paper; original publication metadata also confirmed by MIT DSpace: https://dspace.mit.edu/entities/publication/f6342515-2b7d-411c-a8ad-a9edb23dd394",
+    "topics": [
+      "accelerator",
+      "dataflow",
+      "energy",
+      "fair comparison",
+      "accelerators",
+      "memory"
+    ],
+    "paper_type": "accelerator architecture",
+    "sections_read": [
+      "Abstract and §I Introduction (PDF pp.1–2)",
+      "§VI-C Framework for Energy Efficiency Analysis, selected passages (PDF pp.8–9)",
+      "§VII-A and comparative energy discussion, selected passages (PDF p.10)"
+    ],
+    "excerpt": {
+      "text": "under the same hardware resource constraints",
+      "pdf_page": 1,
+      "section": "§I Introduction"
+    },
+    "writing_move": "Make fair comparison part of the contribution and explain the accounting before reporting gains.",
+    "analysis": "The paper argues that implementation results from different platforms obscure the effect of dataflow. It defines a shared spatial architecture and charges movement at several storage levels. Comparative results are then decomposed by layer and movement level, so the claimed energy benefit follows from reuse and accounting rather than a resource-size difference alone. Chip evidence and analytical comparisons have distinct roles.",
+    "transfer_caveat": "Resource parity is specific to the question being answered. Match area, parallelism, technology, workload, and accounting scope before attributing the difference to a dataflow."
+  },
+  {
+    "id": "isca2014-rowhammer",
+    "title": "Flipping Bits in Memory Without Accessing Them: An Experimental Study of DRAM Disturbance Errors",
+    "venue": "ISCA",
+    "year": 2014,
+    "recognition": "notable",
+    "recognition_year": null,
+    "recognition_url": null,
+    "selection_reason": "Selected as a prominent characterization/security exemplar. This record makes no ISCA Best Paper or Influential ISCA award claim.",
+    "paper_url": "https://www.istc-cc.cmu.edu/publications/papers/2014/kim-isca14.pdf",
+    "doi": null,
+    "authors": [
+      "Yoongu Kim",
+      "Ross Daly",
+      "Jeremie Kim",
+      "Chris Fallin",
+      "Ji Hye Lee",
+      "Donghyuk Lee",
+      "Chris Wilkerson",
+      "Konrad Lai",
+      "Onur Mutlu"
+    ],
+    "version_note": "Original CMU-hosted paper, not its later retrospective.",
+    "topics": [
+      "DRAM",
+      "reliability",
+      "security",
+      "characterization",
+      "memory"
+    ],
+    "paper_type": "measurement and characterization",
+    "sections_read": [
+      "Abstract and §1 Introduction (PDF p.1)",
+      "§4 Real-System Demonstration and §5 Experimental Methodology, selected passages (PDF pp.3–4)",
+      "§7 Sensitivity Results and §8 Solutions to Disturbance Errors, selected passages (PDF p.10)"
+    ],
+    "excerpt": {
+      "text": "errors in most DRAM modules (110 out of 129)",
+      "pdf_page": 1,
+      "section": "Abstract"
+    },
+    "writing_move": "State the violated invariant, quantify the observed population, and separate demonstration from controlled characterization.",
+    "analysis": "The abstract begins with memory isolation, then gives a concrete way the invariant fails and a numerator and denominator for the observed population. Real-system code establishes practical reach; an FPGA platform isolates activation, refresh, and data-pattern conditions. Sensitivity observations and competing mitigations connect characterization to a solution choice. Evidence from one platform is not silently substituted for all DRAM generations.",
+    "transfer_caveat": "Keep measured hardware population, test conditions, and possible mechanism explanation distinct. Historical prevalence and thresholds are not predictions for current products or a complete exploitation claim."
+  },
+  {
+    "id": "isca2007-dip",
+    "title": "Adaptive Insertion Policies for High Performance Caching",
+    "venue": "ISCA",
+    "year": 2007,
+    "recognition": "test_of_time",
+    "recognition_year": 2026,
+    "recognition_url": "https://www.sigarch.org/isca-2026-trip-report/",
+    "selection_reason": "The SIGARCH ISCA 2026 report identifies this paper as the Influential ISCA Paper Award recipient; this is the ISCA award name rather than a generic Best Paper claim.",
+    "paper_url": "https://www.cs.cmu.edu/afs/cs/academic/class/15740-f18/www/papers/isca07-qureshi-dip.pdf",
+    "doi": null,
+    "authors": [
+      "Moinuddin K. Qureshi",
+      "Aamer Jaleel",
+      "Yale N. Patt",
+      "Simon C. Steely Jr.",
+      "Joel Emer"
+    ],
+    "version_note": "University-hosted copy of the original paper includes one ResearchGate cover page. PDF p.2 is the first actual paper page.",
+    "topics": [
+      "cache",
+      "replacement",
+      "adaptive policies",
+      "low overhead",
+      "memory",
+      "processors"
+    ],
+    "paper_type": "microarchitecture mechanism",
+    "sections_read": [
+      "Abstract and §1 Introduction (PDF p.2)",
+      "§4.3 Case Study of LRU-Friendly Workload (PDF p.6)",
+      "§5 Dynamic Insertion Policy, selected passages (PDF pp.6–7)",
+      "§8 Conclusions and Future Work (PDF p.11)"
+    ],
+    "excerpt": {
+      "text": "We divide the problem of cache replacement into two parts",
+      "pdf_page": 2,
+      "section": "§1 Introduction"
+    },
+    "writing_move": "Decompose a familiar problem to reveal a small intervention with a measurable mechanism.",
+    "analysis": "The argument splits victim selection from insertion position before proposing progressively adaptive policies. It explains why preserving some working-set fraction helps thrashing workloads, then explicitly shows a workload that favors conventional insertion. This counterexample motivates dynamic selection rather than appearing as a disconnected caveat. The set-dueling mechanism follows from the need to adapt without maintaining full duplicate caches.",
+    "transfer_caveat": "A sequence from simple policy to adaptation is useful only when the intermediate failure actually motivates the next component. Avoid treating workload-dependent gains as universal improvement."
+  },
+  {
+    "id": "isca2000-wattch",
+    "title": "Wattch: A Framework for Architectural-Level Power Analysis and Optimizations",
+    "venue": "ISCA",
+    "year": 2000,
+    "recognition": "test_of_time",
+    "recognition_year": 2015,
+    "recognition_url": "https://ieeetcca.org/awards/influential-isca-paper-award/",
+    "selection_reason": "TCCA lists Wattch as the 2015 Influential ISCA Paper Award winner for ISCA 2000.",
+    "paper_url": "https://mrmgroup.cs.princeton.edu/papers/isca2000.pdf",
+    "doi": null,
+    "authors": [
+      "David Brooks",
+      "Vivek Tiwari",
+      "Margaret Martonosi"
+    ],
+    "version_note": "Original author-group PDF; broken font encoding required visual reading of PDF pp.1,5,6. Excerpt verified visually on PDF p.1 (printed p.83).",
+    "topics": [
+      "modeling",
+      "power",
+      "validation",
+      "methodology",
+      "tools",
+      "processors"
+    ],
+    "paper_type": "tool and evaluation methodology",
+    "sections_read": [
+      "Abstract and §1 Introduction (PDF p.1; image read)",
+      "§2.2 SimpleScalar Interface and §2.2.1 Conditional Clocking Styles (PDF p.5; image read)",
+      "§2.2.2 Simulation Speed and §3 Model Validation, selected passages (PDF p.6; image read)"
+    ],
+    "excerpt": {
+      "text": "We see Wattch as a complement to existing lower-level tools;",
+      "pdf_page": 1,
+      "section": "Abstract",
+      "verification": "Visually checked PDF page 1 because pdftotext has broken font encoding."
+    },
+    "writing_move": "Position a fast model by the design decision it enables and the independent checks that justify using it.",
+    "analysis": "The abstract links slow, late-stage power tools to a missing early exploration capability. The method explains how structural power models combine with simulated activity. The validation section separates capacitance checks, relative power breakdowns, and absolute magnitude comparison, instead of allowing one accuracy result to stand for every use. Runtime and clock-gating assumptions are disclosed with the modeling mechanism.",
+    "transfer_caveat": "Transfer the validation decomposition, not the historical accuracy or speed numbers. An architectural model complements detailed evaluation within its tested abstraction and technology assumptions."
+  },
+  {
+    "id": "micro-2024-avatar",
+    "title": "A Case for Speculative Address Translation with Rapid Validation for GPUs",
+    "venue": "MICRO",
+    "year": 2024,
+    "recognition": "best_paper_candidate",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.microarch.org/micro57/program/",
+    "selection_reason": "Official program marks Best Paper Candidate; latency mechanism with validation and recovery.",
+    "paper_url": "https://www.cs.cmu.edu/~18742/papers/Park2024.pdf",
+    "doi": "10.1109/MICRO61859.2024.00029",
+    "topics": [
+      "GPUs",
+      "address translation",
+      "speculation",
+      "correctness",
+      "memory"
+    ],
+    "paper_type": "mechanism",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Contributions and motivation (p.2)",
+      "Rapid validation and mis-speculation handling (p.8)"
+    ],
+    "excerpt": {
+      "text": "Avatar renders unverified sectors invisible in the cache",
+      "pdf_page": 8,
+      "section": "Handling Mis-Speculation"
+    },
+    "writing_move": "Pair a fast speculative path with explicit validation and recovery semantics.",
+    "analysis": "The contribution describes which information is exploited for speculation, how fetched data validates the mapping, and how confirmed information can fill the TLB. The failure path explains what happens to unvalidated, mismatched, and uncompressed sectors. That detail makes correctness part of the mechanism rather than an unexplained assertion.",
+    "transfer_caveat": "A mechanism-level correctness argument does not by itself establish a security threat model or absence of all side channels. Separate speculative-path accuracy, average speedup, and validation invariants.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "micro-2024-nocap",
+    "title": "Accelerating Zero-Knowledge Proofs Through Hardware-Algorithm Co-Design",
+    "venue": "MICRO",
+    "year": 2024,
+    "recognition": "best_paper_candidate",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.microarch.org/micro57/program/",
+    "selection_reason": "Official program marks Best Paper Candidate; full-system cryptographic codesign.",
+    "paper_url": "https://people.csail.mit.edu/devadas/pubs/micro24_nocap.pdf",
+    "doi": null,
+    "topics": [
+      "cryptography",
+      "accelerators",
+      "algorithm hardware codesign",
+      "end-to-end evaluation",
+      "codesign"
+    ],
+    "paper_type": "codesign",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Section III tradeoffs and Table I (p.4)",
+      "Implementation and methodology (p.9)"
+    ],
+    "excerpt": {
+      "text": "improves CPU performance by over 2×.",
+      "pdf_page": 9,
+      "section": "Methodology baseline discussion"
+    },
+    "writing_move": "Strengthen the comparison baseline using the same algorithmic improvements.",
+    "analysis": "The paper compares prover, proof transfer, and verifier costs before choosing the algorithm/hardware combination. Its methodology gives the CPU baseline matching algorithmic improvements and explicitly describes how a previous accelerator is scaled. This makes system-level acceleration distinguishable from choosing a more favorable algorithm only for the proposal.",
+    "transfer_caveat": "A faster prover can yield a larger proof or different verification cost. Report complete service costs and algorithm/security assumptions before comparing end-to-end speedups.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "micro-2023-dvr",
+    "title": "Decoupled Vector Runahead",
+    "venue": "MICRO",
+    "year": 2023,
+    "recognition": "best_paper_candidate",
+    "recognition_year": 2023,
+    "recognition_url": "https://www.microarch.org/micro56/program/",
+    "selection_reason": "Official conference program verifies nomination. Author sources call it a best paper, but the weaker official-program label is retained.",
+    "paper_url": "https://www.cl.cam.ac.uk/~tmj32/papers/docs/naithani23-micro.pdf",
+    "doi": null,
+    "topics": [
+      "processors",
+      "prefetching",
+      "memory-level parallelism",
+      "scaling",
+      "memory"
+    ],
+    "paper_type": "mechanism",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Section 3 motivation and Fig.2 (p.3)",
+      "Hardware overhead and Section 5 setup (p.8)"
+    ],
+    "excerpt": {
+      "text": "The performance gain of VR diminishes with increasing ROB size",
+      "pdf_page": 3,
+      "section": "Figure 2 caption"
+    },
+    "writing_move": "Use a scaling sweep to expose an obsolete trigger condition.",
+    "analysis": "The motivation measures how increasing ROB capacity reduces stalls that trigger the earlier technique, explaining why adding resources can erase its benefit. The proposed decoupling follows from that diagnosis. The setup includes a strong wide core and a stride prefetcher, while overhead is stated separately from performance.",
+    "transfer_caveat": "A proposed trigger change must be tested over the resource regime motivating it. The official nomination label is not silently promoted to a winner label.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "micro-2009-mcpat",
+    "title": "McPAT: An Integrated Power, Area, and Timing Modeling Framework for Multicore and Manycore Architectures",
+    "venue": "MICRO",
+    "year": 2009,
+    "recognition": "notable",
+    "recognition_year": null,
+    "recognition_url": null,
+    "selection_reason": "Selected as an established, publicly released architecture modeling tool; no award label or citation-count claim assigned.",
+    "paper_url": "https://raw.githubusercontent.com/HewlettPackard/mcpat/master/Documents/micro09.pdf",
+    "doi": null,
+    "topics": [
+      "power modeling",
+      "area modeling",
+      "design tools",
+      "validation",
+      "tools",
+      "modeling"
+    ],
+    "paper_type": "tool",
+    "sections_read": [
+      "Abstract (p.1)",
+      "Model framework headings (pp.3-4)",
+      "Validation discussion and Fig.3 (p.6)"
+    ],
+    "excerpt": {
+      "text": "Unfortunately, the best available power numbers we have for these processors are for peak power rather than average power.",
+      "pdf_page": 6,
+      "section": "Validation discussion"
+    },
+    "writing_move": "Match the validation target to the kind of measurement actually available.",
+    "analysis": "The abstract defines modeled components, technology layers, and the simulator interface. Validation distinguishes peak from average power and identifies unmodeled miscellaneous components rather than treating published whole-chip totals as a directly matched target. The design case then makes the objective function explicit when choosing among clustering options.",
+    "transfer_caveat": "Do not call a model estimate a silicon measurement. A change from energy-delay to area-inclusive objectives can change the winner; record the chosen objective before reporting a best configuration.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt.",
+    "selection_source_url": "https://github.com/HewlettPackard/mcpat"
+  },
+  {
+    "id": "micro-2007-cacti6",
+    "title": "Optimizing NUCA Organizations and Wiring Alternatives for Large Caches with CACTI 6.0",
+    "venue": "MICRO",
+    "year": 2007,
+    "recognition": "test_of_time",
+    "recognition_year": 2025,
+    "recognition_url": "https://www.sigmicro.org/awards/tot/",
+    "selection_reason": "Official MICRO ToT winner; modeling validity and design-space coverage.",
+    "paper_url": "https://www2.cs.utah.edu/~rajeev/pubs/micro07a.pdf",
+    "doi": null,
+    "topics": [
+      "cache modeling",
+      "interconnect",
+      "design tools",
+      "validation",
+      "memory",
+      "tools",
+      "modeling"
+    ],
+    "paper_type": "tool",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Validation and case-study assumptions (p.10)"
+    ],
+    "excerpt": {
+      "text": "Thus, two changes have to be made to the tool to reflect the proposed implementation:",
+      "pdf_page": 10,
+      "section": "Case-study discussion"
+    },
+    "writing_move": "Expose the model changes needed before applying a tool to a new design.",
+    "analysis": "The introduction identifies omitted wiring and network choices that limit earlier cache models. Validation precedes a case study, and the case study explicitly revises assumptions about bank access frequencies and cache partitioning. That sequence separates tool accuracy from the architectural conclusions drawn using it.",
+    "transfer_caveat": "A model validated for an S-NUCA organization is not automatically valid for D-NUCA. Treat each changed topology, traffic distribution, and contention assumption as a modeling obligation.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  },
+  {
+    "id": "micro-2006-ucp",
+    "title": "Utility-Based Cache Partitioning: A Low-Overhead, High-Performance, Runtime Mechanism to Partition Shared Caches",
+    "venue": "MICRO",
+    "year": 2006,
+    "recognition": "test_of_time",
+    "recognition_year": 2024,
+    "recognition_url": "https://www.sigmicro.org/awards/tot/",
+    "selection_reason": "Official MICRO Test of Time winner; resource allocation based on marginal benefit.",
+    "paper_url": "https://users.ece.northwestern.edu/~rjoseph/eecs453/papers/quereshi-micro2006.pdf",
+    "doi": null,
+    "topics": [
+      "caches",
+      "resource allocation",
+      "runtime monitoring",
+      "fairness",
+      "memory",
+      "processors"
+    ],
+    "paper_type": "mechanism",
+    "sections_read": [
+      "Abstract and Introduction (p.1)",
+      "Section 3 utility monitoring (pp.3-4)",
+      "Section 5.3 and sampled-set sensitivity (p.7)"
+    ],
+    "excerpt": {
+      "text": "a higher demand for cache resources does not always correlate with a higher performance from additional cache resources.",
+      "pdf_page": 1,
+      "section": "Abstract"
+    },
+    "writing_move": "Challenge the proxy metric with a concrete counterexample.",
+    "analysis": "The motivation distinguishes demand from benefit before defining cache utility. The monitor and sampling construction show how the desired decision signal can be obtained at reasonable hardware cost. Evaluation separates throughput and fairness and varies the sample count, checking both the allocation objective and the low-overhead implementation.",
+    "transfer_caveat": "Borrow the proxy-versus-objective distinction. Do not assume miss reduction always converts to proportional speedup or that one fairness metric captures every QoS requirement.",
+    "source_note": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+    "retrieved": "2026-11-10",
+    "excerpt_normalization": "Whitespace collapse and Unicode NFKC only; no dehyphenation was needed for the selected contiguous excerpt."
+  }
+]
