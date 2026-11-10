@@ -1,0 +1,37 @@
+{
+  "cases": [
+    {
+      "case_id": "heldout-asplos-01",
+      "control": 99.0,
+      "skill": 98.0,
+      "difference": -1.0
+    },
+    {
+      "case_id": "heldout-hpca-01",
+      "control": 99.0,
+      "skill": 99.0,
+      "difference": 0.0
+    },
+    {
+      "case_id": "heldout-isca-01",
+      "control": 97.5,
+      "skill": 97.5,
+      "difference": 0.0
+    },
+    {
+      "case_id": "heldout-micro-01",
+      "control": 99.0,
+      "skill": 99.0,
+      "difference": 0.0
+    }
+  ],
+  "control_mean": 98.625,
+  "skill_mean": 98.375,
+  "mean_difference": -0.25,
+  "skill_wins": 0,
+  "ties": 3,
+  "control_wins": 1,
+  "semantic_penalties": 0,
+  "fatal_fabrications": 0,
+  "interpretation": "Descriptive single-judge results for four procedurally held-out writing cases, not statistical superiority or acceptance evidence."
+}

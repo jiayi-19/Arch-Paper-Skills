@@ -72,6 +72,8 @@ def main():
     p.add_argument('--references',type=Path,help='Private {case_id: original_text_path} map; source text never copied to report')
     p.add_argument('--key',type=Path);p.add_argument('--grades',type=Path);p.add_argument('--out',type=Path)
     a=p.parse_args();briefs=json.loads(a.briefs.read_text())['cases'];refs=json.loads(a.references.read_text()) if a.references else {}
+    if not isinstance(refs,dict):p.error('--references expects a {case_id: text_path} map, not a source metadata list')
+    if a.references and any(b['case_id'] not in refs for b in briefs):p.error('Reference mapping must include every requested case')
     rows=[]
     for brief in briefs:
         output=json.loads((a.outputs/(brief['case_id']+'.json')).read_text())
@@ -83,7 +85,7 @@ def main():
         key=json.loads(a.key.read_text());grades=json.loads(a.grades.read_text())
         if isinstance(grades,dict):grades=grades['cases']
         by_id={r['case_id']:r for r in grades}
-        result['grading']=[aggregate_grade(k,by_id[k['case_id']],key) for k in key['cases']]
+        result['grading']=sorted([aggregate_grade(k,by_id[k['case_id']],key) for k in key['cases']],key=lambda r:r['case_id'])
     text=json.dumps(result,indent=2,ensure_ascii=False)+'\n'
     if a.out:a.out.write_text(text)
     else:print(text)

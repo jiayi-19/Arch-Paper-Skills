@@ -69,6 +69,7 @@ class Toolchain(unittest.TestCase):
             main.write_text(r'\input{missing}\cite{unknown}\ref{absent}\label{d}\label{d}')
             self.assertEqual(len(check_manuscript.inspect(main,root)['errors']),4)
 
+    @unittest.skipUnless(importlib.util.find_spec('matplotlib'), 'Install requirements-figures.txt for plotting integration')
     def test_plot_data_status_and_normalization(self):
         with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'input.csv'

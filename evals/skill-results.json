@@ -1,0 +1,242 @@
+{
+  "mechanical_metrics": [
+    {
+      "case_id": "heldout-hpca-01",
+      "abstract_metrics": {
+        "word_count": 200,
+        "sentence_count": 11,
+        "mean_sentence_words": 18.181818181818183,
+        "number_tokens": 8,
+        "numbers_per_100_words": 4.0,
+        "connectors_per_100_words": 0.5,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.5
+      },
+      "introduction_metrics": {
+        "word_count": 425,
+        "sentence_count": 22,
+        "mean_sentence_words": 19.318181818181817,
+        "number_tokens": 10,
+        "numbers_per_100_words": 2.3529411764705883,
+        "connectors_per_100_words": 0.47058823529411764,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0
+      },
+      "introduction_paragraphs": 3,
+      "abstract_length_in_requested_range": true,
+      "expected_introduction_paragraphs": 3,
+      "unverified_numeric_tokens": [],
+      "unknown_citation_keys": [],
+      "pending_markers": 0,
+      "note": "Unverified tokens are audit leads, not automatic fabrication judgments; known numbers can also be misused.",
+      "source_overlap": {
+        "eightgram_matches_not_in_brief": 0,
+        "longest_contiguous_word_run": 4,
+        "interpretation": "Overlap is a copying/memorization warning, not proof of source exposure or original authorship."
+      }
+    },
+    {
+      "case_id": "heldout-asplos-01",
+      "abstract_metrics": {
+        "word_count": 211,
+        "sentence_count": 11,
+        "mean_sentence_words": 19.181818181818183,
+        "number_tokens": 7,
+        "numbers_per_100_words": 3.3175355450236967,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.47393364928909953
+      },
+      "introduction_metrics": {
+        "word_count": 450,
+        "sentence_count": 21,
+        "mean_sentence_words": 21.428571428571427,
+        "number_tokens": 9,
+        "numbers_per_100_words": 2.0,
+        "connectors_per_100_words": 0.6666666666666666,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.2222222222222222,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.6666666666666666
+      },
+      "introduction_paragraphs": 3,
+      "abstract_length_in_requested_range": true,
+      "expected_introduction_paragraphs": 3,
+      "unverified_numeric_tokens": [],
+      "unknown_citation_keys": [],
+      "pending_markers": 0,
+      "note": "Unverified tokens are audit leads, not automatic fabrication judgments; known numbers can also be misused.",
+      "source_overlap": {
+        "eightgram_matches_not_in_brief": 0,
+        "longest_contiguous_word_run": 6,
+        "interpretation": "Overlap is a copying/memorization warning, not proof of source exposure or original authorship."
+      }
+    },
+    {
+      "case_id": "heldout-isca-01",
+      "abstract_metrics": {
+        "word_count": 210,
+        "sentence_count": 11,
+        "mean_sentence_words": 19.09090909090909,
+        "number_tokens": 12,
+        "numbers_per_100_words": 5.714285714285714,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 9.090909090909092,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.47619047619047616
+      },
+      "introduction_metrics": {
+        "word_count": 473,
+        "sentence_count": 23,
+        "mean_sentence_words": 20.565217391304348,
+        "number_tokens": 18,
+        "numbers_per_100_words": 3.8054968287526427,
+        "connectors_per_100_words": 0.42283298097251587,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.42283298097251587
+      },
+      "introduction_paragraphs": 3,
+      "abstract_length_in_requested_range": true,
+      "expected_introduction_paragraphs": 3,
+      "unverified_numeric_tokens": [],
+      "unknown_citation_keys": [],
+      "pending_markers": 0,
+      "note": "Unverified tokens are audit leads, not automatic fabrication judgments; known numbers can also be misused.",
+      "source_overlap": {
+        "eightgram_matches_not_in_brief": 0,
+        "longest_contiguous_word_run": 5,
+        "interpretation": "Overlap is a copying/memorization warning, not proof of source exposure or original authorship."
+      }
+    },
+    {
+      "case_id": "heldout-micro-01",
+      "abstract_metrics": {
+        "word_count": 214,
+        "sentence_count": 10,
+        "mean_sentence_words": 21.4,
+        "number_tokens": 7,
+        "numbers_per_100_words": 3.2710280373831777,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0
+      },
+      "introduction_metrics": {
+        "word_count": 443,
+        "sentence_count": 21,
+        "mean_sentence_words": 21.095238095238095,
+        "number_tokens": 12,
+        "numbers_per_100_words": 2.708803611738149,
+        "connectors_per_100_words": 0.45146726862302483,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.22573363431151242
+      },
+      "introduction_paragraphs": 3,
+      "abstract_length_in_requested_range": true,
+      "expected_introduction_paragraphs": 3,
+      "unverified_numeric_tokens": [],
+      "unknown_citation_keys": [],
+      "pending_markers": 0,
+      "note": "Unverified tokens are audit leads, not automatic fabrication judgments; known numbers can also be misused.",
+      "source_overlap": {
+        "eightgram_matches_not_in_brief": 0,
+        "longest_contiguous_word_run": 4,
+        "interpretation": "Overlap is a copying/memorization warning, not proof of source exposure or original authorship."
+      }
+    }
+  ],
+  "grading": [
+    {
+      "case_id": "heldout-asplos-01",
+      "coverage_fraction": 1.0,
+      "metric_scores": {
+        "fact_fidelity": 20.0,
+        "unsupported_numbers": 10,
+        "baselines_scope": 10,
+        "argument": 15.0,
+        "mechanism": 15.0,
+        "evidence": 10.0,
+        "positioning": 10.0,
+        "economy": 8.0
+      },
+      "total": 98.0,
+      "penalties": [],
+      "fatal_fabrication": false,
+      "interpretation": "One model-judged writing task; no predeclared pass threshold or statistical superiority claim."
+    },
+    {
+      "case_id": "heldout-hpca-01",
+      "coverage_fraction": 1.0,
+      "metric_scores": {
+        "fact_fidelity": 20.0,
+        "unsupported_numbers": 10,
+        "baselines_scope": 10,
+        "argument": 15.0,
+        "mechanism": 15.0,
+        "evidence": 10.0,
+        "positioning": 10.0,
+        "economy": 9.0
+      },
+      "total": 99.0,
+      "penalties": [],
+      "fatal_fabrication": false,
+      "interpretation": "One model-judged writing task; no predeclared pass threshold or statistical superiority claim."
+    },
+    {
+      "case_id": "heldout-isca-01",
+      "coverage_fraction": 1.0,
+      "metric_scores": {
+        "fact_fidelity": 20.0,
+        "unsupported_numbers": 10,
+        "baselines_scope": 10,
+        "argument": 15.0,
+        "mechanism": 13.5,
+        "evidence": 10.0,
+        "positioning": 10.0,
+        "economy": 9.0
+      },
+      "total": 97.5,
+      "penalties": [],
+      "fatal_fabrication": false,
+      "interpretation": "One model-judged writing task; no predeclared pass threshold or statistical superiority claim."
+    },
+    {
+      "case_id": "heldout-micro-01",
+      "coverage_fraction": 1.0,
+      "metric_scores": {
+        "fact_fidelity": 20.0,
+        "unsupported_numbers": 10,
+        "baselines_scope": 10,
+        "argument": 15.0,
+        "mechanism": 15.0,
+        "evidence": 10.0,
+        "positioning": 10.0,
+        "economy": 9.0
+      },
+      "total": 99.0,
+      "penalties": [],
+      "fatal_fabrication": false,
+      "interpretation": "One model-judged writing task; no predeclared pass threshold or statistical superiority claim."
+    }
+  ]
+}

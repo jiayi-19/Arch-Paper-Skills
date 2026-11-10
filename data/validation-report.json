@@ -1,0 +1,88 @@
+{
+  "version": "architecture-writing-validation.v2",
+  "functional_tests": {
+    "passed": 9,
+    "scope": [
+      "literal source links/citations/labels",
+      "draft percentage and sentence handling",
+      "planned-evidence preservation",
+      "public-statistics reproduction",
+      "function retrieval and split isolation",
+      "figure assets",
+      "plot value/status/normalization integrity",
+      "template-copy isolation",
+      "heldout score arithmetic and numeric/overlap diagnostics"
+    ]
+  },
+  "offline_form": {
+    "checks": [
+      "JavaScript syntax",
+      "preview schema",
+      "JSON download",
+      "invalid-array handling"
+    ],
+    "method": "Node VM with minimal DOM stub, not a full browser render"
+  },
+  "annotation": {
+    "development_papers": 24,
+    "complete_target_sections": 48,
+    "paragraphs": 278,
+    "sentence_or_fragment_units": 1101,
+    "first_figures": 24,
+    "independent_sample": 48,
+    "matching_primary_labels": 40,
+    "cohen_kappa": 0.8063540090771559,
+    "limitation": "Model-agent labels and model-to-model agreement, not human gold"
+  },
+  "source_transcription": "PDF geometric extraction/OCR/reconstruction audits retained privately; reconstruction consistency is not independent semantic correctness",
+  "statistics_reproduction": "All published summaries regenerated from text-free records and compared directly",
+  "python": "Python 3.10+ syntax; tests run on host Python",
+  "plotting_test_library": "3.10.6",
+  "documentation": "All relative Markdown links and public host-path scan pass",
+  "scope": "No manuscript compilation/rendering, live hardware experiments or original user-paper edits. Only synthetic plot fixture generation.",
+  "holdout": "Actual writing results, grades and interpretation are retained under evals; no claim of acceptance-rate improvement.",
+  "heldout": {
+    "cases": 4,
+    "generated_outputs": 8,
+    "blind_judge": "one independent model agent; mapping withheld until grades saved",
+    "score_reproduction": "both conditions reproduce exactly from saved grades",
+    "outcome": {
+      "cases": [
+        {
+          "case_id": "heldout-asplos-01",
+          "control": 99.0,
+          "skill": 98.0,
+          "difference": -1.0
+        },
+        {
+          "case_id": "heldout-hpca-01",
+          "control": 99.0,
+          "skill": 99.0,
+          "difference": 0.0
+        },
+        {
+          "case_id": "heldout-isca-01",
+          "control": 97.5,
+          "skill": 97.5,
+          "difference": 0.0
+        },
+        {
+          "case_id": "heldout-micro-01",
+          "control": 99.0,
+          "skill": 99.0,
+          "difference": 0.0
+        }
+      ],
+      "control_mean": 98.625,
+      "skill_mean": 98.375,
+      "mean_difference": -0.25,
+      "skill_wins": 0,
+      "ties": 3,
+      "control_wins": 1,
+      "semantic_penalties": 0,
+      "fatal_fabrications": 0,
+      "interpretation": "Descriptive single-judge results for four procedurally held-out writing cases, not statistical superiority or acceptance evidence."
+    }
+  },
+  "final_public_files_checked": 108
+}

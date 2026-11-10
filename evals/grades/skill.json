@@ -1,0 +1,223 @@
+{
+  "cases": [
+    {
+      "case_id": "heldout-hpca-01",
+      "label": "B",
+      "fact_coverage": [
+        {
+          "fact_id": "S1",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 ties \"DNN training\" GEMMs to \"Uneven matrix dimensions\" leaving the array idle and \"unstructured zeros\" consuming useless operations."
+        },
+        {
+          "fact_id": "S2",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 describes a \"logical row of multipliers\" grouped into Flex-DPEs, a Benes fabric that \"multicasts operands,\" and FAN partial-sum routing for \"independently sized dot products.\""
+        },
+        {
+          "fact_id": "S3",
+          "coverage_level": 1,
+          "evidence": "Introduction 2: \"A bitmap identifies zero positions and guides useful-operand placement\" and multiple Flex-DPEs form a Flex-DPU; introduction 3 reports the better weight-stationary/input-stationary mapping."
+        },
+        {
+          "fact_id": "S4",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 gives cycle-based analytical evaluation, SCALE-sim, 16,384 PEs, GNMT/Transformer/NCF/DeepBench and the six named sparse baselines. It explicitly limits results to \"GEMMs rather than complete training execution.\""
+        },
+        {
+          "fact_id": "S5",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 reports \"5.7\u00d7 speedup over TPU-like systolic designs on sparse irregular workloads and approximately 3\u00d7 over the compared sparse accelerators,\" after specifying GEMM extensions, orientations and sparsity placements."
+        },
+        {
+          "fact_id": "S6",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 states commercial 28 nm, 500 MHz, BF16 multiplication/FP32 addition, SIGMA 65.10 mm\u00b2/22.33 W versus systolic 47.27 mm\u00b2/12.25 W. Abstract identifies its figures as excluding large SRAMs; introduction also excludes SRAMs from area overhead and both power figures."
+        },
+        {
+          "fact_id": "S7",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 gives \"37.7% area increase\"; Eyeriss v2 is faster on \"two GEMMs\" because it retains both operands while SIGMA repeatedly streams one; \"Streaming sparsity and bandwidth thus delimit the benefit.\""
+        }
+      ],
+      "metric_raw_scores": {
+        "argument": 5,
+        "mechanism": 5,
+        "evidence": 5,
+        "positioning": 5,
+        "economy": 4.5
+      },
+      "penalties": [],
+      "fatal_fabrication": false,
+      "rationale": "The argument explains both dimension mismatch and zero work, with an explicit causal account of allocation and reduction. Evaluation retains model, workload, baseline, numerical format, cost boundary and counterexamples. The 196-word abstract and three paragraphs meet form constraints; the final paragraph carries many results and qualifications at once."
+    },
+    {
+      "case_id": "heldout-asplos-01",
+      "label": "A",
+      "fact_coverage": [
+        {
+          "fact_id": "W1",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 gives byte-addressable nonvolatile storage, \"ordinary memory instructions,\" crash recovery, continued volatile DRAM use, and an epoch grouping stores \"between ordering points.\""
+        },
+        {
+          "fact_id": "W2",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 gives ten applications across direct persistence, transactional libraries and file-system access, including native key-value/database systems, library-backed stores and PMFS-backed services; adaptation/instrumentation and \"Eliza extracts their persistent-access traces\" are explicit."
+        },
+        {
+          "fact_id": "W3",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 gives \"between 5 and 50 epochs,\" Echo/N-store TPC-C exceeding a hundred, common same-thread conflicts and uncommon cross-thread conflicts \"in the measured traces.\""
+        },
+        {
+          "fact_id": "W4",
+          "coverage_level": 1,
+          "evidence": "Introduction 2: \"In the simulated subset, persistent accesses average only 3.54% of memory accesses\"; predominantly volatile traffic motivates the design."
+        },
+        {
+          "fact_id": "W5",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 separates ordering/completion: ofence ends an epoch \"without requiring synchronous durability,\" dfence waits at transaction completion, and per-thread Persist Buffers retain updates/multiple versions with dependency metadata preserving order."
+        },
+        {
+          "fact_id": "W6",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 states gem5 full-system Linux, four-core out-of-order x86, a subset running to completion, \"32-entry Persist Buffer\" per hardware thread and flushing at \"16 entries.\""
+        },
+        {
+          "fact_id": "W7",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 specifies HOPS \"without persistent write queues,\" 24.3% over x86-64 clwb/sfence with durability at NVM and 10% over the x86-64 Persistent Write Queue configuration; the ideal ignores ordering and lacks crash consistency."
+        },
+        {
+          "fact_id": "W8",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 lists per-thread storage, retained versions, dependency metadata and cache/coherence changes, no verified aggregate chip-area/power result, cross-thread conflict handling and conservative tracking false positives."
+        }
+      ],
+      "metric_raw_scores": {
+        "argument": 5,
+        "mechanism": 5,
+        "evidence": 5,
+        "positioning": 5,
+        "economy": 4
+      },
+      "penalties": [],
+      "fatal_fabrication": false,
+      "rationale": "The trace observations motivate a clear ordering-versus-completion mechanism and accurately scoped simulated gains. Cost and correctness qualifications are explicit. Abstract length is 203 words and introduction has three paragraphs. Repeated explanations of the separation and repeated cost caveats make the prose less economical than its otherwise precise causal argument."
+    },
+    {
+      "case_id": "heldout-isca-01",
+      "label": "B",
+      "fact_coverage": [
+        {
+          "fact_id": "T1",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 gives deployed TPU inference on six MLP/CNN/LSTM models, 95% of the provider's inference demand at the time, compared against contemporary Intel Haswell and Nvidia K80."
+        },
+        {
+          "fact_id": "T2",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 describes the host-controlled PCIe inference coprocessor, dense systolic Matrix Multiply Unit, 65,536 MACs using 8-bit integer operands, software-managed Unified Buffer and deterministic scheme."
+        },
+        {
+          "fact_id": "T3",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 states peak 92 trillion operations/s, 24 MiB buffer, 4 MiB accumulators and absence of dedicated sparse-operation support. Abstract/first paragraph distinguish peak arithmetic capacity from service throughput."
+        },
+        {
+          "fact_id": "T4",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 explains batch-induced request waits, 7 ms at MLP0's 99th percentile, response limits and host overhead; introduction 2 contrasts TPU quantization with floating-point CPU/GPU datapaths."
+        },
+        {
+          "fact_id": "T5",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 reports Haswell 14.5\u00d7 geometric/29.2\u00d7 weighted and K80 13.2\u00d7/15.3\u00d7 with host overhead and explicitly different aggregation weights."
+        },
+        {
+          "fact_id": "T6",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 gives complete-server performance/W ranges 17\u201334\u00d7 Haswell and 14\u201316\u00d7 K80, distinguishing incremental subtraction of host power; introduction 3 names efficiency a proxy with undisclosed purchase prices/TCO."
+        },
+        {
+          "fact_id": "T7",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 links roofline/counters and Weight Memory bandwidth to MLP/LSTM memory limits; it gives CNN0 10% load/88% full-load power and explains weak proportionality."
+        },
+        {
+          "fact_id": "T8",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 distinguishes hardware-model alternatives including greater memory bandwidth from deployed measurements; the first paragraph scopes the chosen platforms as contemporary."
+        }
+      ],
+      "metric_raw_scores": {
+        "argument": 5,
+        "mechanism": 4.5,
+        "evidence": 5,
+        "positioning": 5,
+        "economy": 4.5
+      },
+      "penalties": [],
+      "fatal_fabrication": false,
+      "rationale": "The service-constraint argument is specific and the evidence preserves the different precision, averaging and power boundaries. Architecture is clearly described, while the causal benefits of the systolic and deterministic design receive less explanation than the measurements. The 203-word abstract and three introduction paragraphs satisfy form constraints; the result-heavy middle paragraph and final scope recap add density."
+    },
+    {
+      "case_id": "heldout-micro-01",
+      "label": "A",
+      "fact_coverage": [
+        {
+          "fact_id": "M1",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 defines dataflow as when/where tensor computations execute and connects layer dimensions, parallelism, reuse, buffers and communication; stationary labels only partially specify mappings."
+        },
+        {
+          "fact_id": "M2",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 explains TemporalMap/SpatialMap/Cluster and derivation of hierarchical tensor reuse/communication from workload, mapping and hardware, yielding runtime, activities, energy, buffers and utilization."
+        },
+        {
+          "fact_id": "M3",
+          "coverage_level": 1,
+          "evidence": "Introduction 1 requires multicast/reduction/storage and notes adding PEs/buffers can leave bandwidth unresolved; introduction 2 derives energy from activities/component costs and uses synthesized area/power costs in exploration."
+        },
+        {
+          "fact_id": "M4",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 gives 64-PE MAERI RTL/VGG16 and reported Eyeriss/AlexNet validation, average absolute runtime error within 3.9%, explicitly excluding a universal bound or energy-error validation."
+        },
+        {
+          "fact_id": "M5",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 specifies a modeled five-dataflow/five-DNN operator case study, operator-dependent preferred mappings and potential runtime/energy reductions of 37%/10%."
+        },
+        {
+          "fact_id": "M6",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 searches PE count, local/shared buffers and NoC bandwidth under constraints with lower-bound pruning; introduction 3 scopes 3,936,256 explored/175,861 valid/12.20 minutes to KC-P/VGG16-CONV2 and denies a count of full simulations."
+        },
+        {
+          "fact_id": "M7",
+          "coverage_level": 1,
+          "evidence": "Introduction 3 specifies Intel i7-8700K, 32 GB, synthesized 28 nm building blocks and 16 mm\u00b2/450 mW constraints, expressly search settings rather than MAESTRO overhead."
+        },
+        {
+          "fact_id": "M8",
+          "coverage_level": 1,
+          "evidence": "Introduction 2 states analytical exploration is delivered and automatic tuning/RTL generation future plans; introduction 3 calls comparisons modeled rather than proof of a manufactured accelerator's superiority."
+        }
+      ],
+      "metric_raw_scores": {
+        "argument": 5,
+        "mechanism": 5,
+        "evidence": 5,
+        "positioning": 5,
+        "economy": 4.5
+      },
+      "penalties": [],
+      "fatal_fabrication": false,
+      "rationale": "The mapping-to-resource argument is causal, including hardware conditions for reuse and activity-based energy. Runtime validation, modeled adaptive benefits and pruned hardware search retain distinct scopes. Abstract has 208 words and introduction exactly three paragraphs. Several explicit exclusions repeat qualifications, slightly reducing economy without obscuring the contribution."
+    }
+  ]
+}

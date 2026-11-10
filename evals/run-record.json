@@ -1,0 +1,17 @@
+{
+  "version": "architecture-writing-eval.v2",
+  "frozen_development_commit": "9dc333b",
+  "conditions": [
+    "control: common task without skill",
+    "skill: same task plus frozen development skill"
+  ],
+  "model_and_settings": "Both writer agents inherited the same parent model/settings; exact external model ID and sampling parameters are not exported by the agent tool.",
+  "generations": "One independent response per condition/case; four cases, eight outputs; no revision after judging",
+  "access": "Writers instructed to read only writer-safe briefs; skill arm additionally allowed frozen skill/development references. No original source lookup, web or grading key access.",
+  "budgets": "Same requested abstract word range and three introduction paragraphs; token, wall-time and context sizes were not equalized or uniformly instrumented.",
+  "rendering": "No manuscript compilation/rendering; source/data diagnostics only",
+  "blinding": "A/B independently randomized per case, seed29; mapping withheld from judge until saved judgments",
+  "annotation_agreement": "48-unit model-to-model sample, not human gold",
+  "harness_correction": "After writer freeze, source-reference mapping validation and stable case ordering were strengthened. No writing rule, statistic, rubric or candidate changed.",
+  "limitations": "Four selected cases, one generation and one judge; no statistical superiority, productivity or acceptance-rate claim."
+}

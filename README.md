@@ -67,6 +67,8 @@ The workflow is generic across architecture topics and is not tailored to a part
 paper or project. The skill respects the requested edit scope and session's rendering/
 publication preferences. It does not authorize experiments or remote publication itself.
 
+[Coverage relative to the reference workflow](references/toolchain-map.md).
+
 ## Complete workflow
 
 1. Recover facts from notes, source/draft, or [offline intake form](assets/intake_form.html).
@@ -135,6 +137,14 @@ Fact coverage, numeric/baseline/scope errors, mechanism, evidence, positioning a
 are scored with explicit rules. Read [the protocol](evals/README.md) for source isolation,
 pretraining limits and the distinction between mechanical checks and semantic judgment.
 No acceptance-rate, productivity or statistical superiority claim follows from four cases.
+
+### Observed held-out comparison
+
+The four-case blind trial scored control **98.62/100** and the frozen
+skill **98.38/100**, a descriptive paired mean difference of
+**-0.25** points. Both conditions met form constraints and received no factual
+penalties. This small, single-judge result does not establish general superiority.
+Read [all results, limitations and reproduction commands](evals/results-summary.md).
 
 ## Key resources
 

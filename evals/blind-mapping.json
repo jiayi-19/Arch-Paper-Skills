@@ -1,0 +1,21 @@
+{
+  "seed": 29,
+  "mapping": {
+    "heldout-asplos-01": {
+      "A": "skill",
+      "B": "control"
+    },
+    "heldout-hpca-01": {
+      "A": "control",
+      "B": "skill"
+    },
+    "heldout-isca-01": {
+      "A": "control",
+      "B": "skill"
+    },
+    "heldout-micro-01": {
+      "A": "skill",
+      "B": "control"
+    }
+  }
+}
