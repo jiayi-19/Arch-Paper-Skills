@@ -1,0 +1,584 @@
+{
+  "paper_id": "hpca-2025-dynamollm",
+  "paper_url": "https://arxiv.org/pdf/2408.00741",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Annotated recorded arXiv v1 PDF, dated 1 August 2024, associated with the manifest HPCA 2025 entry; this is not assumed identical to a later camera-ready version.",
+    "Introduction is complete through three contribution bullets, ending before Section II Background on physical PDF page 2. The opening right-column continuation was restored to the preceding characterization paragraph.",
+    "Request heterogeneity and sensitivity motivate design and are observation; inferred need for dynamic control is insight. Reported production-trace savings are result."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 185,
+        "sentence_count": 8,
+        "mean_sentence_words": 23.125,
+        "number_tokens": 3,
+        "numbers_per_100_words": 1.6216216216216217,
+        "connectors_per_100_words": 1.0810810810810811,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.5405405405405406,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1345,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "Heterogeneous inference demand motivates dynamic energy management under latency targets.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 145,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 146,
+              "end": 254,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 255,
+              "end": 454,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 4,
+              "start": 455,
+              "end": 655,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 5,
+              "start": 656,
+              "end": 892,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 6,
+              "start": 893,
+              "end": 1013,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 7,
+              "start": 1014,
+              "end": 1173,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 8,
+              "start": 1174,
+              "end": 1345,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 726,
+        "sentence_count": 37,
+        "mean_sentence_words": 19.62162162162162,
+        "number_tokens": 6,
+        "numbers_per_100_words": 0.8264462809917356,
+        "connectors_per_100_words": 0.6887052341597796,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 1.2396694214876034,
+        "trailing_participial_sentences_pct": 2.7027027027027026,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.27548209366391185,
+        "paragraph_count": 11
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 530,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Generative model adoption creates large and demanding serving infrastructures.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 170,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 2,
+              "start": 171,
+              "end": 322,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 323,
+              "end": 530,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 28
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 532,
+          "end": 1172,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Performance-focused inference optimization leaves energy management insufficiently addressed.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 532,
+              "end": 687,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 688,
+              "end": 765,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 3,
+              "start": 766,
+              "end": 878,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 879,
+              "end": 998,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 5,
+              "start": 999,
+              "end": 1172,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1174,
+          "end": 1891,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Characterization identifies variability in requests, models, and service requirements.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1174,
+              "end": 1291,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 1292,
+              "end": 1520,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 3,
+              "start": 1521,
+              "end": 1696,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 1697,
+              "end": 1891,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 30
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1893,
+          "end": 2841,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Compute and memory differences plus temporal change require dynamic resource choices.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1893,
+              "end": 1994,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 1995,
+              "end": 2110,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 2111,
+              "end": 2210,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 4,
+              "start": 2211,
+              "end": 2327,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 5,
+              "start": 2328,
+              "end": 2546,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 6,
+              "start": 2547,
+              "end": 2660,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 7,
+              "start": 2661,
+              "end": 2784,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 8,
+              "start": 2785,
+              "end": 2841,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 8
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2843,
+          "end": 3459,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Profiles drive online control of instance count, parallelism, and frequency.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2843,
+              "end": 3026,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 3027,
+              "end": 3165,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 3166,
+              "end": 3315,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 4,
+              "start": 3316,
+              "end": 3459,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 3461,
+          "end": 4691,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Request-specific pools and hierarchical control adapt configurations with low transition overhead.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3461,
+              "end": 3619,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 3620,
+              "end": 3834,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 3,
+              "start": 3835,
+              "end": 3915,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 4,
+              "start": 3916,
+              "end": 4073,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 5,
+              "start": 4074,
+              "end": 4228,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 6,
+              "start": 4229,
+              "end": 4414,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 7,
+              "start": 4415,
+              "end": 4578,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 8,
+              "start": 4579,
+              "end": 4691,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 4693,
+          "end": 4973,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Production-trace evaluation reports energy, carbon, and cost savings while meeting latency targets.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4693,
+              "end": 4973,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 43
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 4975,
+          "end": 5022,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The work introduces its contribution list.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4975,
+              "end": 5022,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 8
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 5024,
+          "end": 5168,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The first contribution characterizes opportunities in changing inference demand.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5024,
+              "end": 5168,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 19
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 5170,
+          "end": 5278,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The second contribution delivers the serving framework.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5170,
+              "end": 5278,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 5280,
+          "end": 5363,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The third contribution evaluates a large platform with production traces.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5280,
+              "end": 5363,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 11
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "hpca-2025-dynamollm",
+    "pdf_page": 4,
+    "kind": "motivation_plot",
+    "panels": 2,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. Two adjacent stacked-area plots for Coding and Conversation. They occupy the left column only; Figure 2 is a separate right-column figure.",
+    "metrics": {
+      "word_count": 19,
+      "sentence_count": 1,
+      "mean_sentence_words": 19.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 5.2631578947368425,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

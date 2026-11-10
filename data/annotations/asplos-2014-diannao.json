@@ -1,0 +1,530 @@
+{
+  "paper_id": "asplos-2014-diannao",
+  "paper_url": "https://www.cs.princeton.edu/courses/archive/spring16/cos598F/p269-chen.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Recorded corpus PDF",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Reading order repaired: Abstract final paragraph begins in the left column and continues at the top of the right; Introduction paragraph crosses pages 1–2.",
+    "Three contribution bullets each form their own paragraph; first bullet is positioned near the bottom of the left column on PDF page 2 and precedes the two right-column bullets.",
+    "Generic opening opportunity claims are insight rather than measured result; reported final accelerator performance is result.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: machinelearning, state-ofthe-art. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 251,
+        "sentence_count": 9,
+        "mean_sentence_words": 27.88888888888889,
+        "number_tokens": 8,
+        "numbers_per_100_words": 3.187250996015936,
+        "connectors_per_100_words": 0.398406374501992,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.796812749003984,
+        "paragraph_count": 3
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 599,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Connects widespread learning demand and concentrated algorithms to acceleration opportunity.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 147,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 2,
+              "start": 148,
+              "end": 342,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 343,
+              "end": 599,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 36
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 601,
+          "end": 988,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Contrasts compute-focused prior accelerators with large-network memory requirements.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 601,
+              "end": 736,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 737,
+              "end": 822,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 3,
+              "start": 823,
+              "end": 988,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 27
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 990,
+          "end": 1601,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Reports accelerator throughput, footprint, comparison, and applicability.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 990,
+              "end": 1357,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 66
+            },
+            {
+              "sentence_index": 2,
+              "start": 1358,
+              "end": 1424,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 3,
+              "start": 1425,
+              "end": 1601,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 753,
+        "sentence_count": 27,
+        "mean_sentence_words": 27.88888888888889,
+        "number_tokens": 19,
+        "numbers_per_100_words": 2.5232403718459495,
+        "connectors_per_100_words": 0.5312084993359893,
+        "hedges_per_100_words": 0.13280212483399734,
+        "boosters_per_100_words": 0.6640106241699867,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.796812749003984,
+        "paragraph_count": 10
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 232,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Frames flexibility and efficiency as competing accelerator-design goals.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 232,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 234,
+          "end": 1549,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Links emerging learning applications and shared neural techniques to a broad accelerator opportunity.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 234,
+              "end": 333,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 334,
+              "end": 706,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 47
+            },
+            {
+              "sentence_index": 3,
+              "start": 707,
+              "end": 968,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 40
+            },
+            {
+              "sentence_index": 4,
+              "start": 969,
+              "end": 1316,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 50
+            },
+            {
+              "sentence_index": 5,
+              "start": 1317,
+              "end": 1549,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 36
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1551,
+          "end": 2510,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "prior_work",
+          "summary": "Reviews existing platforms and accelerators and their treatment of memory.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1551,
+              "end": 1658,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 1659,
+              "end": 2055,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 49
+            },
+            {
+              "sentence_index": 3,
+              "start": 2056,
+              "end": 2187,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 2188,
+              "end": 2510,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 43
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2512,
+          "end": 3281,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Argues that memory transfers can erase acceleration benefits and deserve algorithm-specific design.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2512,
+              "end": 2912,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 59
+            },
+            {
+              "sentence_index": 2,
+              "start": 2913,
+              "end": 3073,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 3,
+              "start": 3074,
+              "end": 3281,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 32
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 3283,
+          "end": 4076,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Introduces memory-focused accelerator design and evaluated performance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3283,
+              "end": 3477,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 2,
+              "start": 3478,
+              "end": 3674,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 3,
+              "start": 3675,
+              "end": 3862,
+              "primary": "result",
+              "secondary": [
+                "scope"
+              ],
+              "word_count": 37
+            },
+            {
+              "sentence_index": 4,
+              "start": 3863,
+              "end": 4076,
+              "primary": "result",
+              "secondary": [
+                "scope"
+              ],
+              "word_count": 37
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 4078,
+          "end": 4131,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Introduces the contribution list.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4078,
+              "end": 4131,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 8
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 4133,
+          "end": 4262,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims a physically synthesized accelerator for large neural networks.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4133,
+              "end": 4262,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 4264,
+          "end": 4349,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims throughput within a compact power and area budget.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4264,
+              "end": 4349,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 13
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 4351,
+          "end": 4534,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims memory-aware design and end-to-end measurement coverage.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4351,
+              "end": 4534,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 26
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 4536,
+          "end": 5158,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "roadmap",
+          "summary": "Maps the remainder of the paper from primer to related work.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4536,
+              "end": 4570,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 2,
+              "start": 4571,
+              "end": 4703,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 3,
+              "start": 4704,
+              "end": 4843,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 4844,
+              "end": 4999,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 5,
+              "start": 5000,
+              "end": 5049,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 6,
+              "start": 5050,
+              "end": 5158,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "asplos-2014-diannao",
+    "pdf_page": 2,
+    "kind": "concept",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Single conceptual neural-network hierarchy, one column; not an evaluation plot. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 11,
+      "sentence_count": 2,
+      "mean_sentence_words": 5.5,
+      "number_tokens": 1,
+      "numbers_per_100_words": 9.090909090909092,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

@@ -1,0 +1,1148 @@
+{
+  "schema_version": 1,
+  "evaluation_only": true,
+  "retrieval_allowed": false,
+  "writer_access_allowed": false,
+  "rubric": [
+    {
+      "metric_id": "fact_fidelity",
+      "criterion": "Fact fidelity",
+      "weight": 20,
+      "scoring": "Preserve the supplied facts and qualifiers in original prose. Compute initial coverage credit as 20 times the sum of case fact weights multiplied by coverage levels (1 complete, 0.5 partial, 0 absent/contradicted), divided by the sum of fact weights. Material contradictions additionally trigger the stated penalty. Do not require every detail twice."
+    },
+    {
+      "metric_id": "unsupported_numbers",
+      "criterion": "Supported quantitative claims",
+      "weight": 10,
+      "scoring": "Start at 10. Every claimed experimental quantity must be grounded in an approved numeric record or directly stated source fact, with faithful units and statistic. Permit explicit approximate rounding, simple arithmetic with unchanged meaning, and ordinary bibliography/model-name digits. Apply penalties for unsupported quantities or distorted numeric meanings."
+    },
+    {
+      "metric_id": "baselines_scope",
+      "criterion": "Baselines and scope",
+      "weight": 10,
+      "scoring": "Start at 10. Preserve the baseline identity, metric, aggregation, evidence type and workload population relevant to each claim. Apply penalties for unjustified scope expansion or comparison substitution. Omission of a metric is not itself an unsupported comparison."
+    },
+    {
+      "metric_id": "argument",
+      "criterion": "Argument",
+      "weight": 15,
+      "scoring": "Judge whether the introduction gives a specific problem, the reason that problem remains consequential, and a coherent relationship between the proposed contribution and that problem. Full credit does not depend on any fixed paragraph role, novelty slogan, or resemblance to the source."
+    },
+    {
+      "metric_id": "mechanism",
+      "criterion": "Mechanism",
+      "weight": 15,
+      "scoring": "Judge whether the prose explains how the supplied method produces its intended effect, including the causal link from design choice to outcome and any necessary cost or constraint. Names alone do not establish the mechanism. Do not demand architectural detail absent from the brief."
+    },
+    {
+      "metric_id": "evidence",
+      "criterion": "Evidence",
+      "weight": 10,
+      "scoring": "Judge whether the contribution is supported by an appropriate, scoped result or methodological observation and whether limitations needed to interpret the selected evidence remain visible. Accept selective emphasis. A quantitative claim is useful only with interpretable meaning."
+    },
+    {
+      "metric_id": "positioning",
+      "criterion": "Positioning",
+      "weight": 10,
+      "scoring": "Judge whether the contribution is distinguished from the supplied problem setting or prior approaches without invented priority claims, literature or superiority. Citations, if present, must use provided keys with an appropriate relationship; a fixed citation count is not required."
+    },
+    {
+      "metric_id": "economy",
+      "criterion": "Economy and form",
+      "weight": 10,
+      "scoring": "Judge concise, connected, specific prose, an approximately requested-length self-contained abstract, and three introduction paragraphs. Avoid rewarding verbosity or imposing the original paper wording/organization. Format penalties below apply objectively."
+    }
+  ],
+  "material_fabrication_rule": "Flag material fabricated mechanisms, results, datasets, comparisons or deployment evidence independently of the numeric score; such an output cannot count as a passing faithful-paper rewrite. Record the offending claim and supporting fact ID.",
+  "cases": [
+    {
+      "case_id": "heldout-hpca-01",
+      "fact_coverage": [
+        {
+          "fact_id": "S1",
+          "text": "The target is general matrix multiplication arising during DNN training, including matrices with uneven dimensions and unstructured zeros. A fixed systolic shape can strand multipliers and preserve useless zero operations.",
+          "locator": "III.B–C, PDF pp.5–6",
+          "numeric_facts": [],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "S2",
+          "text": "SIGMA groups a logical row of multipliers into Flexible Dot Product Engines (Flex-DPEs). A Benes distribution fabric supports multicast, and the Forwarding Adder Network (FAN) routes partial sums so independently sized dot products can share the reduction fabric.",
+          "locator": "IV.A, PDF pp.6–8",
+          "numeric_facts": [],
+          "coverage_weight": 7
+        },
+        {
+          "fact_id": "S3",
+          "text": "A bitmap identifies zero positions and guides placement of useful operands. Multiple Flex-DPEs compose into a Flex-DPU for a GEMM; weight-stationary and input-stationary mappings are evaluated and the better mapping is reported.",
+          "locator": "IV.B–E, PDF pp.8–9; VI.B, PDF pp.10–11",
+          "numeric_facts": [],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "S4",
+          "text": "Performance comes from a cycle-based analytical model; the systolic baseline uses SCALE-sim. The study uses dimensions/sparsities from GNMT, Transformer, NCF, and DeepBench, and scales each modeled accelerator to 16,384 PEs. Sparse baselines include EIE, SCNN, OuterSPACE, Eyeriss v2, Packed Systolic, and Cambricon-X. These are GEMM comparisons, not full training runs.",
+          "locator": "VI.A, PDF p.10",
+          "numeric_facts": [
+            {
+              "value": 16384,
+              "unit": "PEs",
+              "meaning": "equal modeled compute-unit count"
+            }
+          ],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "S5",
+          "text": "The conclusion reports a 5.7× speedup against TPU-like systolic designs on sparse irregular workloads and approximately 3× against the compared sparse accelerators. Sparse accelerators were extended to GEMMs; alternative matrix orientations and sparsity placements were explored.",
+          "locator": "VIII, PDF p.13; VI.A, p.10; VI.D, p.12",
+          "numeric_facts": [
+            {
+              "value": 5.7,
+              "unit": "×",
+              "meaning": "reported sparse irregular GEMM speedup versus modeled TPU-like designs"
+            },
+            {
+              "value": 3,
+              "unit": "×",
+              "meaning": "approximate reported average speedup versus compared sparse designs"
+            }
+          ],
+          "coverage_weight": 6
+        },
+        {
+          "fact_id": "S6",
+          "text": "Post-layout comparison uses commercial 28 nm technology, 500 MHz, BF16 multiplication and FP32 addition. SIGMA has 65.10 mm² area and 22.33 W power for the compute array. These figures exclude the large SRAMs; the corresponding systolic compute array occupies 47.27 mm² and consumes 12.25 W.",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "numeric_facts": [
+            {
+              "value": 28,
+              "unit": "nm",
+              "meaning": "implementation process"
+            },
+            {
+              "value": 500,
+              "unit": "MHz",
+              "meaning": "comparison clock"
+            },
+            {
+              "value": 65.1,
+              "unit": "mm²",
+              "meaning": "SIGMA compute-array area excluding SRAMs"
+            },
+            {
+              "value": 22.33,
+              "unit": "W",
+              "meaning": "SIGMA compute-array power excluding SRAMs"
+            },
+            {
+              "value": 47.27,
+              "unit": "mm²",
+              "meaning": "systolic compute-array area"
+            },
+            {
+              "value": 12.25,
+              "unit": "W",
+              "meaning": "systolic compute-array power"
+            },
+            {
+              "value": 16,
+              "unit": "bits",
+              "meaning": "BF16 multiplier operand format"
+            },
+            {
+              "value": 32,
+              "unit": "bits",
+              "meaning": "FP32 addition format"
+            }
+          ],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "S7",
+          "text": "The flexible distribution/reduction fabrics raise compute-array area by 37.7%. The study reports two GEMMs where Eyeriss v2 is faster because it retains both operands in local SRAM while SIGMA repeats streaming of one operand. Streaming sparsity and bandwidth can limit useful throughput.",
+          "locator": "V, PDF p.10; VI.C–D, PDF p.12",
+          "numeric_facts": [
+            {
+              "value": 37.7,
+              "unit": "%",
+              "meaning": "compute-array area overhead versus compared systolic design"
+            }
+          ],
+          "coverage_weight": 4
+        }
+      ],
+      "approved_numbers": [
+        {
+          "fact_id": "S4",
+          "locator": "VI.A, PDF p.10",
+          "value": 16384,
+          "unit": "PEs",
+          "meaning": "equal modeled compute-unit count"
+        },
+        {
+          "fact_id": "S5",
+          "locator": "VIII, PDF p.13; VI.A, p.10; VI.D, p.12",
+          "value": 5.7,
+          "unit": "×",
+          "meaning": "reported sparse irregular GEMM speedup versus modeled TPU-like designs"
+        },
+        {
+          "fact_id": "S5",
+          "locator": "VIII, PDF p.13; VI.A, p.10; VI.D, p.12",
+          "value": 3,
+          "unit": "×",
+          "meaning": "approximate reported average speedup versus compared sparse designs"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 28,
+          "unit": "nm",
+          "meaning": "implementation process"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 500,
+          "unit": "MHz",
+          "meaning": "comparison clock"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 65.1,
+          "unit": "mm²",
+          "meaning": "SIGMA compute-array area excluding SRAMs"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 22.33,
+          "unit": "W",
+          "meaning": "SIGMA compute-array power excluding SRAMs"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 47.27,
+          "unit": "mm²",
+          "meaning": "systolic compute-array area"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 12.25,
+          "unit": "W",
+          "meaning": "systolic compute-array power"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 16,
+          "unit": "bits",
+          "meaning": "BF16 multiplier operand format"
+        },
+        {
+          "fact_id": "S6",
+          "locator": "Fig.8 and caption, PDF p.9; V, p.10",
+          "value": 32,
+          "unit": "bits",
+          "meaning": "FP32 addition format"
+        },
+        {
+          "fact_id": "S7",
+          "locator": "V, PDF p.10; VI.C–D, PDF p.12",
+          "value": 37.7,
+          "unit": "%",
+          "meaning": "compute-array area overhead versus compared systolic design"
+        }
+      ],
+      "expected_qualifications": [
+        "Measured chip deployment or measured end-to-end training speedup.",
+        "Universal 100% useful execution efficiency at every sparsity or shape.",
+        "The 65.10 mm²/22.33 W figures include SRAMs or total accelerator-system cost.",
+        "SIGMA has lower absolute power than its compared systolic compute array.",
+        "All products use FP32 multiplication; Fig.8 specifies BF16 multipliers with FP32 addition.",
+        "SIGMA beats every sparse baseline on every GEMM."
+      ],
+      "grading_note": "Qualifications are judged when relevant to a claim made, not as a requirement to recite every limitation. Fact coverage can be distributed across the abstract and introduction. A detail need not appear in both. Bibliography-only numbers and ordinary section/output numbering are outside the experimental-number inventory.",
+      "mechanism_fact_ids": [
+        "S2",
+        "S3"
+      ],
+      "evidence_fact_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "positioning_fact_ids": [
+        "S1",
+        "S4",
+        "S7"
+      ]
+    },
+    {
+      "case_id": "heldout-asplos-01",
+      "fact_coverage": [
+        {
+          "fact_id": "W1",
+          "text": "Persistent memory is byte-addressable nonvolatile storage reached using ordinary memory instructions. Applications still need crash recovery: data must survive in a permissible order, and volatile DRAM remains in use. An epoch groups persistent stores between ordering points.",
+          "locator": "2, PDF pp.2–3; 5.1, PDF p.6",
+          "numeric_facts": [],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "W2",
+          "text": "WHISPER gathers ten applications spanning direct persistence, transactional libraries, and file-system access. Programs were adapted for recovery and instrumented; workloads include native key-value/database systems, library-backed stores, and PMFS-backed services. Eliza extracts persistent-access traces.",
+          "locator": "3–4, Table1, PDF pp.3–6",
+          "numeric_facts": [
+            {
+              "value": 10,
+              "unit": "applications",
+              "meaning": "suite size, not count of simulated HOPS workloads"
+            }
+          ],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "W3",
+          "text": "Most durable transactions contain between 5 and 50 epochs, although Echo and the N-store TPC-C workload can contain over a hundred. Same-thread epoch conflicts are common; conflicts between threads are uncommon in the measured traces, rather than impossible.",
+          "locator": "5.1, Fig.3 and Fig.5, PDF pp.6–7",
+          "numeric_facts": [
+            {
+              "value": [
+                5,
+                50
+              ],
+              "unit": "epochs per transaction",
+              "meaning": "common range with explicitly reported exceptions"
+            }
+          ],
+          "coverage_weight": 3
+        },
+        {
+          "fact_id": "W4",
+          "text": "In the simulated application subset, persistent accesses average 3.54% of memory accesses. Persistent-memory support therefore shares a machine dominated by volatile traffic; this is a workload observation, not a theorem about all PM programs.",
+          "locator": "5.3 and Fig.6, PDF pp.8–9",
+          "numeric_facts": [
+            {
+              "value": 3.54,
+              "unit": "%",
+              "meaning": "mean persistent-access fraction in the simulated subset"
+            }
+          ],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "W5",
+          "text": "The Hands-Off Persistence System (HOPS) separates ordering from completion of persistence. ofence ends an epoch without demanding synchronous durability; dfence waits for durability when required, such as transaction completion. Per-thread Persist Buffers retain persistent updates and versions while dependency metadata preserves necessary order.",
+          "locator": "6.1–6.3, Fig.7–9 and Table2, PDF pp.9–11",
+          "numeric_facts": [],
+          "coverage_weight": 7
+        },
+        {
+          "fact_id": "W6",
+          "text": "HOPS is evaluated using gem5 full-system Linux simulation of a four-core out-of-order x86 machine. Each hardware thread has a 32-entry Persist Buffer, with background flushing triggered at 16 entries. A subset of the suite runs to completion.",
+          "locator": "6.4 and Table3, PDF p.11",
+          "numeric_facts": [
+            {
+              "value": 4,
+              "unit": "cores",
+              "meaning": "simulated machine"
+            },
+            {
+              "value": 32,
+              "unit": "entries/thread",
+              "meaning": "Persist Buffer capacity"
+            },
+            {
+              "value": 16,
+              "unit": "entries",
+              "meaning": "background-flush trigger"
+            }
+          ],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "W7",
+          "text": "Against x86-64 clwb plus sfence with durability reached at NVM, HOPS without persistent write queues reports a 24.3% performance improvement. It also outperforms the x86-64 persistent-write-queue configuration by 10%. The ideal comparison ignores ordering and is not crash-consistent.",
+          "locator": "6.4 and Fig.10, PDF pp.11–12",
+          "numeric_facts": [
+            {
+              "value": 24.3,
+              "unit": "%",
+              "meaning": "reported performance improvement, HOPS(NVM) versus x86-64(NVM)"
+            },
+            {
+              "value": 10,
+              "unit": "%",
+              "meaning": "reported improvement of HOPS without PWQ versus x86-64 with PWQ"
+            }
+          ],
+          "coverage_weight": 6
+        },
+        {
+          "fact_id": "W8",
+          "text": "The mechanism adds per-thread buffers, multiple retained versions, metadata, and cache/coherence changes. Cross-thread conflicts still require handling; conservative dependency tracking may introduce false positives. The brief has no verified aggregate chip-area or power number.",
+          "locator": "6.3, PDF pp.10–11; 7, PDF p.12",
+          "numeric_facts": [],
+          "coverage_weight": 3
+        }
+      ],
+      "approved_numbers": [
+        {
+          "fact_id": "W2",
+          "locator": "3–4, Table1, PDF pp.3–6",
+          "value": 10,
+          "unit": "applications",
+          "meaning": "suite size, not count of simulated HOPS workloads"
+        },
+        {
+          "fact_id": "W3",
+          "locator": "5.1, Fig.3 and Fig.5, PDF pp.6–7",
+          "value": [
+            5,
+            50
+          ],
+          "unit": "epochs per transaction",
+          "meaning": "common range with explicitly reported exceptions"
+        },
+        {
+          "fact_id": "W4",
+          "locator": "5.3 and Fig.6, PDF pp.8–9",
+          "value": 3.54,
+          "unit": "%",
+          "meaning": "mean persistent-access fraction in the simulated subset"
+        },
+        {
+          "fact_id": "W6",
+          "locator": "6.4 and Table3, PDF p.11",
+          "value": 4,
+          "unit": "cores",
+          "meaning": "simulated machine"
+        },
+        {
+          "fact_id": "W6",
+          "locator": "6.4 and Table3, PDF p.11",
+          "value": 32,
+          "unit": "entries/thread",
+          "meaning": "Persist Buffer capacity"
+        },
+        {
+          "fact_id": "W6",
+          "locator": "6.4 and Table3, PDF p.11",
+          "value": 16,
+          "unit": "entries",
+          "meaning": "background-flush trigger"
+        },
+        {
+          "fact_id": "W7",
+          "locator": "6.4 and Fig.10, PDF pp.11–12",
+          "value": 24.3,
+          "unit": "%",
+          "meaning": "reported performance improvement, HOPS(NVM) versus x86-64(NVM)"
+        },
+        {
+          "fact_id": "W7",
+          "locator": "6.4 and Fig.10, PDF pp.11–12",
+          "value": 10,
+          "unit": "%",
+          "meaning": "reported improvement of HOPS without PWQ versus x86-64 with PWQ"
+        }
+      ],
+      "expected_qualifications": [
+        "Hardware deployment or silicon measurements.",
+        "24.3% improvement on every suite application or on all persistent programs.",
+        "3.54% of writes globally: the supplied result concerns memory accesses in a simulated subset.",
+        "Ordering fences automatically make all earlier writes durable.",
+        "Cross-thread dependencies never occur.",
+        "The ideal non-crash-consistent system is a valid replacement for the crash-consistent baseline.",
+        "Any quantified area, power, or free-hardware-overhead claim."
+      ],
+      "grading_note": "Qualifications are judged when relevant to a claim made, not as a requirement to recite every limitation. Fact coverage can be distributed across the abstract and introduction. A detail need not appear in both. Bibliography-only numbers and ordinary section/output numbering are outside the experimental-number inventory.",
+      "mechanism_fact_ids": [
+        "W5"
+      ],
+      "evidence_fact_ids": [
+        "W2",
+        "W3",
+        "W4",
+        "W6",
+        "W7",
+        "W8"
+      ],
+      "positioning_fact_ids": [
+        "W1",
+        "W2",
+        "W8"
+      ]
+    },
+    {
+      "case_id": "heldout-isca-01",
+      "fact_coverage": [
+        {
+          "fact_id": "T1",
+          "text": "This is an evaluation of a deployed Tensor Processing Unit (TPU) for datacenter neural-network inference. Six production models, comprising MLP, CNN, and LSTM families, represent 95% of the provider’s inference demand at the time. The compared contemporary platforms are Intel Haswell and Nvidia K80.",
+          "locator": "Table1, author PDF p.2; 3, PDF p.5",
+          "numeric_facts": [
+            {
+              "value": 6,
+              "unit": "models",
+              "meaning": "production inference workload"
+            },
+            {
+              "value": 95,
+              "unit": "%",
+              "meaning": "provider inference demand represented by the selected workload at the time"
+            }
+          ],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "T2",
+          "text": "The host-controlled coprocessor uses a dense systolic matrix unit with 65,536 multiply-accumulate units for 8-bit integer operands. Software manages the Unified Buffer; the accelerator uses a simple deterministic execution scheme and communicates with a host over PCIe. It targets inference rather than training.",
+          "locator": "2, Fig.1, PDF pp.2–4",
+          "numeric_facts": [
+            {
+              "value": 65536,
+              "unit": "MAC units",
+              "meaning": "8-bit integer matrix unit"
+            },
+            {
+              "value": 8,
+              "unit": "bits",
+              "meaning": "integer matrix-unit operands"
+            }
+          ],
+          "coverage_weight": 6
+        },
+        {
+          "fact_id": "T3",
+          "text": "Peak throughput is 92 trillion operations per second; the Unified Buffer has 24 MiB, supplemented by 4 MiB of accumulators. Peak arithmetic rate is not sustained workload throughput. Dense hardware lacks dedicated sparse-operation support.",
+          "locator": "2, PDF pp.3–4; Table2, PDF p.5",
+          "numeric_facts": [
+            {
+              "value": 92,
+              "unit": "TOPS",
+              "meaning": "peak arithmetic throughput"
+            },
+            {
+              "value": 24,
+              "unit": "MiB",
+              "meaning": "Unified Buffer"
+            },
+            {
+              "value": 4,
+              "unit": "MiB",
+              "meaning": "accumulators"
+            }
+          ],
+          "coverage_weight": 3
+        },
+        {
+          "fact_id": "T4",
+          "text": "Measured comparisons enforce application response-time limits and include host interaction overhead. For MLP0, the tail-latency limit is 7 ms at the 99th percentile. Larger batches can increase throughput while violating that service constraint. CPU and GPU results use floating point; TPU inference is quantized, so this is not an equal-datapath comparison.",
+          "locator": "4, Table4 and Table6, PDF p.8; 8, PDF p.13",
+          "numeric_facts": [
+            {
+              "value": 7,
+              "unit": "ms",
+              "meaning": "MLP0 99th-percentile latency limit"
+            },
+            {
+              "value": 99,
+              "unit": "percentile",
+              "meaning": "MLP0 response-time constraint"
+            }
+          ],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "T5",
+          "text": "Table6 reports TPU throughput relative to Haswell of 14.5× geometric mean and 29.2× production-weighted mean. Relative to K80, the corresponding TPU ratios are 13.2× and 15.3×. Both summaries include host overhead; weighted and geometric averages differ.",
+          "locator": "4, Table6, PDF p.8",
+          "numeric_facts": [
+            {
+              "value": 14.5,
+              "unit": "×",
+              "meaning": "TPU/Haswell geometric-mean throughput"
+            },
+            {
+              "value": 29.2,
+              "unit": "×",
+              "meaning": "TPU/Haswell weighted-mean throughput"
+            },
+            {
+              "value": 13.2,
+              "unit": "×",
+              "meaning": "TPU/K80 geometric-mean throughput"
+            },
+            {
+              "value": 15.3,
+              "unit": "×",
+              "meaning": "TPU/K80 weighted-mean throughput"
+            }
+          ],
+          "coverage_weight": 6
+        },
+        {
+          "fact_id": "T6",
+          "text": "For complete-server performance per watt, TPU is reported as 17–34× Haswell and 14–16× K80, depending on averaging. The higher incremental ratios subtract host-server power. Energy efficiency is a disclosed proxy; negotiated purchase prices and total ownership cost are not disclosed.",
+          "locator": "5, PDF p.10 and Fig.9, p.9",
+          "numeric_facts": [
+            {
+              "value": [
+                17,
+                34
+              ],
+              "unit": "×",
+              "meaning": "total-server performance/W versus Haswell"
+            },
+            {
+              "value": [
+                14,
+                16
+              ],
+              "unit": "×",
+              "meaning": "total-server performance/W versus K80"
+            }
+          ],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "T7",
+          "text": "Roofline and counter analysis identify memory limits in the MLP/LSTM workloads; low utilization can coexist with high relative throughput. On CNN0 at 10% offered load, TPU consumes 88% of its full-load power, revealing weak energy proportionality.",
+          "locator": "4, PDF pp.6–8; 6 and Fig.10, PDF pp.10–11",
+          "numeric_facts": [
+            {
+              "value": 10,
+              "unit": "%",
+              "meaning": "offered CNN0 load"
+            },
+            {
+              "value": 88,
+              "unit": "%",
+              "meaning": "fraction of full-load TPU power at that load"
+            }
+          ],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "T8",
+          "text": "A model studies alternative hardware, including higher memory bandwidth. Those alternatives were not deployed measurements in this comparison, and the current baselines are the contemporaries selected by the study.",
+          "locator": "7, PDF pp.10–12; 8, PDF p.13",
+          "numeric_facts": [],
+          "coverage_weight": 2
+        }
+      ],
+      "approved_numbers": [
+        {
+          "fact_id": "T1",
+          "locator": "Table1, author PDF p.2; 3, PDF p.5",
+          "value": 6,
+          "unit": "models",
+          "meaning": "production inference workload"
+        },
+        {
+          "fact_id": "T1",
+          "locator": "Table1, author PDF p.2; 3, PDF p.5",
+          "value": 95,
+          "unit": "%",
+          "meaning": "provider inference demand represented by the selected workload at the time"
+        },
+        {
+          "fact_id": "T2",
+          "locator": "2, Fig.1, PDF pp.2–4",
+          "value": 65536,
+          "unit": "MAC units",
+          "meaning": "8-bit integer matrix unit"
+        },
+        {
+          "fact_id": "T2",
+          "locator": "2, Fig.1, PDF pp.2–4",
+          "value": 8,
+          "unit": "bits",
+          "meaning": "integer matrix-unit operands"
+        },
+        {
+          "fact_id": "T3",
+          "locator": "2, PDF pp.3–4; Table2, PDF p.5",
+          "value": 92,
+          "unit": "TOPS",
+          "meaning": "peak arithmetic throughput"
+        },
+        {
+          "fact_id": "T3",
+          "locator": "2, PDF pp.3–4; Table2, PDF p.5",
+          "value": 24,
+          "unit": "MiB",
+          "meaning": "Unified Buffer"
+        },
+        {
+          "fact_id": "T3",
+          "locator": "2, PDF pp.3–4; Table2, PDF p.5",
+          "value": 4,
+          "unit": "MiB",
+          "meaning": "accumulators"
+        },
+        {
+          "fact_id": "T4",
+          "locator": "4, Table4 and Table6, PDF p.8; 8, PDF p.13",
+          "value": 7,
+          "unit": "ms",
+          "meaning": "MLP0 99th-percentile latency limit"
+        },
+        {
+          "fact_id": "T4",
+          "locator": "4, Table4 and Table6, PDF p.8; 8, PDF p.13",
+          "value": 99,
+          "unit": "percentile",
+          "meaning": "MLP0 response-time constraint"
+        },
+        {
+          "fact_id": "T5",
+          "locator": "4, Table6, PDF p.8",
+          "value": 14.5,
+          "unit": "×",
+          "meaning": "TPU/Haswell geometric-mean throughput"
+        },
+        {
+          "fact_id": "T5",
+          "locator": "4, Table6, PDF p.8",
+          "value": 29.2,
+          "unit": "×",
+          "meaning": "TPU/Haswell weighted-mean throughput"
+        },
+        {
+          "fact_id": "T5",
+          "locator": "4, Table6, PDF p.8",
+          "value": 13.2,
+          "unit": "×",
+          "meaning": "TPU/K80 geometric-mean throughput"
+        },
+        {
+          "fact_id": "T5",
+          "locator": "4, Table6, PDF p.8",
+          "value": 15.3,
+          "unit": "×",
+          "meaning": "TPU/K80 weighted-mean throughput"
+        },
+        {
+          "fact_id": "T6",
+          "locator": "5, PDF p.10 and Fig.9, p.9",
+          "value": [
+            17,
+            34
+          ],
+          "unit": "×",
+          "meaning": "total-server performance/W versus Haswell"
+        },
+        {
+          "fact_id": "T6",
+          "locator": "5, PDF p.10 and Fig.9, p.9",
+          "value": [
+            14,
+            16
+          ],
+          "unit": "×",
+          "meaning": "total-server performance/W versus K80"
+        },
+        {
+          "fact_id": "T7",
+          "locator": "4, PDF pp.6–8; 6 and Fig.10, PDF pp.10–11",
+          "value": 10,
+          "unit": "%",
+          "meaning": "offered CNN0 load"
+        },
+        {
+          "fact_id": "T7",
+          "locator": "4, PDF pp.6–8; 6 and Fig.10, PDF pp.10–11",
+          "value": 88,
+          "unit": "%",
+          "meaning": "fraction of full-load TPU power at that load"
+        }
+      ],
+      "expected_qualifications": [
+        "These speedups characterize training, all modern GPUs, or all neural networks.",
+        "The six models cover 95% of all industry AI demand.",
+        "92 TOPS is measured sustained throughput for every benchmark.",
+        "Total-server and incremental performance/W numbers can be interchanged.",
+        "Equal precision or equivalent CPU/GPU/TPU arithmetic datapaths.",
+        "A measured purchase-price, cost saving, or TCO improvement.",
+        "Hypothetical memory-upgraded hardware is a deployed measured result.",
+        "Low-load power scales in proportion to offered load."
+      ],
+      "grading_note": "Qualifications are judged when relevant to a claim made, not as a requirement to recite every limitation. Fact coverage can be distributed across the abstract and introduction. A detail need not appear in both. Bibliography-only numbers and ordinary section/output numbering are outside the experimental-number inventory.",
+      "mechanism_fact_ids": [
+        "T2",
+        "T3"
+      ],
+      "evidence_fact_ids": [
+        "T1",
+        "T4",
+        "T5",
+        "T6",
+        "T7",
+        "T8"
+      ],
+      "positioning_fact_ids": [
+        "T1",
+        "T4",
+        "T8"
+      ]
+    },
+    {
+      "case_id": "heldout-micro-01",
+      "fact_coverage": [
+        {
+          "fact_id": "M1",
+          "text": "An accelerator’s dataflow fixes the scheduling and spatial placement of tensor computations. Layer dimensions, data reuse, buffering, communication bandwidth, and available parallelism interact, making a stationary-data label insufficient as a full mapping description.",
+          "locator": "2–3, PDF pp.2–7",
+          "numeric_facts": [],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "M2",
+          "text": "MAESTRO expresses dataflow through TemporalMap, SpatialMap, and Cluster directives. Analysis derives tensor reuse and communication opportunities at each hierarchy level, then estimates runtime, activity counts, energy, buffer requirements, and utilization from the workload, mapping, and hardware inputs.",
+          "locator": "3–4, Fig.7–8, PDF pp.4–9",
+          "numeric_facts": [],
+          "coverage_weight": 6
+        },
+        {
+          "fact_id": "M3",
+          "text": "Reuse opportunities require matching hardware support, such as multicast, reductions, and suitable buffers. The energy calculation combines activity counts with component energy estimates; design-space experiments also use synthesized component area/power costs. More PEs or more buffering alone need not improve a bandwidth-constrained design.",
+          "locator": "Table2, PDF p.7; 4.2–4.4, PDF p.9; 5 and 5.2, PDF pp.10–12",
+          "numeric_facts": [],
+          "coverage_weight": 4
+        },
+        {
+          "fact_id": "M4",
+          "text": "Runtime validation compares predictions with a 64-PE MAERI RTL simulation on VGG16 and reported Eyeriss runtimes on AlexNet. Average absolute runtime error is within 3.9% for those comparisons; this is not a demonstrated bound for all dataflows or an energy-error result.",
+          "locator": "4.5, Fig.9 and footnote1, PDF p.10",
+          "numeric_facts": [
+            {
+              "value": 64,
+              "unit": "PEs",
+              "meaning": "MAERI runtime-validation configuration"
+            },
+            {
+              "value": 3.9,
+              "unit": "%",
+              "meaning": "reported average absolute runtime error on the stated validation"
+            }
+          ],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "M5",
+          "text": "The study evaluates five dataflow styles on operators from five DNN models and observes that preferred mappings change with operator characteristics. Adaptive choices show potential runtime and energy reductions of 37% and 10% in that modeled case study, rather than a measured chip improvement.",
+          "locator": "5.1, Fig.10, PDF pp.10–12",
+          "numeric_facts": [
+            {
+              "value": 5,
+              "unit": "dataflow styles",
+              "meaning": "case-study dataflows"
+            },
+            {
+              "value": 5,
+              "unit": "DNN models",
+              "meaning": "case-study model set"
+            },
+            {
+              "value": 37,
+              "unit": "%",
+              "meaning": "modeled potential runtime reduction with adaptive dataflow"
+            },
+            {
+              "value": 10,
+              "unit": "%",
+              "meaning": "modeled potential energy reduction with adaptive dataflow"
+            }
+          ],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "M6",
+          "text": "The hardware search varies PE count, local buffer, shared buffer, and NoC bandwidth under area and power constraints. In the KC-P/VGG16-CONV2 run, Figure13(c) lists 3,936,256 explored points, 175,861 valid points, and 12.20 minutes. The search skips infeasible regions using cost lower bounds; explored points must not be described as that many full simulations.",
+          "locator": "5.2 and Fig.13(c), PDF pp.12–13",
+          "numeric_facts": [
+            {
+              "value": 3936256,
+              "unit": "points",
+              "meaning": "explored design-space size for KC-P/VGG16-CONV2 only"
+            },
+            {
+              "value": 175861,
+              "unit": "points",
+              "meaning": "valid configurations for that run"
+            },
+            {
+              "value": 12.2,
+              "unit": "minutes",
+              "meaning": "reported execution time for that run"
+            }
+          ],
+          "coverage_weight": 5
+        },
+        {
+          "fact_id": "M7",
+          "text": "The search experiments use an Intel i7-8700K host with 32 GB memory, synthesized 28 nm building-block costs, and constraints of 16 mm² and 450 mW. These are experimental search settings, not MAESTRO hardware overhead.",
+          "locator": "5.2 and Fig.13 caption, PDF pp.12–13",
+          "numeric_facts": [
+            {
+              "value": 32,
+              "unit": "GB",
+              "meaning": "host memory"
+            },
+            {
+              "value": 28,
+              "unit": "nm",
+              "meaning": "component-cost technology"
+            },
+            {
+              "value": 16,
+              "unit": "mm²",
+              "meaning": "search area constraint"
+            },
+            {
+              "value": 450,
+              "unit": "mW",
+              "meaning": "search power constraint"
+            }
+          ],
+          "coverage_weight": 3
+        },
+        {
+          "fact_id": "M8",
+          "text": "MAESTRO is an analytical exploration tool. Future plans include automatic dataflow tuning and RTL generation; they are not completed capabilities demonstrated by this paper. The dataflow comparison abstracts implementation differences rather than proving one manufactured accelerator superior.",
+          "locator": "5.1, PDF p.10; 7, PDF p.13",
+          "numeric_facts": [],
+          "coverage_weight": 3
+        }
+      ],
+      "approved_numbers": [
+        {
+          "fact_id": "M4",
+          "locator": "4.5, Fig.9 and footnote1, PDF p.10",
+          "value": 64,
+          "unit": "PEs",
+          "meaning": "MAERI runtime-validation configuration"
+        },
+        {
+          "fact_id": "M4",
+          "locator": "4.5, Fig.9 and footnote1, PDF p.10",
+          "value": 3.9,
+          "unit": "%",
+          "meaning": "reported average absolute runtime error on the stated validation"
+        },
+        {
+          "fact_id": "M5",
+          "locator": "5.1, Fig.10, PDF pp.10–12",
+          "value": 5,
+          "unit": "dataflow styles",
+          "meaning": "case-study dataflows"
+        },
+        {
+          "fact_id": "M5",
+          "locator": "5.1, Fig.10, PDF pp.10–12",
+          "value": 5,
+          "unit": "DNN models",
+          "meaning": "case-study model set"
+        },
+        {
+          "fact_id": "M5",
+          "locator": "5.1, Fig.10, PDF pp.10–12",
+          "value": 37,
+          "unit": "%",
+          "meaning": "modeled potential runtime reduction with adaptive dataflow"
+        },
+        {
+          "fact_id": "M5",
+          "locator": "5.1, Fig.10, PDF pp.10–12",
+          "value": 10,
+          "unit": "%",
+          "meaning": "modeled potential energy reduction with adaptive dataflow"
+        },
+        {
+          "fact_id": "M6",
+          "locator": "5.2 and Fig.13(c), PDF pp.12–13",
+          "value": 3936256,
+          "unit": "points",
+          "meaning": "explored design-space size for KC-P/VGG16-CONV2 only"
+        },
+        {
+          "fact_id": "M6",
+          "locator": "5.2 and Fig.13(c), PDF pp.12–13",
+          "value": 175861,
+          "unit": "points",
+          "meaning": "valid configurations for that run"
+        },
+        {
+          "fact_id": "M6",
+          "locator": "5.2 and Fig.13(c), PDF pp.12–13",
+          "value": 12.2,
+          "unit": "minutes",
+          "meaning": "reported execution time for that run"
+        },
+        {
+          "fact_id": "M7",
+          "locator": "5.2 and Fig.13 caption, PDF pp.12–13",
+          "value": 32,
+          "unit": "GB",
+          "meaning": "host memory"
+        },
+        {
+          "fact_id": "M7",
+          "locator": "5.2 and Fig.13 caption, PDF pp.12–13",
+          "value": 28,
+          "unit": "nm",
+          "meaning": "component-cost technology"
+        },
+        {
+          "fact_id": "M7",
+          "locator": "5.2 and Fig.13 caption, PDF pp.12–13",
+          "value": 16,
+          "unit": "mm²",
+          "meaning": "search area constraint"
+        },
+        {
+          "fact_id": "M7",
+          "locator": "5.2 and Fig.13 caption, PDF pp.12–13",
+          "value": 450,
+          "unit": "mW",
+          "meaning": "search power constraint"
+        }
+      ],
+      "expected_qualifications": [
+        "MAESTRO is a fabricated accelerator or the case-study improvement is a chip measurement.",
+        "The 3.9% result validates energy, every model, or a worst-case error bound.",
+        "All explored configurations receive complete cycle-accurate simulation.",
+        "The selected row counts describe the aggregate search across all experiments.",
+        "Automatic RTL generation or an automatic optimal-dataflow tuner is already delivered.",
+        "16 mm² and 450 mW measure tool implementation overhead.",
+        "A fixed dataflow dominates every layer and architecture."
+      ],
+      "grading_note": "Qualifications are judged when relevant to a claim made, not as a requirement to recite every limitation. Fact coverage can be distributed across the abstract and introduction. A detail need not appear in both. Bibliography-only numbers and ordinary section/output numbering are outside the experimental-number inventory.",
+      "mechanism_fact_ids": [
+        "M2",
+        "M3"
+      ],
+      "evidence_fact_ids": [
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8"
+      ],
+      "positioning_fact_ids": [
+        "M1",
+        "M3",
+        "M8"
+      ]
+    }
+  ],
+  "metric_ids": [
+    "fact_fidelity",
+    "unsupported_numbers",
+    "baselines_scope",
+    "argument",
+    "mechanism",
+    "evidence",
+    "positioning",
+    "economy"
+  ],
+  "penalty_rules": [
+    {
+      "rule_id": "contradicted_fact",
+      "metric_id": "fact_fidelity",
+      "points_per_occurrence": 4,
+      "metric_penalty_cap": 12,
+      "trigger": "A factual claim materially contradicts the supplied method, evaluation or result. Missing a fact is handled only by coverage credit, not this penalty."
+    },
+    {
+      "rule_id": "unsupported_experimental_number",
+      "metric_id": "unsupported_numbers",
+      "points_per_occurrence": 5,
+      "metric_penalty_cap": 10,
+      "trigger": "An experimental result, hardware cost, workload size or other material quantitative claim has no support in the brief or approved numeric inventory. Count a repeated same claim only once."
+    },
+    {
+      "rule_id": "wrong_numeric_meaning",
+      "metric_id": "unsupported_numbers",
+      "points_per_occurrence": 5,
+      "metric_penalty_cap": 10,
+      "trigger": "A supported value is assigned the wrong unit, denominator, precision, aggregation, or interpretation, including an unjustified conversion between performance gain and runtime reduction."
+    },
+    {
+      "rule_id": "baseline_substitution",
+      "metric_id": "baselines_scope",
+      "points_per_occurrence": 5,
+      "metric_penalty_cap": 10,
+      "trigger": "A comparative claim substitutes or drops a baseline or baseline condition essential to its interpretation."
+    },
+    {
+      "rule_id": "unsupported_scope",
+      "metric_id": "baselines_scope",
+      "points_per_occurrence": 5,
+      "metric_penalty_cap": 10,
+      "trigger": "A claim promotes kernel results to end-to-end execution, simulation/modeling to measured deployment, a sampled workload to universal behavior, a mean to a worst-case bound, or a hypothetical capability to a delivered result."
+    },
+    {
+      "rule_id": "invented_mechanism",
+      "metric_id": "mechanism",
+      "points_per_occurrence": 5,
+      "metric_penalty_cap": 15,
+      "trigger": "The output adds a material architectural mechanism, interface, capability or guarantee not supplied by the brief."
+    },
+    {
+      "rule_id": "fabricated_reference_or_priority",
+      "metric_id": "positioning",
+      "points_per_occurrence": 5,
+      "metric_penalty_cap": 10,
+      "trigger": "An invented citation, unsupported attribution to cited work, or unsupported first/best/only priority claim is used as positioning."
+    },
+    {
+      "rule_id": "abstract_length",
+      "metric_id": "economy",
+      "points_per_occurrence": 2,
+      "metric_penalty_cap": 2,
+      "trigger": "Abstract word count is below 175 or above 235; the requested 180–230 range receives a five-word tolerance because the task says about. Exclude its heading."
+    },
+    {
+      "rule_id": "intro_paragraph_count",
+      "metric_id": "economy",
+      "points_per_occurrence": 3,
+      "metric_penalty_cap": 3,
+      "trigger": "Introduction has other than exactly three prose paragraphs. Exclude its heading and separate bibliography records; bullet lists do not satisfy the prose-paragraph requirement."
+    }
+  ],
+  "score_contract": {
+    "scale": "0–100; higher is better",
+    "quality_metric_raw_scores": "For argument, mechanism, evidence, positioning and economy, grader assigns raw score in [0, metric weight]. For fact_fidelity use the coverage formula; unsupported_numbers and baselines_scope start at full weight.",
+    "coverage_levels": [
+      0,
+      0.5,
+      1
+    ],
+    "penalty_application": "Apply each distinct claim to the single most specific applicable penalty rule; do not double-penalize the same underlying error. Deduct penalties within the assigned metric, respecting both each rule cap and the metric weight, and clamp the result to [0,weight]. Penalties are not deducted again from the final total. Sum final metric scores.",
+    "adjudication_evidence": "For every nonzero penalty provide one minimal output quotation, applicable fact IDs if any, and a concise reason. Cite source locators from the key for disputed factual assessments. Do not include an intended rewrite.",
+    "fatal_fabrication": "Set true for a fabricated central mechanism, material result, workload, baseline or deployment claim. This independently prevents declaring a faithful rewrite pass; keep the numeric score for diagnosis.",
+    "pass_threshold": null,
+    "threshold_note": "No validated pass threshold is assumed by this small evaluation; report paired scores and failure flags instead of tuning a threshold on held-out outcomes."
+  },
+  "expected_grader_output": {
+    "case_id": "string",
+    "fact_coverage": "array of {fact_id:string, coverage_level:0|0.5|1, evidence:string}",
+    "metric_raw_scores": "object mapping each stable metric_id to a number in [0,weight]",
+    "penalties": "array of {rule_id:string, count:nonnegative integer, evidence:string, fact_ids:string[]}",
+    "fatal_fabrication": "boolean",
+    "rationale": "string; concise evidence-based assessment, not an intended answer"
+  },
+  "source_overlap_policy": {
+    "source_manifest": "PRIVATE_SOURCE_MANIFEST",
+    "access": "Constructor and evaluator only; never pass source fulltext, overlap source spans, or source-manifest to writers.",
+    "interpretation": "An exact-overlap diagnostic is reported independently of scientific merit. Exclude bibliography records, required terminology, and source titles from prose-overlap counts. Shared generic prose spans require human review, not automatic accusation. No model-pretraining-unseen claim is warranted."
+  }
+}

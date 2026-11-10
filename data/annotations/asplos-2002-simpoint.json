@@ -1,0 +1,464 @@
+{
+  "paper_id": "asplos-2002-simpoint",
+  "paper_url": "https://cseweb.ucsd.edu/~calder/papers/ASPLOS-02-SimPoint.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Recorded corpus PDF",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Column reading order repaired: Introduction opening at bottom left continues at top right on PDF page 1; roadmap continues on PDF page 2.",
+    "The Abstract has two source paragraphs. The explanation of prior BBV work is prior_work, while the proposed clustering formulation is mechanism or insight according to its main clause.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 213,
+        "sentence_count": 9,
+        "mean_sentence_words": 23.666666666666668,
+        "number_tokens": 0,
+        "numbers_per_100_words": 0.0,
+        "connectors_per_100_words": 0.4694835680751174,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.4694835680751174,
+        "paragraph_count": 2
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 613,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Establishes changing whole-program behavior and the need for analysis tools.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 102,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 103,
+              "end": 228,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 3,
+              "start": 229,
+              "end": 406,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 407,
+              "end": 613,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 615,
+          "end": 1450,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "States the large-scale analysis goal, BBV representation, clustering, and simulation application.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 615,
+              "end": 785,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 2,
+              "start": 786,
+              "end": 963,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 964,
+              "end": 1018,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 4,
+              "start": 1019,
+              "end": 1291,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 39
+            },
+            {
+              "sentence_index": 5,
+              "start": 1292,
+              "end": 1450,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 660,
+        "sentence_count": 27,
+        "mean_sentence_words": 24.444444444444443,
+        "number_tokens": 10,
+        "numbers_per_100_words": 1.5151515151515151,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 1.8181818181818181,
+        "paragraph_count": 6
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 703,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Motivates tools for detecting execution phases across full runs.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 127,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 2,
+              "start": 128,
+              "end": 212,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 3,
+              "start": 213,
+              "end": 527,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 46
+            },
+            {
+              "sentence_index": 4,
+              "start": 528,
+              "end": 703,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 705,
+          "end": 1465,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "prior_work",
+          "summary": "Explains earlier BBV representation and representative-window objective.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 705,
+              "end": 883,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 2,
+              "start": 884,
+              "end": 1050,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 3,
+              "start": 1051,
+              "end": 1130,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 4,
+              "start": 1131,
+              "end": 1361,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 37
+            },
+            {
+              "sentence_index": 5,
+              "start": 1362,
+              "end": 1465,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1467,
+          "end": 1905,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Extends BBVs to studying patterns and architectural metrics.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1467,
+              "end": 1551,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 1552,
+              "end": 1725,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 1726,
+              "end": 1905,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 26
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1907,
+          "end": 2512,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Formulates phase grouping as clustering and explains per-group use.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1907,
+              "end": 2048,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 2,
+              "start": 2049,
+              "end": 2270,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 3,
+              "start": 2271,
+              "end": 2410,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 2411,
+              "end": 2512,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2514,
+          "end": 3387,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Applies weighted cluster representatives to simulation and validates released simulation points.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2514,
+              "end": 2645,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 2646,
+              "end": 2850,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 3,
+              "start": 2851,
+              "end": 3111,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 43
+            },
+            {
+              "sentence_index": 4,
+              "start": 3112,
+              "end": 3239,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 5,
+              "start": 3240,
+              "end": 3387,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 24
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 3389,
+          "end": 4162,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "roadmap",
+          "summary": "Locates methodology, BBV analysis, clustering, simulation application, and conclusion.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3389,
+              "end": 3434,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 2,
+              "start": 3435,
+              "end": 3519,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 3,
+              "start": 3520,
+              "end": 3738,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 4,
+              "start": 3739,
+              "end": 3867,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 5,
+              "start": 3868,
+              "end": 4064,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 6,
+              "start": 4065,
+              "end": 4162,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "asplos-2002-simpoint",
+    "pdf_page": 4,
+    "kind": "motivation_plot",
+    "panels": 2,
+    "full_width": true,
+    "notes": "Two side-by-side similarity matrices for gzip and bzip; panels are identified by left/right in the caption, without separate panel letters. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 67,
+      "sentence_count": 3,
+      "mean_sentence_words": 22.333333333333332,
+      "number_tokens": 3,
+      "numbers_per_100_words": 4.477611940298507,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

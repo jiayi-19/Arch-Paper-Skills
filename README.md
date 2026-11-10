@@ -1,173 +1,163 @@
 # Computer Architecture Writing Skill
 
-An evidence-led paper-writing skill for **HPCA, ASPLOS, ISCA, and MICRO**.
-It helps develop a research argument, draft and revise paper sections, plan figures,
-and connect quantitative claims to the mechanism and evidence that support them.
+A complete evidence-led paper-writing workflow for **HPCA, ASPLOS, ISCA and MICRO**:
+research intake, contribution routing, claim/evidence maps, sentence/paragraph plans,
+drafting, figures, source checks, revision and author delivery.
 
-## What it includes
+## Version 2: architecture-derived analysis and tools
 
-- A reusable workflow for storylines, abstracts, introductions, motivation, mechanisms,
-  evaluation, related work, and rebuttals.
-- Architecture-specific guidance on baseline fairness, resource and clock assumptions,
-  mechanism attribution, model validation, PPA scope, and automated design agents.
-- **24 source-located paper exemplars**, six from each of the four conferences.
-- On-demand exemplar retrieval and a read-only LaTeX source checker.
+- **24 development papers**, six per venue, with complete Abstract and Introduction
+  annotations: **48 sections, 278 paragraphs and 1,101 sentence/source-fragment units**.
+- **24 inspected first figures**, with type, source page, caption measurements and
+  layout metadata where recoverable.
+- Transparent per-paper lexical measurements, role transitions, paragraph functions,
+  p10/median/p90 distributions and an independent 48-unit annotation consistency sample.
+- A full offline intake form, structured brief/evidence converter, function-level
+  exemplar retrieval, style/draft/source/figure checks and independent template copy.
+- TikZ mechanism/contrast diagrams, comparison/coverage tables, and actual-data vector
+  plots for bars, scaling sequences, breakdowns and resource/performance tradeoffs.
+- **Four new held-out source papers**, one per venue, with writer briefs, source keys,
+  blind comparison tooling and an auditable evaluation protocol.
 
-The corpus contains **6 Best Papers, 5 candidates/nominees or designated Best Paper
-Session papers, 9 Test of Time / named Influential Paper Award recipients, and
-4 notable teaching selections**. Publication years and award years are recorded
-separately. Each entry has a short excerpt, PDF page, source links, reading scope,
-writing analysis, and a transfer caveat.
+The corpus includes Best Papers, formal candidates/nominees or Best Paper Session
+entries, named Influential/Test of Time award recipients and notable teaching selections.
+[Paper index](references/corpus.md), [measured profile](references/corpus-profile.md),
+[annotation protocol](data/annotation-protocol.md), [evaluation protocol](evals/README.md).
 
-Browse the [corpus and paper list](references/corpus.md). The selection spans
-processors, caches, memory, security, accelerators, compilers, datacenters, and
-architectural modeling. It is a curated teaching collection, not a statistical
-study of all award papers or a guarantee of acceptance.
+These are model annotations of selected papers, not human gold or statistical evidence
+about all award papers. The independent sample has 40/48 exact role agreement (83.3%,
+Cohen's kappa 0.806). Full source passages and captions are not redistributed: public
+records contain labels, offsets, lengths, source locators and original paraphrases.
 
-## What the exemplars teach
+## What the measured corpus says
 
-These are qualitative interpretations of selected passages, not statistical claims
-about every award paper. The source passages, locators, reading scope, and transfer
-limits are recorded in the [corpus](references/corpus.md).
+For these 24 selected papers, Abstract word count has median **226** and p10–p90
+**163–290**; Introduction median **762**, p10–p90 **561.2–1083.3**. First-caption length
+has median **21 words**, p10–p90 **6.3–50.2**. The most common inspected first-figure
+category is a motivation plot (10/24). These describe the sample, not mandatory prose
+lengths, placements or figure counts. Definitions and limitations are in the profile.
 
-| Lesson | Representative papers | How the skill applies it |
-|---|---|---|
-| Turn a workload observation into a specific design intervention. | UCP distinguishes cache demand from utility; Adaptive Insertion Policies separates victim choice from insertion policy. | Connect the observed bottleneck, remaining cost, mechanism, and testable consequence before polishing prose. |
-| Explain what a representation permits before claiming an optimizer is better. | Centauri expands communication partition choices; TensorIR exposes tensorized computation to transformations. | Separate search-space expansion, legal construction, search quality, and final design quality. |
-| Make the baseline and accounting part of the argument. | Eyeriss compares dataflows under shared hardware constraints; NoCap gives a CPU baseline matching algorithmic improvements. | Check resource, precision, clock, workload, algorithm, and budget conditions before attributing a gain to the proposed mechanism. |
-| Validate a fast model for its intended design decision. | Wattch separates several kinds of validation; McPAT identifies the measurement type available for its comparison. | Distinguish predictions, simulation, implementation-stage PPA, and hardware observations; state what each validation supports. |
-| Put the relevant operating limit next to the claim. | Runahead explains architectural-state preservation; TALCO states its banding qualification; RowHammer reports the observed hardware population. | Preserve correctness assumptions and scope in the headline when omitting them would change its meaning. |
+The argument-level lessons remain concrete: expose the residual bottleneck after
+credible prior work, explain the changed mechanism, compare under explicit conditions,
+validate the feedback/model at its intended scope and report the tradeoff the data support.
+Use role sequences and examples to reason about information order, not to copy sentences.
 
-## Why use this skill
+## Install and invoke
 
-The skill turns these lessons into repeatable writing decisions:
-
-- **Build a continuous argument.** Each motivation earns a design requirement, and
-  each mechanism has an observable consequence and an evaluation obligation.
-- **Expose missing experiments early.** A claim-to-evidence map makes absent controls,
-  unmatched comparisons, or unsupported scope visible before the abstract is finalized.
-- **Retrieve by writing purpose.** Find an example of a bottleneck argument, model
-  validation, or qualified result without copying another paper's wording.
-- **Keep revisions consistent.** Align terminology and claim strength across the
-  abstract, introduction, contributions, figures, and results.
-- **Catch source-level mistakes cheaply.** Check literal citations, labels, and draft
-  markers without compiling or rendering the manuscript.
-
-Its current validation covers corpus provenance, retrieval, source-checking behavior,
-and a synthetic writing trial that preserved kernel scope and resource confounds.
-It does not establish improved acceptance rates or measured author productivity.
-
-## Install
-
-For a fresh Codex installation, clone this repository directly to the skill folder:
+For a fresh Codex skill installation:
 
 ```bash
 git clone https://github.com/jiayi-19/Arch-Paper-Skills.git ~/.codex/skills/computer-architecture-writing
 ```
 
-Alternatively, copy this repository's contents into:
+Use `$CODEX_HOME/skills/computer-architecture-writing` when configured. Preserve an
+existing installation before replacement. Other skill-capable agents can load
+`SKILL.md` with its relative resources. Do not include repository metadata or caches
+when manually copying the skill.
 
 ```text
-~/.codex/skills/computer-architecture-writing/
+Use $computer-architecture-writing to develop a research argument and draft the
+requested paper sections from this mechanism, source material, and verified evidence.
+
+Use $computer-architecture-writing to revise this evaluation for fair baselines,
+mechanism attribution, workload scope, uncertainty and measurement-stage qualification.
 ```
 
-If `CODEX_HOME` is configured, use `$CODEX_HOME/skills/computer-architecture-writing/`
-instead. Keep `SKILL.md`, `agents/`, `references/`, `scripts/`, and the license files
-together; omit repository metadata (`.git/`) and caches. Preserve any existing skill
-installation before replacing it.
+The workflow is generic across architecture topics and is not tailored to a particular
+paper or project. The skill respects the requested edit scope and session's rendering/
+publication preferences. It does not authorize experiments or remote publication itself.
 
-The two helper scripts require **Python 3.10+** and use only the standard library.
-No model API keys, TeX installation, or PDF rendering are required by these helpers.
-Other skill-capable agents can load `SKILL.md` and its relative references; the
-`agents/openai.yaml` file supplies Codex UI metadata.
+## Complete workflow
 
-## Use
+1. Recover facts from notes, source/draft, or [offline intake form](assets/intake_form.html).
+2. Route by contribution/motivation and construct a sourced claim/evidence map.
+3. Plan paragraph functions and visuals; retrieve relevant annotated moves.
+4. Draft the requested abstract, introduction, background, design and evaluation.
+5. Integrate real bibliography, data-driven figures and the actual venue template.
+6. Review source, rhetoric, figures and scientific evidence; interpret statistical
+   outliers in context rather than forcing prose toward the corpus median.
+7. Deliver the manuscript and an author report; update affected claims after changes.
 
-Example requests:
+Detailed [workflow](references/workflow.md); substantial-work
+[report template](assets/report-template.md).
 
-```text
-Use $computer-architecture-writing to turn this project outline and verified
-results into a paper storyline and Introduction.
+## Tools
 
-Use $computer-architecture-writing to revise this motivation section. Preserve
-our terminology and identify claims that need additional evidence.
-
-Use $computer-architecture-writing to review our evaluation for baseline fairness,
-mechanism attribution, workload scope, and PPA qualification.
-```
-
-Chinese requests work too:
-
-```text
-用 $computer-architecture-writing，按我们的 outline 写 Background and Motivation，
-保持术语一致，尚未完成的实验保留明确的待补位置。
-```
-
-The skill follows the manuscript language and the session's editing, rendering,
-and publication preferences. Loading the skill does not itself authorize running
-experiments or pushing changes to a remote repository.
-
-## Retrieve writing examples
-
-Run from the repository root:
+Python **3.10+**; all tools except plotting use the standard library.
+Install `requirements-figures.txt` only for Matplotlib-based plotting.
 
 ```bash
-python3 scripts/find_exemplars.py --list --limit 100
-python3 scripts/find_exemplars.py --venue ISCA --topic memory
-python3 scripts/find_exemplars.py --move "validation" --limit 3
+python3 scripts/intake_to_brief.py intake.json --out brief.md --ledger claims.json
+python3 scripts/find_exemplars.py --function limitation --section introduction
+python3 scripts/find_exemplars.py --paragraph gap --section introduction --limit 3
 python3 scripts/find_exemplars.py --id isca2016-eyeriss
-python3 scripts/find_exemplars.py --recognition best_paper_candidate --limit 5
+python3 scripts/style_metrics.py abstract.tex --section abstract
+python3 scripts/check_draft.py abstract.tex --section abstract --brief brief.md
+python3 scripts/check_manuscript.py paper/main.tex
+python3 scripts/check_figures.py paper/main.tex
+python3 scripts/prepare_paper.py --template official-kit --out independent-draft
+python3 scripts/analyze_corpus.py --from-public
 ```
 
-The finder returns the source-located excerpt and a writing card. Learn the
-argument structure and information order; do not copy the excerpt into a new paper.
-Use `--help` for filters and JSON output.
+The final command reproduces all published corpus summaries without copyrighted text.
+Recomputing individual lexical metrics from original source requires privately obtained
+normalized passages, as specified by `--private-passages` and the annotation protocol.
+Exemplar retrieval reads development data only; evaluation cases/keys are excluded.
 
-## Check LaTeX source
+### Figures
 
 ```bash
-python3 scripts/check_manuscript.py /path/to/paper/main.tex
-python3 scripts/check_manuscript.py /path/to/paper/main.tex --format json
+python3 scripts/plot_results.py results.csv --out latency.svg --kind bars \
+  --data-kind measured --y-label 'Latency (ms)'
 ```
 
-The checker inspects ordinary literal inputs, bibliography keys, labels, references,
-and drafting markers. It reports dynamic arguments as unverified where recognized.
-It is a source heuristic, not a TeX interpreter or a scientific validity checker;
-macro-heavy source and actual research claims still require inspection. It does not
-compile, render, access the network, or execute manuscript code.
+CSV fields: `case,method,value,status`, optional `resource` for tradeoff plots.
+Statuses are `valid`, `invalid`, `not_measured`; unavailable rows have empty values.
+Do not omit failures. `--normalize-to` computes candidate/baseline; label the resulting
+ratio accordingly. Outputs are vector SVG/PDF plus an auditable transformation record.
+[Figure guide](references/figures.md), [templates](assets/figures/).
 
-## Layout
+Synthetic demonstration data are marked as synthetic and never treated as research
+results. The helper checks do not compile/render a paper. A data-plot integration test
+may generate a clearly marked synthetic vector image in temporary storage.
 
-```text
-computer-architecture-writing/
-├── SKILL.md
-├── agents/openai.yaml
-├── references/
-│   ├── argument-design.md
-│   ├── architecture-evaluation.md
-│   ├── sections-and-figures.md
-│   ├── revision-and-delivery.md
-│   ├── corpus-maintenance.md
-│   ├── corpus.md
-│   └── corpus.json
-├── scripts/
-│   ├── find_exemplars.py
-│   └── check_manuscript.py
-├── NOTICE.md
-├── LICENSE
-└── LICENSE-base-skill
+## Evaluation and testing
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 evals/score_outputs.py --briefs evals/writer-briefs.json \
+  --outputs evals/outputs/skill --out skill-metrics.json
 ```
 
-## Sources, attribution, and license
+The writing holdout compares the same factual briefs and word/paragraph budgets with
+and without the frozen skill. Candidate identities are randomized for a separate judge.
+Fact coverage, numeric/baseline/scope errors, mechanism, evidence, positioning and economy
+are scored with explicit rules. Read [the protocol](evals/README.md) for source isolation,
+pretraining limits and the distinction between mechanical checks and semantic judgment.
+No acceptance-rate, productivity or statistical superiority claim follows from four cases.
 
-This project adapts workflow ideas from
+## Key resources
+
+- `SKILL.md`: scope-adaptive entrypoint.
+- `references/`: workflow, contribution routes, section guidance, empirical profile,
+  evaluation/figure rules and the source-located exemplar index.
+- `data/annotations/`: text-free per-paper sentence/paragraph and first-figure records.
+- `data/corpus-stats.json`: development-only distributions, samples and move sequences.
+- `data/annotation-review.json`: independent sample and disagreements.
+- `assets/`: offline form, structured examples/report, TikZ/table/plot resources.
+- `scripts/`: reusable workflow, analysis and source-check helpers.
+- `evals/`: held-out briefs, source keys, blind comparison and score aggregation.
+- `tests/`: functional contracts using synthetic fixtures.
+
+## Attribution and rights
+
+Adapted from workflow ideas in
 [Best-Paper-Writing-Skill](https://github.com/gulucaptain/Best-Paper-Writing-Skill),
-inspected at revision `b9eff99`. The architecture corpus, analytical guidance, and
-helper scripts were developed for this adaptation. See [NOTICE.md](NOTICE.md)
-for the upstream lineage, modifications, and attribution.
+inspected at revision `b9eff99`. Its original content is CC BY 4.0; base-work MIT
+attribution is retained. The architecture data, analysis, helpers and assets are
+original adaptations. [NOTICE.md](NOTICE.md), [LICENSE](LICENSE),
+[LICENSE-base-skill](LICENSE-base-skill).
 
-Original adaptation content is **CC BY 4.0**; base-work MIT attribution is preserved
-in [LICENSE-base-skill](LICENSE-base-skill). Short paper excerpts remain the property
-of their respective rights holders and are included for commentary and instruction.
-They are not relicensed as this project's original content. Full paper PDFs are not
-distributed in this repository.
+Paper excerpts remain the property of their rights holders. Short excerpts support
+commentary and instruction, not a phrase bank. Full PDFs, complete source prose,
+private extraction files, credentials and personal host paths are not distributed.

@@ -1,0 +1,499 @@
+{
+  "paper_id": "isca2016-eyeriss",
+  "paper_url": "https://d1qx31qr3h6wln.cloudfront.net/publications/ISCA_2016_Eyeriss.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "NVIDIA-hosted author paper; original publication metadata also confirmed by MIT DSpace: https://dspace.mit.edu/entities/publication/f6342515-2b7d-411c-a8ad-a9edb23dd394",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Introduction is complete through its four contribution bullets, ending before Section II Spatial Architecture on physical PDF page 2. Parenthesized section pointers stay with the preceding bullet sentence.",
+    "Controlled equal-resource comparison and energy modeling are methodology; evaluated energy savings and fabricated-chip demonstration are result. Statements describing how reuse is achieved are mechanism."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 283,
+        "sentence_count": 10,
+        "mean_sentence_words": 28.3,
+        "number_tokens": 4,
+        "numbers_per_100_words": 1.4134275618374559,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 1.4134275618374559,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 1.0600706713780919,
+        "paragraph_count": 2
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 760,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "CNN parallelism leaves data-movement energy as a key design challenge.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 156,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 2,
+              "start": 157,
+              "end": 341,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 342,
+              "end": 575,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 4,
+              "start": 576,
+              "end": 760,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 762,
+          "end": 1982,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Row stationary reuse is compared under matched resources and verified experimentally.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 762,
+              "end": 908,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 909,
+              "end": 1114,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 3,
+              "start": 1115,
+              "end": 1444,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 47
+            },
+            {
+              "sentence_index": 4,
+              "start": 1445,
+              "end": 1634,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 1635,
+              "end": 1881,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 6,
+              "start": 1882,
+              "end": 1982,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 580,
+        "sentence_count": 26,
+        "mean_sentence_words": 22.307692307692307,
+        "number_tokens": 5,
+        "numbers_per_100_words": 0.8620689655172413,
+        "connectors_per_100_words": 0.1724137931034483,
+        "hedges_per_100_words": 0.1724137931034483,
+        "boosters_per_100_words": 0.6896551724137931,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.8620689655172413,
+        "paragraph_count": 9
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 468,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Modern CNN accuracy comes with much larger storage and computation demands.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 263,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 2,
+              "start": 264,
+              "end": 468,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 34
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 470,
+          "end": 1369,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Data location and movement restrict efficient convolution processing.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 470,
+              "end": 595,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 596,
+              "end": 679,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 3,
+              "start": 680,
+              "end": 961,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 4,
+              "start": 962,
+              "end": 1136,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 5,
+              "start": 1137,
+              "end": 1247,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 6,
+              "start": 1248,
+              "end": 1369,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1371,
+          "end": 2040,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Cross-platform comparisons motivate a controlled dataflow analysis.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1371,
+              "end": 1505,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 1506,
+              "end": 1729,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 3,
+              "start": 1730,
+              "end": 1926,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 4,
+              "start": 1927,
+              "end": 2040,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2042,
+          "end": 2527,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "A hierarchy-aware analysis quantifies how dataflows exploit hardware resources.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2042,
+              "end": 2271,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 2,
+              "start": 2272,
+              "end": 2416,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 2417,
+              "end": 2527,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2529,
+          "end": 2956,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Joint reuse across storage levels provides the organizing design rationale.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2529,
+              "end": 2664,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 2,
+              "start": 2665,
+              "end": 2899,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 3,
+              "start": 2900,
+              "end": 2956,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 9
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 2958,
+          "end": 3044,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The work supplies a taxonomy of CNN dataflows.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2958,
+              "end": 3044,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 12
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 3046,
+          "end": 3378,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A fabricated spatial design supports both convolutional and dense layers.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3046,
+              "end": 3177,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 2,
+              "start": 3178,
+              "end": 3303,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 3304,
+              "end": 3378,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 12
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 3380,
+          "end": 3758,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A process-based model evaluates and searches mappings under common constraints.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3380,
+              "end": 3505,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 3506,
+              "end": 3581,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 3,
+              "start": 3582,
+              "end": 3758,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 3760,
+          "end": 3938,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The evaluation compares movement energy and reuse across dataflows.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3760,
+              "end": 3938,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 30
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "isca2016-eyeriss",
+    "pdf_page": 2,
+    "kind": "system_overview",
+    "panels": 2,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. System view and linked PE-array zoom are counted as two visual regions although they have no a/b panel labels.",
+    "metrics": {
+      "word_count": 29,
+      "sentence_count": 3,
+      "mean_sentence_words": 9.666666666666666,
+      "number_tokens": 1,
+      "numbers_per_100_words": 3.4482758620689653,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

@@ -1,106 +1,101 @@
 ---
 name: computer-architecture-writing
-description: Develop, draft, revise, or review computer architecture research papers for HPCA, ASPLOS, ISCA, and MICRO using source-located paper exemplars and architecture-specific evidence checks. Use for paper storylines, abstracts, motivation, mechanisms, evaluation, figures, and rebuttals; not for ordinary code documentation or generic English proofreading.
+description: Develop, draft, revise, or review HPCA, ASPLOS, ISCA, and MICRO papers with a complete intake-to-delivery workflow, annotated architecture-paper moves, empirical style profiles, figure templates and evidence checks. Use for research storylines, paper sections, evaluations, figures and rebuttals; not ordinary code documentation or generic English proofreading.
 metadata:
-  short-description: Architecture papers grounded in mechanisms and evidence
+  short-description: Architecture writing with annotated moves and evidence checks
 ---
 
 # Computer Architecture Writing
 
-Build a persuasive argument from a hardware or systems problem, a technical insight,
-a concrete mechanism, and evidence that measures the claimed effect. Preserve the
-author's intended contribution and established terminology.
+Build the argument from an actual hardware/systems problem, an exploitable insight,
+a concrete mechanism, and evidence supporting its effect. Preserve the author's
+research object and terminology. Use the requested edit scope; a paragraph revision
+does not require restarting the complete paper workflow.
 
-## Choose the work
+## Full workflow and task routing
 
-Use the user's requested scope. A paragraph edit needs a paragraph edit, not a new
-paper outline. For a new story, organize the argument before drafting; for a mature
-paper, diagnose and repair its existing argument. Conference membership or an award
-does not prescribe one writing style.
+For a new or substantial paper, follow [the complete workflow](references/workflow.md):
+intake/fact recovery -> contribution route -> claim/evidence map -> paragraph and
+figure skeleton -> drafting -> source/visual integration -> checks -> author delivery.
+For existing prose, enter at its relevant stage and preserve established facts.
 
-Read only the references needed for the current work:
-
-| Work | Reference and completion criterion |
+| Work | Read and use |
 |---|---|
-| Storyline, outline, Background/Motivation, contribution | [Argument design](references/argument-design.md): each design choice answers an established problem and each main claim has identified support. |
-| Abstract, Introduction, mechanism section, figures | [Sections and figures](references/sections-and-figures.md): the requested text explains its causal role and uses the same claim strength as the evidence. |
-| Evaluation plan, results, quantitative claims | [Architecture evaluation](references/architecture-evaluation.md): comparisons share declared conditions; measured, modeled, and projected quantities stay distinct. |
-| Rewriting, reviewer response, submission source | [Revision and delivery](references/revision-and-delivery.md): requested edits are reviewable and address the stated issue without unsupported additions. |
-| Representative papers or writing examples | [Corpus guide](references/corpus.md), then retrieve selected cards with `scripts/find_exemplars.py`: transfer the argument move, retaining its applicability limits. |
-| Add papers, check award provenance, inspect adaptation | [Corpus maintenance](references/corpus-maintenance.md) and [attribution](NOTICE.md): actual paper passages and recognition sources remain separately verifiable. |
+| Intake JSON, free-form notes or an existing abstract | [Intake](references/intake-form.md); offline [form](assets/intake_form.html), converter and claim ledger. Recover present/vague/missing facts without blocking supported work. |
+| Story, contribution type and motivation | [Routing](references/routing.md), [argument design](references/argument-design.md), [claim calibration](references/claim-calibration.md). Identify the residual technical cost and each claim's support. |
+| Abstract and Introduction/Background | [Abstract](references/abstract.md), [Introduction](references/introduction.md). Use a direct, gap-led or insight-led version when it fits; offer alternatives only when useful. |
+| Design and results | [Method](references/method.md), [experiments](references/experiments.md), [architecture evaluation](references/architecture-evaluation.md). Explain operations, conditions, control comparisons and costs. |
+| Figures, tables and LaTeX | [Figures](references/figures.md), [LaTeX output](references/latex-output.md), [templates](assets/figures/). Use specified mechanisms and actual data. |
+| Revision, related work and rebuttal | [Revision/delivery](references/revision-and-delivery.md); retain terminology and change unsupported meanings explicitly. |
+| Paragraph/sentence examples and empirical style | [Corpus](references/corpus.md), [measured profile](references/corpus-profile.md), [style advice](references/style-rules.md), then retrieve by function/section. |
 
 ## Work from the research
 
-1. **Establish the evidence.** Read the supplied outline, manuscript, relevant code,
-   configurations, results, and protocol at the depth needed for the request. Keep
-   accepted results, hypotheses, planned experiments, and historical results for a
-   different method distinguishable. State a narrow assumption when it permits useful
-   progress; ask only when a missing fact blocks the requested writing.
-2. **Form the argument.** Identify the problem and operating regime; the bottleneck
-   or invalid assumption; why a reasonable existing approach leaves it unresolved;
-   the insight; the mechanism; and the supported outcome. For a benchmark or measurement
-   paper, the contribution can be an evaluation capability or empirical finding.
-3. **Bind claims to evidence.** For substantial drafting, keep a compact ledger:
-   claim; evidence basis; source path and locator; metric and comparison conditions;
-   scope; missing support. An existing results table or author note can serve as this
-   ledger. Do not create a second documentation system for a small edit.
-4. **Retrieve suitable exemplars.** Choose by paragraph function and contribution
-   type before topic. Use `python3 scripts/find_exemplars.py --help`; select two or
-   three relevant cards, read the actual cards, and learn their information order.
-   Exact excerpts are teaching material, not sentences to paste into the new paper.
-5. **Draft or revise.** Connect the workload observation to the design choice and
-   the design choice to a testable consequence. Name what moves, stores, schedules,
-   predicts, or checks something; a component list alone does not explain a mechanism.
-   Use the strongest wording the available evidence supports, with material scope
-   near the claim. Results pending collection remain explicit drafting placeholders.
-6. **Check and deliver.** Verify headline numbers against their sources, bibliography
-   entries against real papers, section/figure references, and consistency of scope
-   across abstract, introduction, contributions, and results. Deliver the requested
-   text or source changes plus only consequential gaps or decisions for the author.
-   A source checker is a limited aid, not scientific validation.
+1. Read the supplied research and requested output at sufficient depth. Distinguish
+   accepted observations, model estimates, hypotheses, historical results from another
+   method and planned experiments. Ask only for a missing fact needed now.
+2. Build the causal chain: operating regime -> bottleneck/invalid assumption ->
+   credible prior alternative -> insight -> changed state/action/representation ->
+   measurable consequence -> scope. A benchmark or measurement can contribute a
+   capability/finding without proposing a faster machine.
+3. Map headline/supporting claims to source paths and locators, comparison conditions,
+   method subsections and tests. Use an existing results table when it serves this
+   purpose; do not create parallel paperwork for a small edit.
+4. Retrieve two or three relevant moves by paragraph function before topic. The
+   development corpus has 24 fully annotated Abstract/Introduction pairs plus first
+   figures. Published annotation records are text-free; source excerpts stay short
+   and attributed. Learn information order and argument logic, not reusable sentences.
+5. Draft the requested sections. Name what is stored, transferred, scheduled,
+   predicted or verified and why the next step is needed. Preserve the actual source
+   values. Pending results remain explicit placeholders; mechanisms absent from the
+   research stay unresolved rather than being invented.
+6. Check sources, claims, references, figures and terminology across the paper.
+   Distribution notes are revision questions, not rules forcing the text toward an
+   average. Deliver the requested files and substantive author notes, using
+   [the report template](assets/report-template.md) for substantial work.
 
-## Claim discipline
+## Evidence and style boundaries
 
-- Explain the hardware change, its operating condition, and the cost it introduces.
-  Report the evidence for a benefit rather than declaring a design "novel" or
-  "efficient" on the strength of a name or proposer identity.
-- Keep simulated cycles, RTL observations, prelayout estimates, postlayout PPA,
-  silicon measurements, and extrapolations labeled by their actual scope.
-- Preserve the denominator and population of an improvement: over which baseline,
-  at what clock/resource/precision, across which workloads, and with what aggregation.
-- Use controls to support causal attribution. A larger array winning does not alone
-  show that a new interconnect caused the gain. A functional test does not alone show
-  that the proposed mechanism was implemented.
-- State essential exclusions or adverse results wherever omitting them would change
-  a headline's meaning. Detailed failure analysis can follow in Evaluation or Discussion.
-- Credit specific closest work and explain a checkable difference. Mark an unverified
-  citation or result as missing; do not manufacture bibliography records or measurements.
-- Award recognition and citation fame are selection signals, not proof of writing
-  quality or scientific correctness. The curated corpus is not a representative
-  statistical sample; do not invent style percentiles, sentence-length targets,
-  mandatory figure counts, or award-success guarantees.
+- Attribute a gain to the intervention actually controlled. Resource scaling,
+  parameter tuning, new mechanisms and algorithm changes can all matter and need
+  corresponding comparisons.
+- Keep simulated cycles, RTL observations, synthesis estimates, postlayout PPA,
+  silicon measurements and extrapolations at their actual measurement stage/scope.
+- Preserve the baseline, population, precision, clock, resource/service assumptions,
+  metric units and aggregation needed to interpret a headline.
+- State material qualifications or adverse regimes near a claim when omitting them
+  changes its meaning. Detailed failure analysis can follow in Evaluation/Discussion.
+- Credit closest work with a checkable difference; verify bibliography entries and
+  claims rather than manufacturing citations, completed experiments or priority.
+- Annotation labels are model judgments, not human ground truth. Corpus percentiles
+  describe the selected development sample. Do not infer universal conference style,
+  mandatory punctuation, figure counts or acceptance guarantees.
+- The four held-out cases and grading keys are evaluation-only. Do not use them for
+  normal exemplar retrieval, drafting-rule development or percentile calibration.
+  Read [evaluation protocol](evals/README.md) only when running the evaluation.
 
-## Output and workflow
+## Toolchain
 
-Write paper prose in the manuscript's language, usually English. Discuss edits in
-the user's language. Retain local terminology, macros, labels, bibliography keys,
-and the requested outline unless a concrete issue warrants a proposed change.
-
-Use an existing LaTeX project when supplied. Consult the current official instructions
-for the actual venue/year when changing submission formatting; avoid transferring a
-CVPR teaser or ACM/IEEE settings between conferences by habit. Follow the session's
-workspace, rendering, commit, and push preferences. A request to skip local rendering
-is satisfied with source checks and the authorized repository workflow. This skill
-itself does not authorize publication, repository pushes, or new experiments.
-
-Useful tools:
+Run from the skill directory (or use absolute script paths):
 
 ```bash
-python3 scripts/find_exemplars.py --venue ISCA --topic memory
-python3 scripts/find_exemplars.py --query 'bottleneck mechanism' --limit 3
-python3 scripts/check_manuscript.py /path/to/paper/main.tex
+python3 scripts/intake_to_brief.py intake.json --out brief.md --ledger claims.json
+python3 scripts/find_exemplars.py --function limitation --section introduction
+python3 scripts/style_metrics.py abstract.tex --section abstract
+python3 scripts/check_draft.py abstract.tex --section abstract --brief brief.md
+python3 scripts/check_manuscript.py paper/main.tex
+python3 scripts/check_figures.py paper/main.tex
+python3 scripts/analyze_corpus.py --from-public
 ```
 
-Run source checks when useful for the actual change. Keep research and author-facing
-notes outside anonymous submission text. Attribution and the corpus scope are in
-[NOTICE.md](NOTICE.md) and [the corpus guide](references/corpus.md).
+[Plotting](references/figures.md) additionally uses Matplotlib; the other helpers
+use the standard library. Metric dictionaries and heuristics are transparent in
+`scripts/writing_metrics.py`. Source checks neither compile nor verify scientific
+truth. Preserve the user's rendering/push preferences; this skill grants no external
+publication or experiment permission. Paper prose follows manuscript language;
+author discussion follows the user's language. Current official venue/year rules
+override remembered templates.
+
+Attribution: [NOTICE.md](NOTICE.md). Dataset construction and source limitations:
+[annotation protocol](data/annotation-protocol.md) and
+[corpus maintenance](references/corpus-maintenance.md).

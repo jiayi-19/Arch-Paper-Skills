@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "usage": "The complete writer input. Provide one case independently per run; do not add source papers, source notes, heldout-cases.json, grader keys, exemplars, or previous answers. Case IDs are opaque routing labels; ignore their components as evidence.",
+  "cases": [
+    {
+      "case_id": "heldout-hpca-01",
+      "task": {
+        "abstract_words": [
+          180,
+          230
+        ],
+        "introduction_paragraphs": 3,
+        "instruction": "Draft a standalone architecture research-paper abstract of about 180–230 words and an introduction of exactly three prose paragraphs from the factual brief. Write original prose. Use only supplied facts and bibliography; do not look up or reproduce the source paper. Choose a coherent emphasis, preserve comparison scope and uncertainty, and use the supplied citation keys where useful. Do not invent missing measurements. Return the abstract followed by the introduction; do not return an outline, fact list, or grading commentary."
+      },
+      "fact_brief": [
+        "The target is general matrix multiplication arising during DNN training, including matrices with uneven dimensions and unstructured zeros. A fixed systolic shape can strand multipliers and preserve useless zero operations.",
+        "SIGMA groups a logical row of multipliers into Flexible Dot Product Engines (Flex-DPEs). A Benes distribution fabric supports multicast, and the Forwarding Adder Network (FAN) routes partial sums so independently sized dot products can share the reduction fabric.",
+        "A bitmap identifies zero positions and guides placement of useful operands. Multiple Flex-DPEs compose into a Flex-DPU for a GEMM; weight-stationary and input-stationary mappings are evaluated and the better mapping is reported.",
+        "Performance comes from a cycle-based analytical model; the systolic baseline uses SCALE-sim. The study uses dimensions/sparsities from GNMT, Transformer, NCF, and DeepBench, and scales each modeled accelerator to 16,384 PEs. Sparse baselines include EIE, SCNN, OuterSPACE, Eyeriss v2, Packed Systolic, and Cambricon-X. These are GEMM comparisons, not full training runs.",
+        "The conclusion reports a 5.7× speedup against TPU-like systolic designs on sparse irregular workloads and approximately 3× against the compared sparse accelerators. Sparse accelerators were extended to GEMMs; alternative matrix orientations and sparsity placements were explored.",
+        "Post-layout comparison uses commercial 28 nm technology, 500 MHz, BF16 multiplication and FP32 addition. SIGMA has 65.10 mm² area and 22.33 W power for the compute array. These figures exclude the large SRAMs; the corresponding systolic compute array occupies 47.27 mm² and consumes 12.25 W.",
+        "The flexible distribution/reduction fabrics raise compute-array area by 37.7%. The study reports two GEMMs where Eyeriss v2 is faster because it retains both operands in local SRAM while SIGMA repeats streaming of one operand. Streaming sparsity and bandwidth can limit useful throughput."
+      ],
+      "terminology": [
+        "SIGMA",
+        "Flex-DPE",
+        "Flex-DPU",
+        "FAN",
+        "Benes",
+        "stationary utilization",
+        "overall efficiency"
+      ],
+      "bibliography": [
+        {
+          "key": "kwon2018maeri",
+          "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Reconfigurable Interconnects",
+          "authors": [
+            "Hyoukjun Kwon",
+            "Ananda Samajdar",
+            "Tushar Krishna"
+          ],
+          "year": 2018,
+          "venue": "ASPLOS",
+          "pages": "461–475"
+        },
+        {
+          "key": "parashar2017scnn",
+          "title": "SCNN: An Accelerator for Compressed-sparse Convolutional Neural Networks",
+          "authors": [
+            "Angshuman Parashar",
+            "Minsoo Rhu",
+            "Anurag Mukkara",
+            "Antonio Puglielli",
+            "Rangharajan Venkatesan",
+            "Brucek Khailany",
+            "Joel Emer",
+            "Stephen W. Keckler",
+            "William J. Dally"
+          ],
+          "year": 2017,
+          "venue": "ISCA",
+          "pages": "27–40"
+        }
+      ],
+      "unreported_quantities": null,
+      "restrictions": [
+        "Use the supplied evidence only; no additional experiments, numbers, novelty rankings, or guarantees.",
+        "Do not reproduce or reconstruct source abstract/introduction wording.",
+        "Bibliography records identify prior work; they do not establish unprovided performance comparisons."
+      ]
+    },
+    {
+      "case_id": "heldout-asplos-01",
+      "task": {
+        "abstract_words": [
+          180,
+          230
+        ],
+        "introduction_paragraphs": 3,
+        "instruction": "Draft a standalone architecture research-paper abstract of about 180–230 words and an introduction of exactly three prose paragraphs from the factual brief. Write original prose. Use only supplied facts and bibliography; do not look up or reproduce the source paper. Choose a coherent emphasis, preserve comparison scope and uncertainty, and use the supplied citation keys where useful. Do not invent missing measurements. Return the abstract followed by the introduction; do not return an outline, fact list, or grading commentary."
+      },
+      "fact_brief": [
+        "Persistent memory is byte-addressable nonvolatile storage reached using ordinary memory instructions. Applications still need crash recovery: data must survive in a permissible order, and volatile DRAM remains in use. An epoch groups persistent stores between ordering points.",
+        "WHISPER gathers ten applications spanning direct persistence, transactional libraries, and file-system access. Programs were adapted for recovery and instrumented; workloads include native key-value/database systems, library-backed stores, and PMFS-backed services. Eliza extracts persistent-access traces.",
+        "Most durable transactions contain between 5 and 50 epochs, although Echo and the N-store TPC-C workload can contain over a hundred. Same-thread epoch conflicts are common; conflicts between threads are uncommon in the measured traces, rather than impossible.",
+        "In the simulated application subset, persistent accesses average 3.54% of memory accesses. Persistent-memory support therefore shares a machine dominated by volatile traffic; this is a workload observation, not a theorem about all PM programs.",
+        "The Hands-Off Persistence System (HOPS) separates ordering from completion of persistence. ofence ends an epoch without demanding synchronous durability; dfence waits for durability when required, such as transaction completion. Per-thread Persist Buffers retain persistent updates and versions while dependency metadata preserves necessary order.",
+        "HOPS is evaluated using gem5 full-system Linux simulation of a four-core out-of-order x86 machine. Each hardware thread has a 32-entry Persist Buffer, with background flushing triggered at 16 entries. A subset of the suite runs to completion.",
+        "Against x86-64 clwb plus sfence with durability reached at NVM, HOPS without persistent write queues reports a 24.3% performance improvement. It also outperforms the x86-64 persistent-write-queue configuration by 10%. The ideal comparison ignores ordering and is not crash-consistent.",
+        "The mechanism adds per-thread buffers, multiple retained versions, metadata, and cache/coherence changes. Cross-thread conflicts still require handling; conservative dependency tracking may introduce false positives. The brief has no verified aggregate chip-area or power number."
+      ],
+      "terminology": [
+        "WHISPER",
+        "epoch",
+        "HOPS",
+        "ofence",
+        "dfence",
+        "Persist Buffer",
+        "Buffered Epoch Persistency",
+        "Persistent Write Queue"
+      ],
+      "bibliography": [
+        {
+          "key": "volos2011mnemosyne",
+          "title": "Mnemosyne: Lightweight Persistent Memory",
+          "authors": [
+            "Haris Volos",
+            "Andres Jaan Tack",
+            "Michael M. Swift"
+          ],
+          "year": 2011,
+          "venue": "ASPLOS",
+          "pages": "91–104"
+        },
+        {
+          "key": "dulloor2014pmfs",
+          "title": "System Software for Persistent Memory",
+          "authors": [
+            "Subramanya R. Dulloor",
+            "Sanjay Kumar",
+            "Anil Keshavamurthy",
+            "Philip Lantz",
+            "Dheeraj Reddy",
+            "Rajesh Sankaran",
+            "Jeff Jackson"
+          ],
+          "year": 2014,
+          "venue": "EuroSys",
+          "pages": "15:1–15:15"
+        }
+      ],
+      "unreported_quantities": {
+        "aggregate_area_mm2": null,
+        "aggregate_power_W": null
+      },
+      "restrictions": [
+        "Use the supplied evidence only; no additional experiments, numbers, novelty rankings, or guarantees.",
+        "Do not reproduce or reconstruct source abstract/introduction wording.",
+        "Bibliography records identify prior work; they do not establish unprovided performance comparisons."
+      ]
+    },
+    {
+      "case_id": "heldout-isca-01",
+      "task": {
+        "abstract_words": [
+          180,
+          230
+        ],
+        "introduction_paragraphs": 3,
+        "instruction": "Draft a standalone architecture research-paper abstract of about 180–230 words and an introduction of exactly three prose paragraphs from the factual brief. Write original prose. Use only supplied facts and bibliography; do not look up or reproduce the source paper. Choose a coherent emphasis, preserve comparison scope and uncertainty, and use the supplied citation keys where useful. Do not invent missing measurements. Return the abstract followed by the introduction; do not return an outline, fact list, or grading commentary."
+      },
+      "fact_brief": [
+        "This is an evaluation of a deployed Tensor Processing Unit (TPU) for datacenter neural-network inference. Six production models, comprising MLP, CNN, and LSTM families, represent 95% of the provider’s inference demand at the time. The compared contemporary platforms are Intel Haswell and Nvidia K80.",
+        "The host-controlled coprocessor uses a dense systolic matrix unit with 65,536 multiply-accumulate units for 8-bit integer operands. Software manages the Unified Buffer; the accelerator uses a simple deterministic execution scheme and communicates with a host over PCIe. It targets inference rather than training.",
+        "Peak throughput is 92 trillion operations per second; the Unified Buffer has 24 MiB, supplemented by 4 MiB of accumulators. Peak arithmetic rate is not sustained workload throughput. Dense hardware lacks dedicated sparse-operation support.",
+        "Measured comparisons enforce application response-time limits and include host interaction overhead. For MLP0, the tail-latency limit is 7 ms at the 99th percentile. Larger batches can increase throughput while violating that service constraint. CPU and GPU results use floating point; TPU inference is quantized, so this is not an equal-datapath comparison.",
+        "Table6 reports TPU throughput relative to Haswell of 14.5× geometric mean and 29.2× production-weighted mean. Relative to K80, the corresponding TPU ratios are 13.2× and 15.3×. Both summaries include host overhead; weighted and geometric averages differ.",
+        "For complete-server performance per watt, TPU is reported as 17–34× Haswell and 14–16× K80, depending on averaging. The higher incremental ratios subtract host-server power. Energy efficiency is a disclosed proxy; negotiated purchase prices and total ownership cost are not disclosed.",
+        "Roofline and counter analysis identify memory limits in the MLP/LSTM workloads; low utilization can coexist with high relative throughput. On CNN0 at 10% offered load, TPU consumes 88% of its full-load power, revealing weak energy proportionality.",
+        "A model studies alternative hardware, including higher memory bandwidth. Those alternatives were not deployed measurements in this comparison, and the current baselines are the contemporaries selected by the study."
+      ],
+      "terminology": [
+        "TPU",
+        "Matrix Multiply Unit",
+        "Unified Buffer",
+        "Weight Memory",
+        "Roofline",
+        "geometric mean",
+        "weighted mean",
+        "total performance/Watt",
+        "incremental performance/Watt"
+      ],
+      "bibliography": [
+        {
+          "key": "williams2009roofline",
+          "title": "Roofline: An Insightful Visual Performance Model for Multicore Architectures",
+          "authors": [
+            "Samuel Williams",
+            "Andrew Waterman",
+            "David Patterson"
+          ],
+          "year": 2009,
+          "venue": "Communications of the ACM 52(4)",
+          "pages": "65–76"
+        },
+        {
+          "key": "dean2013tail",
+          "title": "The Tail at Scale",
+          "authors": [
+            "Jeffrey Dean",
+            "Luiz André Barroso"
+          ],
+          "year": 2013,
+          "venue": "Communications of the ACM 56(2)",
+          "pages": "74–80"
+        }
+      ],
+      "unreported_quantities": {
+        "purchase_price": null,
+        "total_cost_of_ownership": null
+      },
+      "restrictions": [
+        "Use the supplied evidence only; no additional experiments, numbers, novelty rankings, or guarantees.",
+        "Do not reproduce or reconstruct source abstract/introduction wording.",
+        "Bibliography records identify prior work; they do not establish unprovided performance comparisons."
+      ]
+    },
+    {
+      "case_id": "heldout-micro-01",
+      "task": {
+        "abstract_words": [
+          180,
+          230
+        ],
+        "introduction_paragraphs": 3,
+        "instruction": "Draft a standalone architecture research-paper abstract of about 180–230 words and an introduction of exactly three prose paragraphs from the factual brief. Write original prose. Use only supplied facts and bibliography; do not look up or reproduce the source paper. Choose a coherent emphasis, preserve comparison scope and uncertainty, and use the supplied citation keys where useful. Do not invent missing measurements. Return the abstract followed by the introduction; do not return an outline, fact list, or grading commentary."
+      },
+      "fact_brief": [
+        "An accelerator’s dataflow fixes the scheduling and spatial placement of tensor computations. Layer dimensions, data reuse, buffering, communication bandwidth, and available parallelism interact, making a stationary-data label insufficient as a full mapping description.",
+        "MAESTRO expresses dataflow through TemporalMap, SpatialMap, and Cluster directives. Analysis derives tensor reuse and communication opportunities at each hierarchy level, then estimates runtime, activity counts, energy, buffer requirements, and utilization from the workload, mapping, and hardware inputs.",
+        "Reuse opportunities require matching hardware support, such as multicast, reductions, and suitable buffers. The energy calculation combines activity counts with component energy estimates; design-space experiments also use synthesized component area/power costs. More PEs or more buffering alone need not improve a bandwidth-constrained design.",
+        "Runtime validation compares predictions with a 64-PE MAERI RTL simulation on VGG16 and reported Eyeriss runtimes on AlexNet. Average absolute runtime error is within 3.9% for those comparisons; this is not a demonstrated bound for all dataflows or an energy-error result.",
+        "The study evaluates five dataflow styles on operators from five DNN models and observes that preferred mappings change with operator characteristics. Adaptive choices show potential runtime and energy reductions of 37% and 10% in that modeled case study, rather than a measured chip improvement.",
+        "The hardware search varies PE count, local buffer, shared buffer, and NoC bandwidth under area and power constraints. In the KC-P/VGG16-CONV2 run, Figure13(c) lists 3,936,256 explored points, 175,861 valid points, and 12.20 minutes. The search skips infeasible regions using cost lower bounds; explored points must not be described as that many full simulations.",
+        "The search experiments use an Intel i7-8700K host with 32 GB memory, synthesized 28 nm building-block costs, and constraints of 16 mm² and 450 mW. These are experimental search settings, not MAESTRO hardware overhead.",
+        "MAESTRO is an analytical exploration tool. Future plans include automatic dataflow tuning and RTL generation; they are not completed capabilities demonstrated by this paper. The dataflow comparison abstracts implementation differences rather than proving one manufactured accelerator superior."
+      ],
+      "terminology": [
+        "MAESTRO",
+        "TemporalMap",
+        "SpatialMap",
+        "Cluster",
+        "dataflow",
+        "spatial reuse",
+        "temporal reuse",
+        "KC-P",
+        "NoC"
+      ],
+      "bibliography": [
+        {
+          "key": "kwon2018maeri",
+          "title": "MAERI: Enabling Flexible Dataflow Mapping over DNN Accelerators via Reconfigurable Interconnects",
+          "authors": [
+            "Hyoukjun Kwon",
+            "Ananda Samajdar",
+            "Tushar Krishna"
+          ],
+          "year": 2018,
+          "venue": "ASPLOS",
+          "pages": "461–475"
+        },
+        {
+          "key": "parashar2019timeloop",
+          "title": "Timeloop: A Systematic Approach to DNN Accelerator Evaluation",
+          "authors": [
+            "Angshuman Parashar",
+            "Priyanka Raina",
+            "Yakun Sophia Shao",
+            "Yu-Hsin Chen",
+            "Victor A. Ying",
+            "Anurag Mukkara",
+            "Rangharajan Venkatesan",
+            "Brucek Khailany",
+            "Stephen W. Keckler",
+            "Joel Emer"
+          ],
+          "year": 2019,
+          "venue": "ISPASS",
+          "pages": null
+        }
+      ],
+      "unreported_quantities": {
+        "universal_prediction_error_bound": null,
+        "measured_energy_error_percent": null
+      },
+      "restrictions": [
+        "Use the supplied evidence only; no additional experiments, numbers, novelty rankings, or guarantees.",
+        "Do not reproduce or reconstruct source abstract/introduction wording.",
+        "Bibliography records identify prior work; they do not establish unprovided performance comparisons."
+      ]
+    }
+  ]
+}

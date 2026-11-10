@@ -1,0 +1,436 @@
+{
+  "paper_id": "hpca-2003-runahead",
+  "paper_url": "https://people.inf.ethz.ch/omutlu/pub/mutlu_hpca03.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Introduction is complete through the final evaluation paragraph on physical PDF page 2, ending before Section 2 Related work.",
+    "The single abstract paragraph contains fragmented and reordered Intel/Pentium registered-trademark glyphs in extraction. The ordinary sentence was reconstructed in original reading order and trademark markers omitted after source-page inspection.",
+    "The cache-miss-only study assumption is scope; checkpointing, bogus values, pseudo-retirement, and state restoration are mechanism. The final scope/evaluation paragraph stays one paragraph because no PDF paragraph break occurs within it."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 198,
+        "sentence_count": 9,
+        "mean_sentence_words": 22.0,
+        "number_tokens": 6,
+        "numbers_per_100_words": 3.0303030303030303,
+        "connectors_per_100_words": 0.5050505050505051,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.5050505050505051,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.5050505050505051,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1292,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "Runahead avoids large-window costs while improving latency tolerance and measured IPC.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 104,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 105,
+              "end": 248,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 3,
+              "start": 249,
+              "end": 436,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 4,
+              "start": 437,
+              "end": 471,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 5,
+              "start": 472,
+              "end": 657,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 6,
+              "start": 658,
+              "end": 808,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 7,
+              "start": 809,
+              "end": 884,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 8,
+              "start": 885,
+              "end": 1111,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 9,
+              "start": 1112,
+              "end": 1292,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 544,
+        "sentence_count": 25,
+        "mean_sentence_words": 21.76,
+        "number_tokens": 10,
+        "numbers_per_100_words": 1.838235294117647,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 1.286764705882353,
+        "paragraph_count": 6
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 494,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Out-of-order engines use a bounded instruction window to hide latency.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 120,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 121,
+              "end": 322,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 3,
+              "start": 323,
+              "end": 494,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 26
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 496,
+          "end": 1055,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Growing main-memory latency makes conventional window scaling costly.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 496,
+              "end": 556,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 7
+            },
+            {
+              "sentence_index": 2,
+              "start": 557,
+              "end": 736,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 737,
+              "end": 925,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 926,
+              "end": 1055,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1057,
+          "end": 1447,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Runahead discards a blocking operation to free a small window.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1057,
+              "end": 1194,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 1195,
+              "end": 1447,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 38
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1449,
+          "end": 2197,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Checkpointing and pseudo-retirement execute future work without committing architectural state.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1449,
+              "end": 1580,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 1581,
+              "end": 1623,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 3,
+              "start": 1624,
+              "end": 1725,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 4,
+              "start": 1726,
+              "end": 1846,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 5,
+              "start": 1847,
+              "end": 2003,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 6,
+              "start": 2004,
+              "end": 2081,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 7,
+              "start": 2082,
+              "end": 2197,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2199,
+          "end": 2596,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "insight",
+          "summary": "A nonblocking window generates useful early cache requests at modest cost.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2199,
+              "end": 2391,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 2,
+              "start": 2392,
+              "end": 2519,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 2520,
+              "end": 2596,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 13
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 2598,
+          "end": 3697,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "A bounded evaluation compares memory-latency tolerance and equivalent window performance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2598,
+              "end": 2791,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 2,
+              "start": 2792,
+              "end": 2995,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 2996,
+              "end": 3208,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 34
+            },
+            {
+              "sentence_index": 4,
+              "start": 3209,
+              "end": 3361,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 5,
+              "start": 3362,
+              "end": 3545,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 6,
+              "start": 3546,
+              "end": 3697,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 27
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "hpca-2003-runahead",
+    "pdf_page": 3,
+    "kind": "motivation_plot",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. A single seven-bar chart compares idealized bottleneck removals and includes a runahead configuration; motivation_plot captures its role in motivating memory-latency tolerance.",
+    "metrics": {
+      "word_count": 23,
+      "sentence_count": 3,
+      "mean_sentence_words": 7.666666666666667,
+      "number_tokens": 1,
+      "numbers_per_100_words": 4.3478260869565215,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

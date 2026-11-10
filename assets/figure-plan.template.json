@@ -1,0 +1,16 @@
+{
+  "version": "architecture-figure-plan.v2",
+  "figures": [
+    {
+      "id": "fig:mechanism",
+      "section": "Design",
+      "question": "What event/state/action changes?",
+      "type": "mechanism_diagram",
+      "claim_status": "mechanism specified; benefit pending",
+      "inputs": [],
+      "status": "planned",
+      "caption_takeaway": "Replace with the supported mechanism statement.",
+      "comparison_conditions": "Specify the actual preserved conditions."
+    }
+  ]
+}

@@ -1,0 +1,686 @@
+{
+  "paper_id": "asplos-2024-centauri",
+  "paper_url": "https://jf-d.github.io/files/Centauri.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Recorded corpus PDF",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Introduction extends through all four contribution bullets on PDF page 3. Figure 1 and Table 1 text are excluded; the paragraph explaining the partitioning insight continues around the table.",
+    "Run-on column/page continuations are merged, including the tiered scheduling paragraph across pages 2–3. Contribution bullets are separate paragraphs.",
+    "Broad proposed-design efficacy is mechanism or insight; numerical evaluation gains are result.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: topologyaware. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 163,
+        "sentence_count": 9,
+        "mean_sentence_words": 18.11111111111111,
+        "number_tokens": 1,
+        "numbers_per_100_words": 0.6134969325153374,
+        "connectors_per_100_words": 0.6134969325153374,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 1.2269938650306749,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.6134969325153374,
+        "paragraph_count": 2
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 514,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Frames hybrid-parallel training communication costs and limitations of existing overlap methods.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 190,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 191,
+              "end": 308,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 3,
+              "start": 309,
+              "end": 514,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 516,
+          "end": 1408,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Introduces partition dimensions, hierarchical scheduling, and measured speedup.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 516,
+              "end": 688,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 689,
+              "end": 853,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 854,
+              "end": 948,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 4,
+              "start": 949,
+              "end": 1149,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 1150,
+              "end": 1262,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 6,
+              "start": 1263,
+              "end": 1408,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 892,
+        "sentence_count": 47,
+        "mean_sentence_words": 18.97872340425532,
+        "number_tokens": 13,
+        "numbers_per_100_words": 1.4573991031390134,
+        "connectors_per_100_words": 0.672645739910314,
+        "hedges_per_100_words": 0.5605381165919282,
+        "boosters_per_100_words": 0.672645739910314,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.336322869955157,
+        "paragraph_count": 11
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 448,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Connects model scaling benefits to escalating pretraining cost.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 124,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 125,
+              "end": 265,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 3,
+              "start": 266,
+              "end": 448,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 26
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 450,
+          "end": 1213,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Describes parallel training strategies and their communication burden.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 450,
+              "end": 592,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 593,
+              "end": 905,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 3,
+              "start": 906,
+              "end": 1098,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 4,
+              "start": 1099,
+              "end": 1213,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1215,
+          "end": 2484,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "prior_work",
+          "summary": "Reviews scheduling and fusion approaches and the overlap opportunities each misses.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1215,
+              "end": 1364,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 1365,
+              "end": 1465,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 3,
+              "start": 1466,
+              "end": 1676,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 4,
+              "start": 1677,
+              "end": 1766,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 5,
+              "start": 1767,
+              "end": 1933,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 6,
+              "start": 1934,
+              "end": 2117,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 7,
+              "start": 2118,
+              "end": 2287,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 8,
+              "start": 2288,
+              "end": 2394,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 9,
+              "start": 2395,
+              "end": 2484,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 19
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2486,
+          "end": 3878,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Motivates three partition dimensions and hierarchy-based scheduling from two challenges.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2486,
+              "end": 2581,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 2,
+              "start": 2582,
+              "end": 2703,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 3,
+              "start": 2704,
+              "end": 2849,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 4,
+              "start": 2850,
+              "end": 2976,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 5,
+              "start": 2977,
+              "end": 3070,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 6,
+              "start": 3071,
+              "end": 3131,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 7
+            },
+            {
+              "sentence_index": 7,
+              "start": 3132,
+              "end": 3280,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 8,
+              "start": 3281,
+              "end": 3493,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 9,
+              "start": 3494,
+              "end": 3767,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 40
+            },
+            {
+              "sentence_index": 10,
+              "start": 3768,
+              "end": 3878,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 3880,
+          "end": 4748,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Explains primitive, topology-aware group, and workload partitioning.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3880,
+              "end": 4072,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 4073,
+              "end": 4139,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 3,
+              "start": 4140,
+              "end": 4302,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 4,
+              "start": 4303,
+              "end": 4426,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 5,
+              "start": 4427,
+              "end": 4578,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 6,
+              "start": 4579,
+              "end": 4748,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 4750,
+          "end": 5742,
+          "pdf_page_start": 2,
+          "pdf_page_end": 3,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Explains operation-, layer-, and model-level scheduling.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4750,
+              "end": 4957,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 2,
+              "start": 4958,
+              "end": 5175,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 3,
+              "start": 5176,
+              "end": 5303,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 5304,
+              "end": 5444,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 5,
+              "start": 5445,
+              "end": 5576,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 6,
+              "start": 5577,
+              "end": 5742,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 5744,
+          "end": 5789,
+          "pdf_page_start": 3,
+          "pdf_page_end": 3,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Introduces the contribution list.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5744,
+              "end": 5789,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 6
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 5791,
+          "end": 6000,
+          "pdf_page_start": 3,
+          "pdf_page_end": 3,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims a three-dimensional communication partition abstraction.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5791,
+              "end": 5911,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 5912,
+              "end": 6000,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 10
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 6002,
+          "end": 6278,
+          "pdf_page_start": 3,
+          "pdf_page_end": 3,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims hierarchical scheduling decomposition and its three responsibilities.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6002,
+              "end": 6144,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 2,
+              "start": 6145,
+              "end": 6278,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 6280,
+          "end": 6532,
+          "pdf_page_start": 3,
+          "pdf_page_end": 3,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims integration into Megatron-LM and scheduling components.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6280,
+              "end": 6367,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 6368,
+              "end": 6532,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 6534,
+          "end": 6870,
+          "pdf_page_start": 3,
+          "pdf_page_end": 3,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "States the evaluation setting and peak speedups for single and hybrid parallelism.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6534,
+              "end": 6680,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 6681,
+              "end": 6870,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "asplos-2024-centauri",
+    "pdf_page": 2,
+    "kind": "mechanism_diagram",
+    "panels": 3,
+    "full_width": false,
+    "notes": "Three labeled timeline rows (a/b/c) compare scheduling strategies; one column. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 46,
+      "sentence_count": 2,
+      "mean_sentence_words": 23.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 2.1739130434782608,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 4.3478260869565215
+    }
+  }
+}

@@ -1,0 +1,761 @@
+{
+  "paper_id": "isca2024-constable",
+  "paper_url": "https://arxiv.org/pdf/2406.18786",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Author preprint arXiv:2406.18786v1, 26 June 2024. Published-program title differs slightly.",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Introduction is complete through all seven contribution bullets, ending before Section 2 Background on physical PDF page 2. Safety-condition bullets are preserved separately.",
+    "The two safety conditions are scope statements specifying the premise of an insight; the following reasoning is insight. Naming likely-stable loads is treated as mechanism vocabulary. Storage cost is scope even when included with evaluation results.",
+    "Removed superscript footnote callout after likely-stable and run-in Key limitation/Key mechanism/Key results labels. Subscript instance indices are rendered with spacing; the source phrase source architectural registers the load instruction is retained without grammatical repair.",
+    "Original page image confirms off-the-shelf in the released-tool bullet; extraction dropped the h at the line boundary and was corrected from the source image."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 293,
+        "sentence_count": 11,
+        "mean_sentence_words": 26.636363636363637,
+        "number_tokens": 10,
+        "numbers_per_100_words": 3.4129692832764507,
+        "connectors_per_100_words": 0.3412969283276451,
+        "hedges_per_100_words": 1.023890784982935,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.3412969283276451,
+        "paragraph_count": 3
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 561,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Load speculation leaves contention for execution resources unresolved.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 135,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 136,
+              "end": 293,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 3,
+              "start": 294,
+              "end": 561,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 37
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 563,
+          "end": 1298,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Stable-address and stable-value loads are identified and safely skipped.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 563,
+              "end": 667,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 668,
+              "end": 806,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 807,
+              "end": 928,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 4,
+              "start": 929,
+              "end": 962,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 5
+            },
+            {
+              "sentence_index": 5,
+              "start": 963,
+              "end": 1298,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 51
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1300,
+          "end": 2018,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Single-thread and SMT experiments report performance and dynamic-power benefits.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1300,
+              "end": 1638,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 51
+            },
+            {
+              "sentence_index": 2,
+              "start": 1639,
+              "end": 1774,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 1775,
+              "end": 2018,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 36
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 1183,
+        "sentence_count": 41,
+        "mean_sentence_words": 28.853658536585368,
+        "number_tokens": 53,
+        "numbers_per_100_words": 4.480135249366018,
+        "connectors_per_100_words": 0.42265426880811496,
+        "hedges_per_100_words": 0.33812341504649196,
+        "boosters_per_100_words": 0.25359256128486896,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.591715976331361,
+        "paragraph_count": 18
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1143,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Load latency and resource contention jointly restrict instruction parallelism.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 117,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 118,
+              "end": 386,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 39
+            },
+            {
+              "sentence_index": 3,
+              "start": 387,
+              "end": 519,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 4,
+              "start": 520,
+              "end": 767,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 39
+            },
+            {
+              "sentence_index": 5,
+              "start": 768,
+              "end": 887,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 6,
+              "start": 888,
+              "end": 1143,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 39
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 1145,
+          "end": 1624,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "prior_work",
+          "summary": "Value speculation breaks dependencies on a load result.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1145,
+              "end": 1249,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 1250,
+              "end": 1486,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 3,
+              "start": 1487,
+              "end": 1624,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1626,
+          "end": 2197,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Predicted loads still occupy execution resources for verification.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1626,
+              "end": 1943,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 45
+            },
+            {
+              "sentence_index": 2,
+              "start": 1944,
+              "end": 2197,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 37
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2199,
+          "end": 2539,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "The proposed design removes both components of load execution.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2199,
+              "end": 2303,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 2304,
+              "end": 2539,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 33
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2541,
+          "end": 2825,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Unmodified register and memory state makes repeated load execution redundant.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2541,
+              "end": 2825,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 51
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 2827,
+          "end": 2931,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "scope",
+          "summary": "The first safety condition concerns source-register updates.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2827,
+              "end": 2931,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 2933,
+          "end": 3053,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "scope",
+          "summary": "The second safety condition concerns stores and coherence activity.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2933,
+              "end": 3053,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 3055,
+          "end": 3371,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Each safety condition justifies eliminating one component operation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3055,
+              "end": 3212,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 2,
+              "start": 3213,
+              "end": 3371,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 3373,
+          "end": 4195,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Confidence and lightweight modification tracking enable safe load elimination.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3373,
+              "end": 3511,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 3512,
+              "end": 3646,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 3647,
+              "end": 3680,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 5
+            },
+            {
+              "sentence_index": 4,
+              "start": 3681,
+              "end": 3924,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 5,
+              "start": 3925,
+              "end": 4195,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 45
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 4197,
+          "end": 5610,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "A strong baseline and varied workloads establish several measured benefits and storage cost.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4197,
+              "end": 4625,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 56
+            },
+            {
+              "sentence_index": 2,
+              "start": 4626,
+              "end": 4701,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 3,
+              "start": 4702,
+              "end": 4860,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 4,
+              "start": 4861,
+              "end": 5053,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 5054,
+              "end": 5278,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 6,
+              "start": 5279,
+              "end": 5522,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 7,
+              "start": 5523,
+              "end": 5610,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 5612,
+          "end": 5665,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The paper introduces its list of delivered findings and artifacts.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5612,
+              "end": 5665,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 9
+            }
+          ]
+        },
+        {
+          "paragraph_index": 12,
+          "start": 5667,
+          "end": 6191,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Workload inspection finds persistent loads missed by compiler optimizations.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5667,
+              "end": 5850,
+              "primary": "observation",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 32
+            },
+            {
+              "sentence_index": 2,
+              "start": 5851,
+              "end": 6191,
+              "primary": "observation",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 47
+            }
+          ]
+        },
+        {
+          "paragraph_index": 13,
+          "start": 6193,
+          "end": 6577,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Idealized experiments expose extra headroom from eliminating resource demand.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6193,
+              "end": 6461,
+              "primary": "observation",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 41
+            },
+            {
+              "sentence_index": 2,
+              "start": 6462,
+              "end": 6577,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 14,
+          "start": 6579,
+          "end": 6930,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The contribution specifies confidence-driven elimination and dependency tracking.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6579,
+              "end": 6930,
+              "primary": "mechanism",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 49
+            }
+          ]
+        },
+        {
+          "paragraph_index": 15,
+          "start": 6932,
+          "end": 7133,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The microarchitecture supports safety under aggressive load scheduling.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6932,
+              "end": 7133,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 27
+            }
+          ]
+        },
+        {
+          "paragraph_index": 16,
+          "start": 7135,
+          "end": 7344,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Instruction-by-instruction comparison verifies correctness.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 7135,
+              "end": 7344,
+              "primary": "methodology",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 17,
+          "start": 7346,
+          "end": 7736,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Evaluation quantifies performance, dynamic power, and storage effects.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 7346,
+              "end": 7641,
+              "primary": "result",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 44
+            },
+            {
+              "sentence_index": 2,
+              "start": 7642,
+              "end": 7736,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 11
+            }
+          ]
+        },
+        {
+          "paragraph_index": 18,
+          "start": 7738,
+          "end": 7985,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A released instrumentation artifact identifies repeated constant loads.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 7738,
+              "end": 7985,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 39
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "isca2024-constable",
+    "pdf_page": 2,
+    "kind": "mechanism_diagram",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. Baseline load-execution pipeline with resource and operation callouts, not a diagram of the proposed Constable design.",
+    "metrics": {
+      "word_count": 15,
+      "sentence_count": 1,
+      "mean_sentence_words": 15.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 6.666666666666667,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 Initial curated edition: 24 papers, six each from HPCA, ASPLOS, ISCA, and MICRO. Original publication years range from 2000 to 2025. Selection is purposeful rather than statistical; notable means a teaching selection, not a quantified fame ranking. Recognition was checked against official conference or society sources on 2026-11-10.
 
-Each record contains one short exact excerpt, its one-based PDF page and section, the inspected reading scope, source/version notes, an original writing analysis, and a transfer caveat. Abstract/introduction plus selected technical/evaluation passages were read; this is not a full sentence-level annotation of 24 complete papers.
+Each record contains one short exact excerpt, its one-based PDF page and section, the inspected reading scope, source/version notes, an original writing analysis, and a transfer caveat. The original exemplar cards record their selected reading passages. Version 2 adds a complete Abstract/Introduction annotation pass for all 24 development papers, plus first-figure metadata; it does not claim full-paper annotation of every section. See [the measured profile](corpus-profile.md) and [annotation protocol](../data/annotation-protocol.md).
 
 The machine-readable [corpus](corpus.json) stores each quote once. Retrieve a full card on demand:
 

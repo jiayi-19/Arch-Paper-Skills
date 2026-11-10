@@ -1,0 +1,27 @@
+{
+  "schema": "architecture-intake.v2",
+  "project": {
+    "title": "Working title",
+    "venue": "Specify venue and year",
+    "paper_type": "mechanism",
+    "sections": [
+      "abstract",
+      "introduction",
+      "method",
+      "evaluation"
+    ]
+  },
+  "research": {
+    "problem": "Describe the workload regime and concrete bottleneck.",
+    "prior_approach": "Name the strongest relevant approach and its mechanism.",
+    "limitation": "Describe what remains unresolved.",
+    "reason": "Identify the technical cause.",
+    "insight": "State the exploitable workload or machine property.",
+    "mechanism": "Describe the state, action, interfaces and correctness rule.",
+    "closest_work": [],
+    "scope": "State operating conditions, costs and untested regimes."
+  },
+  "evidence": [],
+  "figures": [],
+  "bibliography": ""
+}

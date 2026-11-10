@@ -1,0 +1,7 @@
+case,method,value,status,resource
+Example 1,Reference,10,valid,10
+Example 1,Variant,8,valid,12
+Example 2,Reference,15,valid,10
+Example 2,Variant,12,valid,12
+Example 3,Reference,11,valid,10
+Example 3,Variant,,not_measured,12

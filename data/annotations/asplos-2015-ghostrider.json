@@ -1,0 +1,688 @@
+{
+  "paper_id": "asplos-2015-ghostrider",
+  "paper_url": "https://www.cs.umd.edu/~mwh/papers/ghostrider15.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Recorded corpus PDF",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Named Introduction subsection 1.1 is included in full. Run-in contribution headings are recorded as subsection metadata and excluded from sentence text.",
+    "Introduction paragraph defining MTO continues across PDF pages 1–2; its footnote marker and explanatory footnote are excluded.",
+    "Security proofs are reported research outcomes; illustrative leakage properties are observation or limitation rather than final performance results.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: ORAMcapable, memorytrace. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 163,
+        "sentence_count": 7,
+        "mean_sentence_words": 23.285714285714285,
+        "number_tokens": 0,
+        "numbers_per_100_words": 0.0,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 1.8404907975460123,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1094,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "Introduces the MTO guarantee, ORAM baseline, compiler optimizations, proof, and prototype result.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 142,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 143,
+              "end": 399,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 3,
+              "start": 400,
+              "end": 571,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 4,
+              "start": 572,
+              "end": 802,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 5,
+              "start": 803,
+              "end": 909,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 6,
+              "start": 910,
+              "end": 967,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 7,
+              "start": 968,
+              "end": 1094,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 1025,
+        "sentence_count": 49,
+        "mean_sentence_words": 20.918367346938776,
+        "number_tokens": 3,
+        "numbers_per_100_words": 0.2926829268292683,
+        "connectors_per_100_words": 0.3902439024390244,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0975609756097561,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.3902439024390244,
+        "paragraph_count": 12
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 479,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Balances cloud benefits against physical control and privacy concerns.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 205,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 2,
+              "start": 206,
+              "end": 329,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 330,
+              "end": 479,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 19
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 481,
+          "end": 935,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains why software security alone cannot prevent physical attacks.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 481,
+              "end": 609,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 610,
+              "end": 844,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 3,
+              "start": 845,
+              "end": 935,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 937,
+          "end": 1668,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "prior_work",
+          "summary": "Introduces address-trace leakage and ORAM-based protection.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 937,
+              "end": 1124,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 2,
+              "start": 1125,
+              "end": 1257,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 1258,
+              "end": 1487,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 4,
+              "start": 1488,
+              "end": 1668,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 20
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1670,
+          "end": 2402,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains the single-ORAM baseline and its bandwidth, latency, and trace-length costs.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1670,
+              "end": 1894,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 41
+            },
+            {
+              "sentence_index": 2,
+              "start": 1895,
+              "end": 2079,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 3,
+              "start": 2080,
+              "end": 2222,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 4,
+              "start": 2223,
+              "end": 2402,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2404,
+          "end": 3395,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "Memory Trace Oblivious (MTO) Program Execution",
+          "role": "insight",
+          "summary": "Defines MTO and motivates selective encryption and multiple ORAM banks.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2404,
+              "end": 2702,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 43
+            },
+            {
+              "sentence_index": 2,
+              "start": 2703,
+              "end": 2974,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 44
+            },
+            {
+              "sentence_index": 3,
+              "start": 2975,
+              "end": 3170,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 4,
+              "start": 3171,
+              "end": 3263,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 5,
+              "start": 3264,
+              "end": 3395,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 3397,
+          "end": 3656,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Memory Trace Oblivious (MTO) Program Execution",
+          "role": "gap",
+          "summary": "Identifies the unrealistic architectural assumptions in earlier conceptual work.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3397,
+              "end": 3537,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 3538,
+              "end": 3656,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 3658,
+          "end": 4113,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Our Results and Contributions",
+          "role": "contributions",
+          "summary": "Introduces practical GhostRider co-design and the compiler-architecture challenges.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3658,
+              "end": 3739,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 3740,
+              "end": 3863,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 3864,
+              "end": 4090,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 4,
+              "start": 4091,
+              "end": 4113,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 3
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 4115,
+          "end": 5039,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Our Results and Contributions / New compiler and type system",
+          "role": "contributions",
+          "summary": "Details the compiler contribution and why resource allocation and caching must preserve MTO.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4115,
+              "end": 4241,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 4242,
+              "end": 4473,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 3,
+              "start": 4474,
+              "end": 4553,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 4,
+              "start": 4554,
+              "end": 4652,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 5,
+              "start": 4653,
+              "end": 4751,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 6,
+              "start": 4752,
+              "end": 4828,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 7,
+              "start": 4829,
+              "end": 4887,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 8,
+              "start": 4888,
+              "end": 4957,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 9,
+              "start": 4958,
+              "end": 5039,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 13
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 5041,
+          "end": 5534,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Our Results and Contributions / New compiler and type system",
+          "role": "approach",
+          "summary": "Describes low-level typing and the compiler safety argument.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5041,
+              "end": 5151,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 5152,
+              "end": 5271,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 5272,
+              "end": 5435,
+              "primary": "mechanism",
+              "secondary": [
+                "scope"
+              ],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 4,
+              "start": 5436,
+              "end": 5534,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 5536,
+          "end": 6353,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Our Results and Contributions / Processor architecture for MTO program execution",
+          "role": "contributions",
+          "summary": "Details architectural support, Phantom extensions, FPGA prototype, and ISA.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5536,
+              "end": 5747,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 2,
+              "start": 5748,
+              "end": 5860,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 5861,
+              "end": 6124,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 4,
+              "start": 6125,
+              "end": 6185,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 5,
+              "start": 6186,
+              "end": 6286,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 6,
+              "start": 6287,
+              "end": 6353,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 8
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 6355,
+          "end": 6856,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Our Results and Contributions / Implementation and Empirical Results",
+          "role": "evidence",
+          "summary": "Explains how FPGA and simulation support complementary evaluations.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6355,
+              "end": 6471,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 6472,
+              "end": 6558,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 6559,
+              "end": 6767,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 4,
+              "start": 6768,
+              "end": 6856,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 12,
+          "start": 6858,
+          "end": 7082,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Our Results and Contributions / Implementation and Empirical Results",
+          "role": "evidence",
+          "summary": "Reports speedup against placing all memory into a single ORAM bank.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6858,
+              "end": 7082,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 33
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "asplos-2015-ghostrider",
+    "pdf_page": 2,
+    "kind": "other",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Motivating code listing rather than a hardware mechanism diagram; one column. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 5,
+      "sentence_count": 2,
+      "mean_sentence_words": 2.5,
+      "number_tokens": 1,
+      "numbers_per_100_words": 20.0,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

@@ -1,0 +1,814 @@
+{
+  "paper_id": "micro-2024-avatar",
+  "paper_url": "https://www.cs.cmu.edu/~18742/papers/Park2024.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Reading order restored on PDF page 2: the contribution list precedes body continuation in flow extraction but follows the complete Avatar description visually.",
+    "The page-1 challenge paragraph continues on page 2. Four contribution bullets are separate paragraphs, and subsection-like run-in headings are stored as metadata.",
+    "Motivation slowdowns and baseline speedup gaps are observation; evaluated Avatar gains are result.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: threadlevel. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 232,
+        "sentence_count": 14,
+        "mean_sentence_words": 16.571428571428573,
+        "number_tokens": 5,
+        "numbers_per_100_words": 2.1551724137931036,
+        "connectors_per_100_words": 0.8620689655172413,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.8620689655172413,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 3
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 398,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Frames unified virtual addressing, GPU TLB pressure, and measured translation overhead.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 118,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 119,
+              "end": 256,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 3,
+              "start": 257,
+              "end": 398,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 400,
+          "end": 1046,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Introduces CAST and CAVA and explains speculative immediate fetching.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 400,
+              "end": 490,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 491,
+              "end": 618,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 3,
+              "start": 619,
+              "end": 786,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 4,
+              "start": 787,
+              "end": 884,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 5,
+              "start": 885,
+              "end": 1046,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1048,
+          "end": 1707,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Explains validation limits, in-cache translation metadata, and evaluated gains.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1048,
+              "end": 1152,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 1153,
+              "end": 1230,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 3,
+              "start": 1231,
+              "end": 1314,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 4,
+              "start": 1315,
+              "end": 1406,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 5,
+              "start": 1407,
+              "end": 1577,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 6,
+              "start": 1578,
+              "end": 1707,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 19
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 946,
+        "sentence_count": 52,
+        "mean_sentence_words": 18.192307692307693,
+        "number_tokens": 16,
+        "numbers_per_100_words": 1.6913319238900635,
+        "connectors_per_100_words": 0.6342494714587738,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.5285412262156448,
+        "trailing_participial_sentences_pct": 3.8461538461538463,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.9513742071881607,
+        "paragraph_count": 14
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 518,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Explains GPU virtual-memory interest and unified-address-space programming benefits.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 95,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 96,
+              "end": 230,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 231,
+              "end": 313,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 4,
+              "start": 314,
+              "end": 518,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 28
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 520,
+          "end": 1438,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains translation latency and why thread parallelism cannot hide it.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 520,
+              "end": 597,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 2,
+              "start": 598,
+              "end": 825,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 826,
+              "end": 1003,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 1004,
+              "end": 1144,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 5,
+              "start": 1145,
+              "end": 1256,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 6,
+              "start": 1257,
+              "end": 1438,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1440,
+          "end": 2014,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "GPU Address Translation – Challenges and Solutions",
+          "role": "prior_work",
+          "summary": "Summarizes page-walk and TLB-reach approaches and the residual translation path.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1440,
+              "end": 1589,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 1590,
+              "end": 1638,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 7
+            },
+            {
+              "sentence_index": 3,
+              "start": 1639,
+              "end": 1754,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 4,
+              "start": 1755,
+              "end": 1894,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 5,
+              "start": 1895,
+              "end": 2014,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2016,
+          "end": 2952,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "GPU Address Translation – Challenges and Solutions",
+          "role": "gap",
+          "summary": "Shows the remaining performance gap and motivates capacity-independent translation hiding.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2016,
+              "end": 2082,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 2,
+              "start": 2083,
+              "end": 2157,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 3,
+              "start": 2158,
+              "end": 2253,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 2254,
+              "end": 2417,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 5,
+              "start": 2418,
+              "end": 2518,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 6,
+              "start": 2519,
+              "end": 2595,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 7,
+              "start": 2596,
+              "end": 2709,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 8,
+              "start": 2710,
+              "end": 2867,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 9,
+              "start": 2868,
+              "end": 2952,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2954,
+          "end": 3375,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Accelerated Address Translation in GPUs",
+          "role": "approach",
+          "summary": "Introduces the Avatar components and the mapping-storage idea.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2954,
+              "end": 3134,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 3135,
+              "end": 3247,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 3,
+              "start": 3248,
+              "end": 3375,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 3377,
+          "end": 4017,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Accelerated Address Translation in GPUs",
+          "role": "approach",
+          "summary": "Explains contiguity tracking and simultaneous speculation and translation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3377,
+              "end": 3445,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 2,
+              "start": 3446,
+              "end": 3656,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 3657,
+              "end": 3750,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 3751,
+              "end": 3881,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 5,
+              "start": 3882,
+              "end": 4017,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 4019,
+          "end": 5053,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Accelerated Address Translation in GPUs",
+          "role": "approach",
+          "summary": "Explains why CAVA is needed and how compressed sector metadata validates speculation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4019,
+              "end": 4072,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 7
+            },
+            {
+              "sentence_index": 2,
+              "start": 4073,
+              "end": 4182,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 4183,
+              "end": 4235,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 4,
+              "start": 4236,
+              "end": 4373,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 5,
+              "start": 4374,
+              "end": 4569,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 6,
+              "start": 4570,
+              "end": 4719,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 7,
+              "start": 4720,
+              "end": 4968,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 8,
+              "start": 4969,
+              "end": 5053,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 5055,
+          "end": 5641,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Accelerated Address Translation in GPUs",
+          "role": "scope",
+          "summary": "States fallback conditions, results, low overhead, and correctness preservation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5055,
+              "end": 5244,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 2,
+              "start": 5245,
+              "end": 5369,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 3,
+              "start": 5370,
+              "end": 5477,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 5478,
+              "end": 5641,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 5643,
+          "end": 5683,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Introduces four contributions.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5643,
+              "end": 5683,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 6
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 5685,
+          "end": 5869,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Contributions / GPU-Based Speculative Address Translation",
+          "role": "contributions",
+          "summary": "Claims a low-cost speculative translation framework preserving correctness.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5685,
+              "end": 5869,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 26
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 5871,
+          "end": 6110,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Contributions / Exploiting Data Mapping",
+          "role": "contributions",
+          "summary": "Claims contiguity- and locality-based immediate physical access.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5871,
+              "end": 5972,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 5973,
+              "end": 6110,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 12,
+          "start": 6112,
+          "end": 6408,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Contributions / Exploiting Data Content",
+          "role": "contributions",
+          "summary": "Claims rapid metadata-based validation of speculatively fetched data.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6112,
+              "end": 6293,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 2,
+              "start": 6294,
+              "end": 6408,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        },
+        {
+          "paragraph_index": 13,
+          "start": 6410,
+          "end": 6532,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Contributions / Repurposing Retrieved Translation",
+          "role": "contributions",
+          "summary": "Claims reuse of confirmed translation for further performance gains.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6410,
+              "end": 6532,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        },
+        {
+          "paragraph_index": 14,
+          "start": 6534,
+          "end": 6667,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Reports final speedup and speculation accuracy.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6534,
+              "end": 6667,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "micro-2024-avatar",
+    "pdf_page": 1,
+    "kind": "motivation_plot",
+    "panels": 1,
+    "full_width": false,
+    "notes": "One grouped-bar plot of measured page-walk overhead, one column. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 39,
+      "sentence_count": 2,
+      "mean_sentence_words": 19.5,
+      "number_tokens": 3,
+      "numbers_per_100_words": 7.6923076923076925,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

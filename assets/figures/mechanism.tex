@@ -1,0 +1,19 @@
+% Requires \usepackage{tikz} and \usetikzlibrary{arrows.meta,positioning,fit}.
+% Replace the labeled placeholders with actual design state/actions.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=7mm and 6mm,
+ block/.style={draw,rounded corners=1pt,align=center,font=\small,minimum height=8mm},
+ flow/.style={-{Latex[length=1.6mm]},thick}]
+\node[block] (input) {Workload event};
+\node[block,right=of input,fill=blue!10] (policy) {Proposed rule};
+\node[block,right=of policy] (action) {Changed action};
+\node[block,below=of policy,fill=gray!12] (state) {Required state};
+\draw[flow] (input)--(policy);
+\draw[flow] (policy)--(action);
+\draw[flow] (state)--(policy);
+\draw[flow] (action.south)|-(state.east);
+\end{tikzpicture}
+\caption{\textbf{Mechanism placeholder.} Identify the triggering event, state read or updated, action and feedback. Explain the correctness invariant and incurred cost in the surrounding text.}
+\label{fig:mechanism}
+\end{figure}

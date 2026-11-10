@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Computer Architecture Writing Intake</title>
+<style>body{max-width:900px;margin:32px auto;padding:0 20px;font:16px/1.5 system-ui;color:#18232d}label{display:block;font-weight:600;margin-top:18px}textarea,input,select{box-sizing:border-box;width:100%;padding:10px;font:inherit;border:1px solid #9aa8b4;border-radius:5px}textarea{min-height:84px}button{margin:18px 12px 0 0;padding:10px 18px}pre{white-space:pre-wrap;background:#f1f4f7;padding:16px}.hint{color:#53616e}</style>
+<h1>Computer Architecture Writing Intake</h1>
+<p>Offline form / 离线研究材料表。No data are sent anywhere. Missing results remain pending.</p>
+<label for="title">Working title / 暂定标题</label><input id="title">
+<label for="venue">Venue and year / 会议年份</label><input id="venue">
+<label for="type">Contribution type</label><select id="type"><option>mechanism</option><option>accelerator</option><option>codesign</option><option>characterization</option><option>model/tool</option><option>benchmark/resource</option><option>formal/analytical</option><option>re-examination</option></select>
+<div id="fields"></div>
+<label for="evidence">Evidence records (JSON array) / 实验记录</label>
+<p class="hint">Each record: id, claim, status (measured/modeled/derived/planned/unavailable), metric, baseline, ours, unit, conditions, source, locator.</p>
+<textarea id="evidence">[]</textarea>
+<label for="figures">Figure plan (JSON array)</label><textarea id="figures">[]</textarea>
+<label for="bib">Verified BibTeX entries / 已核对引用</label><textarea id="bib"></textarea>
+<button id="preview">Preview JSON</button><button id="save">Download intake.json</button><pre id="output" aria-live="polite"></pre>
+<script>
+const names=['problem','prior_approach','limitation','reason','insight','mechanism','closest_work','scope'];
+for(const name of names){const label=document.createElement('label');label.htmlFor=name;label.textContent=name.replaceAll('_',' ');const field=document.createElement('textarea');field.id=name;document.getElementById('fields').append(label,field);}
+function data(){const research={};for(const key of names)research[key]=document.getElementById(key).value.trim();const evidence=JSON.parse(document.getElementById('evidence').value);const figures=JSON.parse(document.getElementById('figures').value);if(!Array.isArray(evidence)||!Array.isArray(figures))throw Error('Evidence and figures must be JSON arrays.');return {schema:'architecture-intake.v2',project:{title:document.getElementById('title').value,venue:document.getElementById('venue').value,paper_type:document.getElementById('type').value,sections:['abstract','introduction','method','evaluation']},research,evidence,figures,bibliography:document.getElementById('bib').value};}
+function serialize(){const text=JSON.stringify(data(),null,2);document.getElementById('output').textContent=text;return text;}
+document.getElementById('preview').onclick=()=>{try{serialize();}catch(e){document.getElementById('output').textContent=e.message;}};
+document.getElementById('save').onclick=()=>{try{const blob=new Blob([serialize()],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='intake.json';a.click();URL.revokeObjectURL(url);}catch(e){document.getElementById('output').textContent=e.message;}};
+</script></html>

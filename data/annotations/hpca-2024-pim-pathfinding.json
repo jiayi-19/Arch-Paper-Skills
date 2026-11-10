@@ -1,0 +1,380 @@
+{
+  "paper_id": "hpca-2024-pim-pathfinding",
+  "paper_url": "https://arxiv.org/pdf/2308.00846",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Introduction is complete through the final research-directions sentence on physical PDF page 2, ending before Section II UPMEM-PIM Architecture.",
+    "Opening attributed industry quotation is included because it is part of the Introduction argument, not an author block. Its attribution stays associated with that quoted unit; quoted challenge statements are labeled by their argumentative function.",
+    "Characterization procedure is methodology; ISA/compiler/simulator operations are mechanism; promised future-architecture findings without detailed results are contribution. Removed final superscript footnote callout."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 165,
+        "sentence_count": 7,
+        "mean_sentence_words": 23.571428571428573,
+        "number_tokens": 0,
+        "numbers_per_100_words": 0.0,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 1.8181818181818181,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1197,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "A simulator enables characterization and diagnosis of a commercial programmable PIM design.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 209,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 34
+            },
+            {
+              "sentence_index": 2,
+              "start": 210,
+              "end": 427,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 3,
+              "start": 428,
+              "end": 584,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 4,
+              "start": 585,
+              "end": 674,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 5,
+              "start": 675,
+              "end": 888,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 6,
+              "start": 889,
+              "end": 981,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 7,
+              "start": 982,
+              "end": 1197,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 674,
+        "sentence_count": 23,
+        "mean_sentence_words": 29.304347826086957,
+        "number_tokens": 3,
+        "numbers_per_100_words": 0.44510385756676557,
+        "connectors_per_100_words": 0.14836795252225518,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.14836795252225518,
+        "trailing_participial_sentences_pct": 4.3478260869565215,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 1.0385756676557865,
+        "paragraph_count": 4
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 522,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "An attributed industry quotation motivates programmability and flexible parallelism.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 120,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 121,
+              "end": 181,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 3,
+              "start": 182,
+              "end": 290,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 4,
+              "start": 291,
+              "end": 438,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 5,
+              "start": 439,
+              "end": 522,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 8
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 524,
+          "end": 1450,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "The memory wall motivates PIM but historical implementation and software costs impeded adoption.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 524,
+              "end": 662,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 663,
+              "end": 849,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 3,
+              "start": 850,
+              "end": 1050,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 4,
+              "start": 1051,
+              "end": 1450,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 51
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1452,
+          "end": 3228,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "prior_work",
+          "summary": "Commercial products expose domain-specific and programmable general-purpose alternatives.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1452,
+              "end": 1610,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 1611,
+              "end": 1723,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 3,
+              "start": 1724,
+              "end": 2248,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 47
+            },
+            {
+              "sentence_index": 4,
+              "start": 2249,
+              "end": 2597,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 49
+            },
+            {
+              "sentence_index": 5,
+              "start": 2598,
+              "end": 2852,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 6,
+              "start": 2853,
+              "end": 3228,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 55
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 3230,
+          "end": 5098,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "An ISA-compatible simulator supports validation, characterization, and future-architecture directions.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3230,
+              "end": 3503,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 2,
+              "start": 3504,
+              "end": 3734,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 34
+            },
+            {
+              "sentence_index": 3,
+              "start": 3735,
+              "end": 3913,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 4,
+              "start": 3914,
+              "end": 4090,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 4091,
+              "end": 4387,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 41
+            },
+            {
+              "sentence_index": 6,
+              "start": 4388,
+              "end": 4613,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 7,
+              "start": 4614,
+              "end": 4868,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 8,
+              "start": 4869,
+              "end": 5098,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 34
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "hpca-2024-pim-pathfinding",
+    "pdf_page": 2,
+    "kind": "system_overview",
+    "panels": 2,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. A host/DIMM view is linked to an enlarged PIM-chip/DPU view. Count is two visual regions rather than formal panel labels.",
+    "metrics": {
+      "word_count": 6,
+      "sentence_count": 1,
+      "mean_sentence_words": 6.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 16.666666666666668,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

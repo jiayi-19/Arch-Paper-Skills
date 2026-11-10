@@ -1,0 +1,781 @@
+{
+  "paper_id": "isca2000-wattch",
+  "paper_url": "https://mrmgroup.cs.princeton.edu/papers/isca2000.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Original author-group PDF; broken font encoding required visual reading of PDF pp.1,5,6. Excerpt verified visually on PDF p.1 (printed p.83).",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "PDF text mapping is unusable. Rendered original physical pages 1 and 2 at 2400-pixel page height, OCRed with Tesseract 4.1.1, and visually checked the entire recovered Abstract and Introduction against both page images. OCR paragraph order was manually restored across columns.",
+    "Complete Introduction includes subsections 1.1 Prior Work and 1.2 Contributions of this Work through the closing roadmap before Section 2 Our Power Modeling Methodology. Physical pages 1 and 2 are printed pages 83 and 84.",
+    "The printed sentence beginning One of the major shortcomings is grammatically unusual but faithfully retained. The abstract prints 1000X; it is not rewritten as a multiplication symbol. OCR lexical hyphens and quotation typography were checked against the images.",
+    "Descriptions of prior metric inadequacy are limitation, while the proposed modular scenario operations are mechanism. The statement positioning Wattch as complementary is scope."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 220,
+        "sentence_count": 10,
+        "mean_sentence_words": 22.0,
+        "number_tokens": 2,
+        "numbers_per_100_words": 0.9090909090909091,
+        "connectors_per_100_words": 0.45454545454545453,
+        "hedges_per_100_words": 0.45454545454545453,
+        "boosters_per_100_words": 0.9090909090909091,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.45454545454545453,
+        "paragraph_count": 3
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 584,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Architects need earlier and faster power feedback than implementation-level tools supply.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 87,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 88,
+              "end": 248,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 249,
+              "end": 397,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 4,
+              "start": 398,
+              "end": 584,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 586,
+          "end": 1125,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "The simulator provides fast estimates, validation, and example uses.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 586,
+              "end": 714,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 715,
+              "end": 900,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 901,
+              "end": 962,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 4,
+              "start": 963,
+              "end": 1125,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 24
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1127,
+          "end": 1478,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "scope",
+          "summary": "The framework complements detailed tools and broadens access through SimpleScalar.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1127,
+              "end": 1289,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 2,
+              "start": 1290,
+              "end": 1478,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 1149,
+        "sentence_count": 55,
+        "mean_sentence_words": 20.89090909090909,
+        "number_tokens": 10,
+        "numbers_per_100_words": 0.8703220191470844,
+        "connectors_per_100_words": 0.26109660574412535,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.5221932114882507,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.17406440382941687,
+        "passive_proxy_per_100_words": 1.4795474325500435,
+        "paragraph_count": 12
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 696,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Power, delivery, and cooling increasingly constrain general-purpose processors.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 123,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 124,
+              "end": 251,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 3,
+              "start": 252,
+              "end": 420,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 4,
+              "start": 421,
+              "end": 536,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 5,
+              "start": 537,
+              "end": 696,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 698,
+          "end": 1153,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Circuit strategies alone cannot meet the growing power-design need.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 698,
+              "end": 861,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 2,
+              "start": 862,
+              "end": 1000,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 1001,
+              "end": 1153,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 20
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1155,
+          "end": 1600,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Power-aware architectural research lacks a suitably balanced modeling infrastructure.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1155,
+              "end": 1260,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 1261,
+              "end": 1420,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 3,
+              "start": 1421,
+              "end": 1600,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1602,
+          "end": 2047,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Parameterized component models and simulated activity estimate processor power.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1602,
+              "end": 1695,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 2,
+              "start": 1696,
+              "end": 1883,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 1884,
+              "end": 2047,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2049,
+          "end": 2301,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "1.1 Prior Work",
+          "role": "roadmap",
+          "summary": "The prior-work discussion separates power optimization from power estimation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2049,
+              "end": 2095,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 7
+            },
+            {
+              "sentence_index": 2,
+              "start": 2096,
+              "end": 2301,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 28
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 2303,
+          "end": 2797,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "1.1 Prior Work",
+          "role": "prior_work",
+          "summary": "Earlier architectural power research concentrated on regular, power-intensive caches.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2303,
+              "end": 2412,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 2413,
+              "end": 2457,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 3,
+              "start": 2458,
+              "end": 2636,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 4,
+              "start": 2637,
+              "end": 2797,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 27
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 2799,
+          "end": 3888,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "1.1 Prior Work",
+          "role": "gap",
+          "summary": "Existing work-saved metrics cannot compare different optimization families directly.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2799,
+              "end": 2890,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 2,
+              "start": 2891,
+              "end": 3052,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 3,
+              "start": 3053,
+              "end": 3191,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 4,
+              "start": 3192,
+              "end": 3290,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 5,
+              "start": 3291,
+              "end": 3450,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 6,
+              "start": 3451,
+              "end": 3622,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 32
+            },
+            {
+              "sentence_index": 7,
+              "start": 3623,
+              "end": 3813,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 8,
+              "start": 3814,
+              "end": 3888,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 10
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 3890,
+          "end": 4509,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.1 Prior Work",
+          "role": "prior_work",
+          "summary": "An earlier DSP/RISC model relies on fixed circuit characterization and restricted workloads.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3890,
+              "end": 3970,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 3971,
+              "end": 4129,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 3,
+              "start": 4130,
+              "end": 4278,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 4,
+              "start": 4279,
+              "end": 4509,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 37
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 4511,
+          "end": 5643,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.2 Contributions of this Work",
+          "role": "gap",
+          "summary": "Detailed tools cannot support early, broad architectural exploration.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4511,
+              "end": 4698,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 2,
+              "start": 4699,
+              "end": 4807,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 3,
+              "start": 4808,
+              "end": 4926,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 4927,
+              "end": 5085,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 5,
+              "start": 5086,
+              "end": 5264,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 6,
+              "start": 5265,
+              "end": 5438,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 7,
+              "start": 5439,
+              "end": 5643,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 5645,
+          "end": 6304,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.2 Contributions of this Work",
+          "role": "contributions",
+          "summary": "The work delivers a parameterized high-level simulator with measured speed and accuracy.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5645,
+              "end": 5734,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 2,
+              "start": 5735,
+              "end": 5925,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 3,
+              "start": 5926,
+              "end": 6125,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 4,
+              "start": 6126,
+              "end": 6304,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 6306,
+          "end": 7350,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.2 Contributions of this Work",
+          "role": "approach",
+          "summary": "Three usage scenarios cover architecture parameters, compiler comparisons, and modular extensions.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6306,
+              "end": 6359,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 2,
+              "start": 6360,
+              "end": 6572,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 3,
+              "start": 6573,
+              "end": 6734,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 4,
+              "start": 6735,
+              "end": 6791,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 7
+            },
+            {
+              "sentence_index": 5,
+              "start": 6792,
+              "end": 6850,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 6,
+              "start": 6851,
+              "end": 6950,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 7,
+              "start": 6951,
+              "end": 7068,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 8,
+              "start": 7069,
+              "end": 7219,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 9,
+              "start": 7220,
+              "end": 7350,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 12,
+          "start": 7352,
+          "end": 7846,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "1.2 Contributions of this Work",
+          "role": "roadmap",
+          "summary": "The remaining sections describe models, validation, applications, and conclusions.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 7352,
+              "end": 7505,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 7506,
+              "end": 7718,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 7719,
+              "end": 7846,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "isca2000-wattch",
+    "pdf_page": 2,
+    "kind": "concept",
+    "panels": 3,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. Three labeled workflow scenarios A, B, and C, arranged within one column. Concept denotes usage workflows rather than implementation circuitry.",
+    "metrics": {
+      "word_count": 9,
+      "sentence_count": 1,
+      "mean_sentence_words": 9.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 11.11111111111111,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

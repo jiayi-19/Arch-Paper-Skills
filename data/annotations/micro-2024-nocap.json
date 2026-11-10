@@ -1,0 +1,860 @@
+{
+  "paper_id": "micro-2024-nocap",
+  "paper_url": "https://people.csail.mit.edu/devadas/pubs/micro24_nocap.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Reconstructed the two-column reading order directly from PDF page crops because the supplied flow extraction interleaves columns line by line. Source Abstract and Introduction are complete through the four contribution bullets on PDF page 2.",
+    "Each contribution bullet is a separate paragraph; run-in topic headings are captured as subsection metadata. Footnote markers and the NoCap name footnote are excluded.",
+    "The scheme-selection tradeoff is insight, measured NoCap benefits are result, and illustrative application scenarios are distinguished from implementation mechanisms.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: differentiallyprivate, endto-end, hashbased. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 264,
+        "sentence_count": 11,
+        "mean_sentence_words": 24.0,
+        "number_tokens": 3,
+        "numbers_per_100_words": 1.1363636363636365,
+        "connectors_per_100_words": 0.3787878787878788,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.7575757575757576,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 3
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 670,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Introduces ZKP use cases and their proof-generation barrier.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 213,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 2,
+              "start": 214,
+              "end": 406,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 3,
+              "start": 407,
+              "end": 529,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 530,
+              "end": 670,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 672,
+          "end": 1388,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Introduces NoCap, its evaluated speedups, scheme selection, and proof-size tradeoff.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 672,
+              "end": 790,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 791,
+              "end": 909,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 910,
+              "end": 1197,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 42
+            },
+            {
+              "sentence_index": 4,
+              "start": 1198,
+              "end": 1388,
+              "primary": "result",
+              "secondary": [
+                "scope"
+              ],
+              "word_count": 27
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1390,
+          "end": 1825,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims a programmable vector accelerator, co-designed algorithm implementation, and new-use-case benefits.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1390,
+              "end": 1583,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 2,
+              "start": 1584,
+              "end": 1753,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 3,
+              "start": 1754,
+              "end": 1825,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 1056,
+        "sentence_count": 53,
+        "mean_sentence_words": 19.92452830188679,
+        "number_tokens": 28,
+        "numbers_per_100_words": 2.6515151515151514,
+        "connectors_per_100_words": 0.0946969696969697,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.3787878787878788,
+        "trailing_participial_sentences_pct": 1.8867924528301887,
+        "em_dashes_per_100_words": 0.1893939393939394,
+        "passive_proxy_per_100_words": 0.7575757575757576,
+        "paragraph_count": 19
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 497,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Explains the prover/verifier interface and proof publication.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 234,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 2,
+              "start": 235,
+              "end": 268,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 3,
+              "start": 269,
+              "end": 336,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 4,
+              "start": 337,
+              "end": 406,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 5,
+              "start": 407,
+              "end": 497,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 499,
+          "end": 1227,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Describes verifiable computation, private model claims, and application diversity.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 499,
+              "end": 549,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 2,
+              "start": 550,
+              "end": 830,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 42
+            },
+            {
+              "sentence_index": 3,
+              "start": 831,
+              "end": 1062,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 4,
+              "start": 1063,
+              "end": 1227,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1229,
+          "end": 1868,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Quantifies proof overhead and describes acceleration efforts.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1229,
+              "end": 1391,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 2,
+              "start": 1392,
+              "end": 1653,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 42
+            },
+            {
+              "sentence_index": 3,
+              "start": 1654,
+              "end": 1772,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 4,
+              "start": 1773,
+              "end": 1868,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 13
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1870,
+          "end": 2047,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "A full-system approach to accelerate ZKPs",
+          "role": "contributions",
+          "summary": "Claims accelerator gains sufficient to expand ZKP use.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1870,
+              "end": 2047,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 30
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2049,
+          "end": 2317,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "A full-system approach to accelerate ZKPs",
+          "role": "insight",
+          "summary": "Explains selecting schemes for end-to-end prover/verifier tradeoffs.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2049,
+              "end": 2317,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 43
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 2319,
+          "end": 2869,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "A full-system approach to accelerate ZKPs",
+          "role": "gap",
+          "summary": "Explains why elliptic-curve schemes and PipeZK cannot overcome ZKP overhead.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2319,
+              "end": 2430,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 2431,
+              "end": 2554,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 3,
+              "start": 2555,
+              "end": 2688,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 2689,
+              "end": 2798,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 5,
+              "start": 2799,
+              "end": 2869,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 11
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 2871,
+          "end": 3313,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "A full-system approach to accelerate ZKPs",
+          "role": "insight",
+          "summary": "Identifies acceleration-friendly hash-based schemes and their larger-proof tradeoff.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2871,
+              "end": 3076,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 2,
+              "start": 3077,
+              "end": 3141,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 3,
+              "start": 3142,
+              "end": 3313,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 32
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 3315,
+          "end": 3581,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap accelerator",
+          "role": "approach",
+          "summary": "Introduces an accelerator built around shared, evolving ZKP primitives.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3315,
+              "end": 3392,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 2,
+              "start": 3393,
+              "end": 3581,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 3583,
+          "end": 4033,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap accelerator",
+          "role": "approach",
+          "summary": "Details vector units, memory hierarchy, and synthesized area/power.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3583,
+              "end": 3795,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 2,
+              "start": 3796,
+              "end": 3869,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 3,
+              "start": 3870,
+              "end": 4033,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 4035,
+          "end": 4369,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap accelerator",
+          "role": "evidence",
+          "summary": "Reports evaluation scope, CPU and ASIC speedups, and enabled applications.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4035,
+              "end": 4085,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 2,
+              "start": 4086,
+              "end": 4274,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 3,
+              "start": 4275,
+              "end": 4369,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 11
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 4371,
+          "end": 4542,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap accelerator",
+          "role": "scope",
+          "summary": "States claimed scheme coverage and research novelty.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4371,
+              "end": 4480,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 4481,
+              "end": 4542,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 10
+            }
+          ]
+        },
+        {
+          "paragraph_index": 12,
+          "start": 4544,
+          "end": 5154,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap enables new use cases for ZKPs",
+          "role": "evidence",
+          "summary": "Illustrates authenticated image editing and compares proving/verification times.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4544,
+              "end": 4597,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 2,
+              "start": 4598,
+              "end": 4656,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 3,
+              "start": 4657,
+              "end": 4730,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 4,
+              "start": 4731,
+              "end": 4847,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 5,
+              "start": 4848,
+              "end": 4994,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 6,
+              "start": 4995,
+              "end": 5154,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 32
+            }
+          ]
+        },
+        {
+          "paragraph_index": 13,
+          "start": 5156,
+          "end": 5883,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap enables new use cases for ZKPs",
+          "role": "evidence",
+          "summary": "Contrasts latency-throughput tradeoffs in verifiable databases with NoCap.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5156,
+              "end": 5204,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 2,
+              "start": 5205,
+              "end": 5479,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 3,
+              "start": 5480,
+              "end": 5597,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 4,
+              "start": 5598,
+              "end": 5776,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 5,
+              "start": 5777,
+              "end": 5883,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 14,
+          "start": 5885,
+          "end": 6396,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "NoCap enables new use cases for ZKPs",
+          "role": "evidence",
+          "summary": "Illustrates private-data applications and reduced verified-training time.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5885,
+              "end": 6014,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 6015,
+              "end": 6187,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 3,
+              "start": 6188,
+              "end": 6296,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 6297,
+              "end": 6396,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 15,
+          "start": 6398,
+          "end": 6436,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Introduces the contribution list.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6398,
+              "end": 6436,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 6
+            }
+          ]
+        },
+        {
+          "paragraph_index": 16,
+          "start": 6438,
+          "end": 6593,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims an acceleration opportunity from combining Spartan and Orion.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6438,
+              "end": 6593,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 24
+            }
+          ]
+        },
+        {
+          "paragraph_index": 17,
+          "start": 6595,
+          "end": 6701,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims the NoCap programmable accelerator.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6595,
+              "end": 6701,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 18,
+          "start": 6703,
+          "end": 6882,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims a scalable high-reuse Spartan+Orion implementation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6703,
+              "end": 6882,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 26
+            }
+          ]
+        },
+        {
+          "paragraph_index": 19,
+          "start": 6884,
+          "end": 7031,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims synthesis and performance evaluation at modest hardware cost.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 6884,
+              "end": 7031,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "micro-2024-nocap",
+    "pdf_page": 1,
+    "kind": "concept",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Single conceptual prover/verifier diagram, one column. Mathematical variables are recorded as extracted f and w; typography does not preserve overbars. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 24,
+      "sentence_count": 1,
+      "mean_sentence_words": 24.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 4.166666666666667,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 4.166666666666667,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

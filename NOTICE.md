@@ -9,3 +9,7 @@ Changes: a new architecture-specific corpus from HPCA/ASPLOS/ISCA/MICRO; new ana
 Original architecture-specific text and scripts in this adaptation are licensed CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. Preserve credit and indicate modifications when redistributing. No endorsement by the upstream authors, paper authors, award committees or conferences is implied.
 
 Short attributed paper excerpts remain the property of their respective rights holders. They are included for commentary and instruction and are not covered by the adaptation's license. Learn their argument function; do not copy them into new papers. Award metadata and paper analysis have different sources: awards from official listings, passages from papers, analysis from this skill's curator.
+
+## Version 2 additions
+
+Version 2 extends the adaptation with a complete intake-to-delivery workflow, original architecture-specific form/plot/template assets, per-sentence and per-paragraph model annotations for complete development abstracts and introductions, transparent corpus measurements, first-figure metadata, independent annotation sampling, and a procedurally held-out writing comparison. Full paper passages/captions are not redistributed. Public labels, counts, offsets and curator paraphrases are original analytical data. The four new evaluation papers are excluded from normal retrieval and development statistics.

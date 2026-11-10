@@ -1,0 +1,491 @@
+{
+  "method": "Independent model-agent review; same codebook, original labels withheld. Not human gold and not independent scientific replication.",
+  "sampling": "Two units per development paper at floor(0.25*N) and floor(0.75*N) in source reading order; 48 total. Not a random population sample.",
+  "n": 48,
+  "agreements": 40,
+  "agreement_fraction": 0.8333333333333334,
+  "cohen_kappa": 0.8063540090771559,
+  "interpretation": "This sample measures role-label consistency. It does not establish correctness of every annotation or validate corpus selection.",
+  "items": [
+    {
+      "sample_id": "asplos-2002-simpoint-sample-1",
+      "paper_id": "asplos-2002-simpoint",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Establishes broad variation in program behavior before introducing the analytical need; observation is also plausible."
+    },
+    {
+      "sample_id": "asplos-2002-simpoint-sample-2",
+      "paper_id": "asplos-2002-simpoint",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 3,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Claims the resulting simulation points achieve representative coverage with little simulation effort; phrased qualitatively rather than as a numeric evaluation."
+    },
+    {
+      "sample_id": "asplos-2013-paragon-sample-1",
+      "paper_id": "asplos-2013-paragon",
+      "section": "introduction",
+      "paragraph_index": 2,
+      "sentence_index": 1,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "States the simultaneous scheduling objectives the operator must satisfy."
+    },
+    {
+      "sample_id": "asplos-2013-paragon-sample-2",
+      "paper_id": "asplos-2013-paragon",
+      "section": "introduction",
+      "paragraph_index": 7,
+      "sentence_index": 4,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Claims achieved scalability of the proposed scheduler without explaining an operation."
+    },
+    {
+      "sample_id": "asplos-2014-diannao-sample-1",
+      "paper_id": "asplos-2014-diannao",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "Frames the flexibility versus efficiency tradeoff as the design issue to address."
+    },
+    {
+      "sample_id": "asplos-2014-diannao-sample-2",
+      "paper_id": "asplos-2014-diannao",
+      "section": "introduction",
+      "paragraph_index": 7,
+      "sentence_index": 1,
+      "first_primary": "contribution",
+      "second_primary": "contribution",
+      "review_rationale": "Names a delivered synthesized accelerator artifact without operational detail."
+    },
+    {
+      "sample_id": "asplos-2015-ghostrider-sample-1",
+      "paper_id": "asplos-2015-ghostrider",
+      "section": "introduction",
+      "paragraph_index": 3,
+      "sentence_index": 2,
+      "first_primary": "observation",
+      "second_primary": "observation",
+      "review_rationale": "Identifies the specific information leakage property that motivates oblivious memory; its vulnerability framing could also support problem."
+    },
+    {
+      "sample_id": "asplos-2015-ghostrider-sample-2",
+      "paper_id": "asplos-2015-ghostrider",
+      "section": "introduction",
+      "paragraph_index": 9,
+      "sentence_index": 2,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Reports a formal correctness guarantee established for well-typed programs."
+    },
+    {
+      "sample_id": "asplos-2023-tensorir-sample-1",
+      "paper_id": "asplos-2023-tensorir",
+      "section": "introduction",
+      "paragraph_index": 2,
+      "sentence_index": 1,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "Introduces hardware specialization as an additional source of optimization difficulty."
+    },
+    {
+      "sample_id": "asplos-2023-tensorir-sample-2",
+      "paper_id": "asplos-2023-tensorir",
+      "section": "introduction",
+      "paragraph_index": 7,
+      "sentence_index": 2,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Explains how the new block construct isolates tensor computation from surrounding loops."
+    },
+    {
+      "sample_id": "asplos-2024-centauri-sample-1",
+      "paper_id": "asplos-2024-centauri",
+      "section": "introduction",
+      "paragraph_index": 2,
+      "sentence_index": 3,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "Identifies communication time as a substantial training bottleneck."
+    },
+    {
+      "sample_id": "asplos-2024-centauri-sample-2",
+      "paper_id": "asplos-2024-centauri",
+      "section": "introduction",
+      "paragraph_index": 6,
+      "sentence_index": 2,
+      "first_primary": "mechanism",
+      "second_primary": "insight",
+      "review_rationale": "Infers that ordering and granularity must be coordinated to enable overlap; an abstract mechanism reading is also plausible."
+    },
+    {
+      "sample_id": "hpca-2001-perceptron-sample-1",
+      "paper_id": "hpca-2001-perceptron",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 2,
+      "first_primary": "context",
+      "second_primary": "prior_work",
+      "review_rationale": "Describes how existing prefetching and value speculation techniques operate; these also serve as background examples."
+    },
+    {
+      "sample_id": "hpca-2001-perceptron-sample-2",
+      "paper_id": "hpca-2001-perceptron",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 2,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Reports the demonstrated branch class on which the selected predictor succeeds."
+    },
+    {
+      "sample_id": "hpca-2003-runahead-sample-1",
+      "paper_id": "hpca-2003-runahead",
+      "section": "abstract",
+      "paragraph_index": 1,
+      "sentence_index": 9,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Gives a quantitative performance comparison between evaluated processor configurations."
+    },
+    {
+      "sample_id": "hpca-2003-runahead-sample-2",
+      "paper_id": "hpca-2003-runahead",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 1,
+      "first_primary": "insight",
+      "second_primary": "mechanism",
+      "review_rationale": "Explains the proposed transformation of a blocked instruction window into a window that continues execution."
+    },
+    {
+      "sample_id": "hpca-2019-stretch-sample-1",
+      "paper_id": "hpca-2019-stretch",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Introduces the general efficiency objectives of datacenters before discussing colocation."
+    },
+    {
+      "sample_id": "hpca-2019-stretch-sample-2",
+      "paper_id": "hpca-2019-stretch",
+      "section": "introduction",
+      "paragraph_index": 7,
+      "sentence_index": 2,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Specifies the runtime condition, software action, and ROB allocation change."
+    },
+    {
+      "sample_id": "hpca-2024-pim-pathfinding-sample-1",
+      "paper_id": "hpca-2024-pim-pathfinding",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "problem",
+      "second_primary": "limitation",
+      "review_rationale": "Reports practical obstacles to applying existing PIM approaches, elaborated as programmability restrictions in the paragraph; problem is a close alternative."
+    },
+    {
+      "sample_id": "hpca-2024-pim-pathfinding-sample-2",
+      "paper_id": "hpca-2024-pim-pathfinding",
+      "section": "introduction",
+      "paragraph_index": 4,
+      "sentence_index": 1,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "States the research objective of understanding a poorly characterized PIM design; the proposed study makes methodology a plausible secondary reading."
+    },
+    {
+      "sample_id": "hpca-2024-talco-sample-1",
+      "paper_id": "hpca-2024-talco",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Establishes the importance and history of sequence alignment in its application domain."
+    },
+    {
+      "sample_id": "hpca-2024-talco-sample-2",
+      "paper_id": "hpca-2024-talco",
+      "section": "introduction",
+      "paragraph_index": 6,
+      "sentence_index": 3,
+      "first_primary": "observation",
+      "second_primary": "result",
+      "review_rationale": "Reports quantified redundancy incurred by the implemented algorithms over an evaluated error range."
+    },
+    {
+      "sample_id": "hpca-2025-dynamollm-sample-1",
+      "paper_id": "hpca-2025-dynamollm",
+      "section": "introduction",
+      "paragraph_index": 2,
+      "sentence_index": 1,
+      "first_primary": "prior_work",
+      "second_primary": "prior_work",
+      "review_rationale": "Introduces previously proposed software and hardware approaches responding to compute demand."
+    },
+    {
+      "sample_id": "hpca-2025-dynamollm-sample-2",
+      "paper_id": "hpca-2025-dynamollm",
+      "section": "introduction",
+      "paragraph_index": 6,
+      "sentence_index": 2,
+      "first_primary": "observation",
+      "second_primary": "observation",
+      "review_rationale": "Gives a workload-dependent efficiency property used to justify heterogeneous instance pools."
+    },
+    {
+      "sample_id": "isca2000-wattch-sample-1",
+      "paper_id": "isca2000-wattch",
+      "section": "introduction",
+      "paragraph_index": 2,
+      "sentence_index": 2,
+      "first_primary": "limitation",
+      "second_primary": "limitation",
+      "review_rationale": "Explicitly argues that the existing low-level power techniques do not suffice."
+    },
+    {
+      "sample_id": "isca2000-wattch-sample-2",
+      "paper_id": "isca2000-wattch",
+      "section": "introduction",
+      "paragraph_index": 9,
+      "sentence_index": 7,
+      "first_primary": "insight",
+      "second_primary": "insight",
+      "review_rationale": "Draws an analogy to infer why higher-level power tools can expand participation; this is a rationale rather than a demonstrated outcome."
+    },
+    {
+      "sample_id": "isca2007-dip-sample-1",
+      "paper_id": "isca2007-dip",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 2,
+      "first_primary": "limitation",
+      "second_primary": "limitation",
+      "review_rationale": "Identifies the workload regime in which the established LRU approach behaves poorly."
+    },
+    {
+      "sample_id": "isca2007-dip-sample-2",
+      "paper_id": "isca2007-dip",
+      "section": "introduction",
+      "paragraph_index": 4,
+      "sentence_index": 4,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Reports the proposed insertion policy retaining protection while adapting to working-set changes."
+    },
+    {
+      "sample_id": "isca2014-rowhammer-sample-1",
+      "paper_id": "isca2014-rowhammer",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Supplies the broad technology trend that sets up the subsequent reliability argument."
+    },
+    {
+      "sample_id": "isca2014-rowhammer-sample-2",
+      "paper_id": "isca2014-rowhammer",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 3,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Explains selective probabilistic refresh as the way the proposed solution prevents errors."
+    },
+    {
+      "sample_id": "isca2016-eyeriss-sample-1",
+      "paper_id": "isca2016-eyeriss",
+      "section": "abstract",
+      "paragraph_index": 2,
+      "sentence_index": 6,
+      "first_primary": "result",
+      "second_primary": "methodology",
+      "review_rationale": "Identifies fabricated-silicon demonstration as the validation vehicle; the successful verification wording also makes result plausible."
+    },
+    {
+      "sample_id": "isca2016-eyeriss-sample-2",
+      "paper_id": "isca2016-eyeriss",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 3,
+      "first_primary": "contribution",
+      "second_primary": "contribution",
+      "review_rationale": "Explicitly introduces the list of research contributions."
+    },
+    {
+      "sample_id": "isca2024-constable-sample-1",
+      "paper_id": "isca2024-constable",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 3,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "Identifies load execution as an important source of constrained instruction parallelism."
+    },
+    {
+      "sample_id": "isca2024-constable-sample-2",
+      "paper_id": "isca2024-constable",
+      "section": "introduction",
+      "paragraph_index": 10,
+      "sentence_index": 6,
+      "first_primary": "result",
+      "second_primary": "result",
+      "review_rationale": "Reports numerical reductions in resource use and attributes power savings to those reductions."
+    },
+    {
+      "sample_id": "isca2024-mind-the-gap-sample-1",
+      "paper_id": "isca2024-mind-the-gap",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 2,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Provides a general technology-scaling fact explaining the increasing importance of data movement; observation is a reasonable alternative."
+    },
+    {
+      "sample_id": "isca2024-mind-the-gap-sample-2",
+      "paper_id": "isca2024-mind-the-gap",
+      "section": "introduction",
+      "paragraph_index": 4,
+      "sentence_index": 9,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Describes constraints enabling tiled producer-consumer exchange in the proposed fused-mapping approach; identifying constraints also has a contribution function."
+    },
+    {
+      "sample_id": "micro-2006-ucp-sample-1",
+      "paper_id": "micro-2006-ucp",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 2,
+      "first_primary": "problem",
+      "second_primary": "problem",
+      "review_rationale": "Frames increasing core count as rising pressure on the shared memory system."
+    },
+    {
+      "sample_id": "micro-2006-ucp-sample-2",
+      "paper_id": "micro-2006-ucp",
+      "section": "introduction",
+      "paragraph_index": 4,
+      "sentence_index": 4,
+      "first_primary": "insight",
+      "second_primary": "observation",
+      "review_rationale": "Uses a motivating example to quantify the opportunity from utility-based allocation, rather than reporting the final evaluated scheme."
+    },
+    {
+      "sample_id": "micro-2007-cacti6-sample-1",
+      "paper_id": "micro-2007-cacti6",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 2,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Uses an existing commercial cache configuration to establish the scale of contemporary hierarchies; prior_work is also defensible."
+    },
+    {
+      "sample_id": "micro-2007-cacti6-sample-2",
+      "paper_id": "micro-2007-cacti6",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 5,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Describes the new tool searching network parameters to select a cache organization."
+    },
+    {
+      "sample_id": "micro-2009-mcpat-sample-1",
+      "paper_id": "micro-2009-mcpat",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 2,
+      "first_primary": "prior_work",
+      "second_primary": "prior_work",
+      "review_rationale": "Names an existing power tool and describes its research-enabling role."
+    },
+    {
+      "sample_id": "micro-2009-mcpat-sample-2",
+      "paper_id": "micro-2009-mcpat",
+      "section": "introduction",
+      "paragraph_index": 5,
+      "sentence_index": 1,
+      "first_primary": "mechanism",
+      "second_primary": "contribution",
+      "review_rationale": "Enumerates a capability delivered by McPAT without yet explaining its implementation; the comparison also signals a prior-tool limitation."
+    },
+    {
+      "sample_id": "micro-2023-dvr-sample-1",
+      "paper_id": "micro-2023-dvr",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 1,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Establishes contemporary processor window sizes before introducing the remaining memory bottleneck."
+    },
+    {
+      "sample_id": "micro-2023-dvr-sample-2",
+      "paper_id": "micro-2023-dvr",
+      "section": "introduction",
+      "paragraph_index": 4,
+      "sentence_index": 1,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Explains early prefetching and how it prevents cache misses from occupying critical reorder-buffer positions."
+    },
+    {
+      "sample_id": "micro-2024-avatar-sample-1",
+      "paper_id": "micro-2024-avatar",
+      "section": "introduction",
+      "paragraph_index": 1,
+      "sentence_index": 3,
+      "first_primary": "prior_work",
+      "second_primary": "prior_work",
+      "review_rationale": "Introduces a named existing memory-management technique whose operation is explained next."
+    },
+    {
+      "sample_id": "micro-2024-avatar-sample-2",
+      "paper_id": "micro-2024-avatar",
+      "section": "introduction",
+      "paragraph_index": 7,
+      "sentence_index": 4,
+      "first_primary": "mechanism",
+      "second_primary": "mechanism",
+      "review_rationale": "Describes the proposed addition of a validation component to speculative address translation."
+    },
+    {
+      "sample_id": "micro-2024-nocap-sample-1",
+      "paper_id": "micro-2024-nocap",
+      "section": "introduction",
+      "paragraph_index": 2,
+      "sentence_index": 1,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Introduces the breadth of the application domain before giving examples."
+    },
+    {
+      "sample_id": "micro-2024-nocap-sample-2",
+      "paper_id": "micro-2024-nocap",
+      "section": "introduction",
+      "paragraph_index": 12,
+      "sentence_index": 5,
+      "first_primary": "context",
+      "second_primary": "context",
+      "review_rationale": "Illustrates a hypothetical privacy-preserving photo use case; no evaluated outcome or concrete proof operation is given in the target."
+    }
+  ]
+}

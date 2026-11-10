@@ -1,0 +1,482 @@
+{
+  "paper_id": "micro-2006-ucp",
+  "paper_url": "https://users.ece.northwestern.edu/~rjoseph/eecs453/papers/quereshi-micro2006.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "Column reading order repaired. The LRU paragraph is interrupted in extraction by the Abstract and a footnote; the vpr/equake example continues from page 1 to page 2.",
+    "Motivation and Background is Section 2 and excluded. Figure labels and the explanatory demand footnote are excluded.",
+    "Motivating benchmark measurements are observation; the final UCP comparison is result.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: dualcore. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 217,
+        "sentence_count": 8,
+        "mean_sentence_words": 27.125,
+        "number_tokens": 4,
+        "numbers_per_100_words": 1.8433179723502304,
+        "connectors_per_100_words": 0.4608294930875576,
+        "hedges_per_100_words": 0.4608294930875576,
+        "boosters_per_100_words": 0.9216589861751152,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.4608294930875576,
+        "paragraph_count": 2
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 672,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Contrasts demand-based cache allocation with performance benefit.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 120,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 121,
+              "end": 343,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 3,
+              "start": 344,
+              "end": 473,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 4,
+              "start": 474,
+              "end": 672,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 32
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 674,
+          "end": 1436,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Describes UCP monitoring, allocation, storage cost, and evaluation gains.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 674,
+              "end": 952,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 40
+            },
+            {
+              "sentence_index": 2,
+              "start": 953,
+              "end": 1100,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 3,
+              "start": 1101,
+              "end": 1260,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 4,
+              "start": 1261,
+              "end": 1436,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 27
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 749,
+        "sentence_count": 30,
+        "mean_sentence_words": 24.966666666666665,
+        "number_tokens": 31,
+        "numbers_per_100_words": 4.138851802403204,
+        "connectors_per_100_words": 0.40053404539385845,
+        "hedges_per_100_words": 0.40053404539385845,
+        "boosters_per_100_words": 0.26702269692923897,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.9345794392523364,
+        "paragraph_count": 6
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 621,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Frames cache partitioning as a way to reduce multicore memory pressure.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 136,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 137,
+              "end": 320,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 321,
+              "end": 491,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 4,
+              "start": 492,
+              "end": 621,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 623,
+          "end": 1657,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains why LRU demand allocation can waste cache on streaming workloads.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 623,
+              "end": 735,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 736,
+              "end": 977,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 40
+            },
+            {
+              "sentence_index": 3,
+              "start": 978,
+              "end": 1171,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 4,
+              "start": 1172,
+              "end": 1376,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 5,
+              "start": 1377,
+              "end": 1491,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 6,
+              "start": 1492,
+              "end": 1657,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1659,
+          "end": 2485,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Uses separate benchmark runs to expose distinct miss-versus-capacity curves.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1659,
+              "end": 1735,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 1736,
+              "end": 1877,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 3,
+              "start": 1878,
+              "end": 1972,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 4,
+              "start": 1973,
+              "end": 2124,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 5,
+              "start": 2125,
+              "end": 2229,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 6,
+              "start": 2230,
+              "end": 2401,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 32
+            },
+            {
+              "sentence_index": 7,
+              "start": 2402,
+              "end": 2485,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2487,
+          "end": 3222,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Compares LRU allocation with utility-based reallocation for two applications.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2487,
+              "end": 2659,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 34
+            },
+            {
+              "sentence_index": 2,
+              "start": 2660,
+              "end": 2804,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 2805,
+              "end": 2997,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 4,
+              "start": 2998,
+              "end": 3222,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 38
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 3224,
+          "end": 4095,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Introduces utility monitoring, overhead, the allocation algorithm, and evaluated gains.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3224,
+              "end": 3352,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 3353,
+              "end": 3520,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 3521,
+              "end": 3660,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 4,
+              "start": 3661,
+              "end": 3812,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 3813,
+              "end": 3953,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 6,
+              "start": 3954,
+              "end": 4095,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 4097,
+          "end": 4541,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains combinatorial partition-search growth and a scalable algorithm.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4097,
+              "end": 4205,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 4206,
+              "end": 4396,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 3,
+              "start": 4397,
+              "end": 4541,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 21
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "micro-2006-ucp",
+    "pdf_page": 1,
+    "kind": "motivation_plot",
+    "panels": 2,
+    "full_width": false,
+    "notes": "Two labeled panels (a/b) showing motivation measurements; one-column figure. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 40,
+      "sentence_count": 2,
+      "mean_sentence_words": 20.0,
+      "number_tokens": 3,
+      "numbers_per_100_words": 7.5,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 7.5
+    }
+  }
+}

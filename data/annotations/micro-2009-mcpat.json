@@ -1,0 +1,466 @@
+{
+  "paper_id": "micro-2009-mcpat",
+  "paper_url": "https://raw.githubusercontent.com/HewlettPackard/mcpat/master/Documents/micro09.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "The Introduction includes all four numbered-in-prose advances before the roadmap and stops at Section 2.",
+    "The third advance continues across PDF pages 1–2. Abstract category/general-term metadata is excluded.",
+    "Capabilities are mechanism when concretely explained; comparison limitations are limitation. The model-supported clustering tradeoff outcome is result.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: doublegate, energy-delayarea, outof-order. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 275,
+        "sentence_count": 8,
+        "mean_sentence_words": 34.375,
+        "number_tokens": 5,
+        "numbers_per_100_words": 1.8181818181818181,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.36363636363636365,
+        "paragraph_count": 2
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 845,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Introduces integrated models, component coverage, device-level power/timing support, and simulator interface.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 228,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 2,
+              "start": 229,
+              "end": 487,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 3,
+              "start": 488,
+              "end": 754,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 4,
+              "start": 755,
+              "end": 845,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 847,
+          "end": 1903,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "Explains joint design metrics and the evaluated clustering tradeoff.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 847,
+              "end": 1102,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 2,
+              "start": 1103,
+              "end": 1255,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 3,
+              "start": 1256,
+              "end": 1494,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 36
+            },
+            {
+              "sentence_index": 4,
+              "start": 1495,
+              "end": 1903,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 67
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 578,
+        "sentence_count": 28,
+        "mean_sentence_words": 20.642857142857142,
+        "number_tokens": 6,
+        "numbers_per_100_words": 1.0380622837370241,
+        "connectors_per_100_words": 0.3460207612456747,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 3.5714285714285716,
+        "em_dashes_per_100_words": 0.3460207612456747,
+        "passive_proxy_per_100_words": 0.3460207612456747,
+        "paragraph_count": 6
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 778,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Motivates a replacement architecture model with more complete technologies and cost metrics.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 94,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 95,
+              "end": 221,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 222,
+              "end": 326,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 327,
+              "end": 623,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 43
+            },
+            {
+              "sentence_index": 5,
+              "start": 624,
+              "end": 778,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 780,
+          "end": 1614,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Describes joint power-area-timing metrics and high-level-to-circuit configuration.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 780,
+              "end": 907,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 908,
+              "end": 1218,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 48
+            },
+            {
+              "sentence_index": 3,
+              "start": 1219,
+              "end": 1495,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 39
+            },
+            {
+              "sentence_index": 4,
+              "start": 1496,
+              "end": 1614,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 20
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1616,
+          "end": 1941,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Explains why static and short-circuit power are modeled.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1616,
+              "end": 1779,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 1780,
+              "end": 1941,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 1943,
+          "end": 2978,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Contrasts comprehensive multicore and realistic core models with Wattch limitations.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1943,
+              "end": 2054,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 2055,
+              "end": 2184,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 3,
+              "start": 2185,
+              "end": 2323,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 2324,
+              "end": 2448,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 5,
+              "start": 2449,
+              "end": 2636,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 6,
+              "start": 2637,
+              "end": 2734,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 7,
+              "start": 2735,
+              "end": 2818,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 8,
+              "start": 2819,
+              "end": 2978,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2980,
+          "end": 3425,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Replaces linear scaling assumptions with ITRS-based technology projections.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2980,
+              "end": 3094,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 3095,
+              "end": 3230,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 3,
+              "start": 3231,
+              "end": 3425,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 3427,
+          "end": 3934,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "roadmap",
+          "summary": "Maps related work, framework, validation, case study, and conclusion.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3427,
+              "end": 3479,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 9
+            },
+            {
+              "sentence_index": 2,
+              "start": 3480,
+              "end": 3580,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 3,
+              "start": 3581,
+              "end": 3663,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 4,
+              "start": 3664,
+              "end": 3704,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 6
+            },
+            {
+              "sentence_index": 5,
+              "start": 3705,
+              "end": 3908,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 6,
+              "start": 3909,
+              "end": 3934,
+              "primary": "roadmap",
+              "secondary": [],
+              "word_count": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "micro-2009-mcpat",
+    "pdf_page": 3,
+    "kind": "system_overview",
+    "panels": 1,
+    "full_width": true,
+    "notes": "Single framework block diagram spans both columns. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 8,
+      "sentence_count": 1,
+      "mean_sentence_words": 8.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 12.5,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

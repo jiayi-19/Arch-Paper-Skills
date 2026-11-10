@@ -1,0 +1,50 @@
+{
+  "version": "architecture-corpus-split.v2",
+  "development_ids": [
+    "isca2024-constable",
+    "isca2024-mind-the-gap",
+    "isca2007-dip",
+    "isca2000-wattch",
+    "isca2016-eyeriss",
+    "isca2014-rowhammer",
+    "asplos-2014-diannao",
+    "asplos-2002-simpoint",
+    "asplos-2013-paragon",
+    "asplos-2015-ghostrider",
+    "asplos-2024-centauri",
+    "asplos-2023-tensorir",
+    "hpca-2001-perceptron",
+    "hpca-2003-runahead",
+    "hpca-2019-stretch",
+    "hpca-2024-pim-pathfinding",
+    "hpca-2024-talco",
+    "hpca-2025-dynamollm",
+    "micro-2006-ucp",
+    "micro-2007-cacti6",
+    "micro-2009-mcpat",
+    "micro-2023-dvr",
+    "micro-2024-nocap",
+    "micro-2024-avatar"
+  ],
+  "heldout_protocol": "Four new papers, one per venue, selected for evaluation after development-set selection. Their text and briefs are excluded from writing-rule and percentile development. Existing model pretraining exposure cannot be excluded.",
+  "development_scope": "24 papers from the previously published exemplar corpus; all complete abstract/introduction passages targeted.",
+  "freeze_stage": "Development IDs and annotation codebook fixed before annotation and held-out brief construction.",
+  "heldout_paper_ids": [
+    "qin2020sigma",
+    "nalli2017whisper",
+    "jouppi2017tpu",
+    "kwon2019maestro"
+  ],
+  "heldout_case_ids": [
+    "heldout-hpca-01",
+    "heldout-asplos-01",
+    "heldout-isca-01",
+    "heldout-micro-01"
+  ],
+  "evaluation_only_paths": [
+    "evals/heldout-cases.json",
+    "evals/heldout-key.json",
+    "evals/writer-briefs.json"
+  ],
+  "retrieval_and_statistics": "Only development_ids are indexed by normal retrieval and empirical profiles."
+}

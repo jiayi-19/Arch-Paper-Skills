@@ -1,0 +1,600 @@
+{
+  "paper_id": "isca2014-rowhammer",
+  "paper_url": "https://www.istc-cc.cmu.edu/publications/papers/2014/kim-isca14.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Original CMU-hosted paper, not its later retrospective.",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Introduction is complete through all four contribution bullets, ending before Section 2 DRAM Background on physical PDF page 2. Removed superscript footnote marker after field.",
+    "The reliability mechanism in the motivation is context or observation, while measured vulnerability is result. Characterization findings in explicit contribution bullets retain their substantive function plus contribution where applicable.",
+    "Probability typography in PARA was checked from the original page; the small-probability inequality is preserved rather than inferred from the broken text extraction."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 248,
+        "sentence_count": 12,
+        "mean_sentence_words": 20.666666666666668,
+        "number_tokens": 4,
+        "numbers_per_100_words": 1.6129032258064515,
+        "connectors_per_100_words": 0.4032258064516129,
+        "hedges_per_100_words": 0.4032258064516129,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.4032258064516129,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1513,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "The abstract links isolation failure, empirical characterization, a physical cause, and mitigation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 185,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 2,
+              "start": 186,
+              "end": 351,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 3,
+              "start": 352,
+              "end": 441,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 4,
+              "start": 442,
+              "end": 548,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 5,
+              "start": 549,
+              "end": 629,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 6,
+              "start": 630,
+              "end": 746,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 7,
+              "start": 747,
+              "end": 838,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 8,
+              "start": 839,
+              "end": 913,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 9,
+              "start": 914,
+              "end": 1105,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 10,
+              "start": 1106,
+              "end": 1231,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 11,
+              "start": 1232,
+              "end": 1389,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 34
+            },
+            {
+              "sentence_index": 12,
+              "start": 1390,
+              "end": 1513,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 835,
+        "sentence_count": 38,
+        "mean_sentence_words": 21.973684210526315,
+        "number_tokens": 14,
+        "numbers_per_100_words": 1.6766467065868262,
+        "connectors_per_100_words": 0.3592814371257485,
+        "hedges_per_100_words": 0.5988023952095808,
+        "boosters_per_100_words": 0.11976047904191617,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.11976047904191617,
+        "passive_proxy_per_100_words": 0.9580838323353293,
+        "paragraph_count": 9
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 846,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "DRAM density increases expose multiple reliability failure mechanisms.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 109,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 110,
+              "end": 222,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 223,
+              "end": 331,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 4,
+              "start": 332,
+              "end": 482,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 5,
+              "start": 483,
+              "end": 656,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 6,
+              "start": 657,
+              "end": 846,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 848,
+          "end": 1676,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Established mitigation and screening have failed to contain disturbance errors.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 848,
+              "end": 998,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 2,
+              "start": 999,
+              "end": 1099,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 1100,
+              "end": 1245,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 4,
+              "start": 1246,
+              "end": 1514,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 5,
+              "start": 1515,
+              "end": 1676,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1678,
+          "end": 2595,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Commodity-chip experiments and a user program establish widespread vulnerability.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1678,
+              "end": 1809,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 2,
+              "start": 1810,
+              "end": 1934,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 1935,
+              "end": 2191,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 4,
+              "start": 2192,
+              "end": 2315,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 5,
+              "start": 2316,
+              "end": 2488,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 6,
+              "start": 2489,
+              "end": 2595,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2597,
+          "end": 3374,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "insight",
+          "summary": "Repeated wordline toggling explains charge loss in neighboring cells.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2597,
+              "end": 2715,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 2,
+              "start": 2716,
+              "end": 2810,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 2811,
+              "end": 2945,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 4,
+              "start": 2946,
+              "end": 3051,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 5,
+              "start": 3052,
+              "end": 3238,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 6,
+              "start": 3239,
+              "end": 3374,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 24
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 3376,
+          "end": 4000,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Characterization guides a probabilistic refresh mitigation with low overhead.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3376,
+              "end": 3508,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 3509,
+              "end": 3656,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 3,
+              "start": 3657,
+              "end": 3832,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 4,
+              "start": 3833,
+              "end": 3954,
+              "primary": "scope",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 5,
+              "start": 3955,
+              "end": 4000,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 6
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 4002,
+          "end": 4143,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The paper claims the first broad disclosure of this commodity-memory failure.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4002,
+              "end": 4143,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 4145,
+          "end": 4413,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A user program demonstrates potential violation of memory protection.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4145,
+              "end": 4239,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 4240,
+              "end": 4413,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 30
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 4415,
+          "end": 4993,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "FPGA characterization identifies causes and quantifies vulnerability.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4415,
+              "end": 4541,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 4542,
+              "end": 4636,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 4637,
+              "end": 4775,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 4,
+              "start": 4776,
+              "end": 4993,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 42
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 4995,
+          "end": 5393,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Probabilistic adjacent-row activation offsets accumulating disturbance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4995,
+              "end": 5152,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 5153,
+              "end": 5254,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 5255,
+              "end": 5393,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "isca2014-rowhammer",
+    "pdf_page": 2,
+    "kind": "concept",
+    "panels": 2,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. Explicit panels a (rows of cells) and b (a single cell) explain baseline DRAM organization.",
+    "metrics": {
+      "word_count": 6,
+      "sentence_count": 2,
+      "mean_sentence_words": 3.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 16.666666666666668,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

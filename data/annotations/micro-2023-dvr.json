@@ -1,0 +1,334 @@
+{
+  "paper_id": "micro-2023-dvr",
+  "paper_url": "https://www.cl.cam.ac.uk/~tmj32/papers/docs/naithani23-micro.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Excerpt checked against the named PDF; whitespace and typographic ligatures normalized. Selected passages read, not a full-paper annotation.",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "The entire Introduction has four source paragraphs and extends onto PDF page 2; Figure 1 and page headers are excluded from the continuation.",
+    "The detached INTRODUCTION heading in the flow extraction is omitted. The capability list in the Introduction is prose, not separate contribution bullets.",
+    "The qualitative effects in the final paragraph mix rationale and final claims; insight and result are assigned by the main clause.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: controlflow. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 196,
+        "sentence_count": 6,
+        "mean_sentence_words": 32.666666666666664,
+        "number_tokens": 4,
+        "numbers_per_100_words": 2.0408163265306123,
+        "connectors_per_100_words": 0.5102040816326531,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 1.0204081632653061,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1363,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Summarizes proactive decoupled vector prefetching, hardware support, cost, and evaluated performance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 267,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 34
+            },
+            {
+              "sentence_index": 2,
+              "start": 268,
+              "end": 419,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 3,
+              "start": 420,
+              "end": 651,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 39
+            },
+            {
+              "sentence_index": 4,
+              "start": 652,
+              "end": 875,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 5,
+              "start": 876,
+              "end": 1056,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 6,
+              "start": 1057,
+              "end": 1363,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 42
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 554,
+        "sentence_count": 18,
+        "mean_sentence_words": 30.77777777777778,
+        "number_tokens": 5,
+        "numbers_per_100_words": 0.9025270758122743,
+        "connectors_per_100_words": 0.7220216606498195,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.18050541516245489,
+        "trailing_participial_sentences_pct": 5.555555555555555,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 1.0830324909747293,
+        "paragraph_count": 4
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 1012,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Introduces memory stalls despite large windows and the existing vector-runahead approach.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 127,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 128,
+              "end": 433,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 42
+            },
+            {
+              "sentence_index": 3,
+              "start": 434,
+              "end": 526,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 4,
+              "start": 527,
+              "end": 1012,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 63
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 1014,
+          "end": 1534,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains why full-window triggering limits the benefits of Vector Runahead.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1014,
+              "end": 1190,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 2,
+              "start": 1191,
+              "end": 1317,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 3,
+              "start": 1318,
+              "end": 1534,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 31
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1536,
+          "end": 2725,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Details independent runahead, divergence support, loop discovery, and nested vectorization.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1536,
+              "end": 1646,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 1647,
+              "end": 1963,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 51
+            },
+            {
+              "sentence_index": 3,
+              "start": 1964,
+              "end": 2169,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 4,
+              "start": 2170,
+              "end": 2344,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 2345,
+              "end": 2725,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 54
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2727,
+          "end": 3846,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Explains proactive prefetching and reports performance against OoO and Vector Runahead.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2727,
+              "end": 2968,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 2,
+              "start": 2969,
+              "end": 3051,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 3,
+              "start": 3052,
+              "end": 3166,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 3167,
+              "end": 3284,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 5,
+              "start": 3285,
+              "end": 3554,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 46
+            },
+            {
+              "sentence_index": 6,
+              "start": 3555,
+              "end": 3846,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 44
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "micro-2023-dvr",
+    "pdf_page": 2,
+    "kind": "other",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Motivating indirect-access code listing, one column. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 7,
+      "sentence_count": 1,
+      "mean_sentence_words": 7.0,
+      "number_tokens": 1,
+      "numbers_per_100_words": 14.285714285714286,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

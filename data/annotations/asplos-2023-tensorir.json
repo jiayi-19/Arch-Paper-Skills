@@ -1,0 +1,570 @@
+{
+  "paper_id": "asplos-2023-tensorir",
+  "paper_url": "https://arxiv.org/pdf/2207.04296",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Author arXiv v2, 27 October 2022; venue verified against official ASPLOS 2023 program and SIGPLAN OpenTOC.",
+  "cleaning_notes": [
+    "Annotated by a model agent after inspecting full Abstract and Introduction source text, paragraph boundaries, and each functional primary label; labels are not human ground truth.",
+    "PDF page locators are one-based file pages, not printed proceedings page numbers.",
+    "Whitespace, typographic ligatures, and line-wrap hyphens normalized; author blocks, captions, footnotes, running matter, and section headings excluded.",
+    "The recorded source is arXiv:2207.04296v2 (27 October 2022), the manifest version, rather than an inferred final publication layout.",
+    "Introduction includes its two named challenge paragraphs and all three contribution bullets; Figure 1 and author-note footnotes are excluded.",
+    "Contribution bullets are separate source paragraphs. Introductory challenge lead-in and preceding proposal share one paragraph in the source.",
+    "Visually checked rendered PDF pages for paragraph indentation, source continuations, and section end; also inspected the first figure. Numeric superscript footnote markers are excluded where present.",
+    "Restored lexical compound hyphens lost at extracted line wraps: microkernel. No grammar or technical claims corrected.",
+    "Function ambiguity remains for introductory capability and novelty claims: operational descriptions use mechanism, explicit delivered-object claims use contribution, motivation measurements use observation, and final evaluated benefits use result. These are inspected model judgments, not a universal conference template."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 130,
+        "sentence_count": 7,
+        "mean_sentence_words": 18.571428571428573,
+        "number_tokens": 0,
+        "numbers_per_100_words": 0.0,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.0,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.0,
+        "paragraph_count": 1
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 998,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "mixed",
+          "summary": "Introduces deployment and specialization challenges, TensorIR abstraction, framework, and evaluated performance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 80,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 12
+            },
+            {
+              "sentence_index": 2,
+              "start": 81,
+              "end": 207,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 3,
+              "start": 208,
+              "end": 332,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 4,
+              "start": 333,
+              "end": 457,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 5,
+              "start": 458,
+              "end": 607,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 6,
+              "start": 608,
+              "end": 763,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 7,
+              "start": 764,
+              "end": 998,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 735,
+        "sentence_count": 36,
+        "mean_sentence_words": 20.416666666666668,
+        "number_tokens": 3,
+        "numbers_per_100_words": 0.40816326530612246,
+        "connectors_per_100_words": 0.1360544217687075,
+        "hedges_per_100_words": 0.1360544217687075,
+        "boosters_per_100_words": 0.6802721088435374,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.0,
+        "passive_proxy_per_100_words": 0.40816326530612246,
+        "paragraph_count": 11
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 445,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Establishes diverse models and deployment targets as a compiler challenge.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 209,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 210,
+              "end": 292,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 3,
+              "start": 293,
+              "end": 445,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 23
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 447,
+          "end": 1576,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Defines specialized tensor primitives and the tensorized optimization problem.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 447,
+              "end": 526,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 11
+            },
+            {
+              "sentence_index": 2,
+              "start": 527,
+              "end": 719,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 3,
+              "start": 720,
+              "end": 932,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 4,
+              "start": 933,
+              "end": 1167,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 5,
+              "start": 1168,
+              "end": 1320,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 6,
+              "start": 1321,
+              "end": 1576,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 36
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1578,
+          "end": 2271,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Explains manual kernel libraries and the engineering burden of supporting model and hardware growth.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1578,
+              "end": 1873,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 39
+            },
+            {
+              "sentence_index": 2,
+              "start": 1874,
+              "end": 1986,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 3,
+              "start": 1987,
+              "end": 2271,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 43
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2273,
+          "end": 2777,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Proposes automatic compilation and identifies missing automatic tensorization support.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2273,
+              "end": 2393,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 17
+            },
+            {
+              "sentence_index": 2,
+              "start": 2394,
+              "end": 2559,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 3,
+              "start": 2560,
+              "end": 2712,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 4,
+              "start": 2713,
+              "end": 2777,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 10
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 2779,
+          "end": 3264,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Abstraction for Tensorized Programs",
+          "role": "gap",
+          "summary": "States representation requirements for tensor operations, memory, and hardware hierarchies.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2779,
+              "end": 2971,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 26
+            },
+            {
+              "sentence_index": 2,
+              "start": 2972,
+              "end": 3145,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 19
+            },
+            {
+              "sentence_index": 3,
+              "start": 3146,
+              "end": 3264,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 19
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 3266,
+          "end": 3865,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "Large Design Space of Possible Tensorized Program Optimizations",
+          "role": "gap",
+          "summary": "Explains the large, coupled optimization search space and need for effective search.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3266,
+              "end": 3365,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 3366,
+              "end": 3544,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 29
+            },
+            {
+              "sentence_index": 3,
+              "start": 3545,
+              "end": 3705,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 4,
+              "start": 3706,
+              "end": 3774,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 10
+            },
+            {
+              "sentence_index": 5,
+              "start": 3775,
+              "end": 3865,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 3867,
+          "end": 4757,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Describes blocks, transformations, automatic scheduling, and irregular-computation support.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 3867,
+              "end": 3976,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 3977,
+              "end": 4127,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 3,
+              "start": 4128,
+              "end": 4273,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 20
+            },
+            {
+              "sentence_index": 4,
+              "start": 4274,
+              "end": 4377,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 5,
+              "start": 4378,
+              "end": 4482,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 6,
+              "start": 4483,
+              "end": 4711,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 30
+            },
+            {
+              "sentence_index": 7,
+              "start": 4712,
+              "end": 4757,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 6
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 4759,
+          "end": 4991,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims separation of tensorized computation and loop transformations with hardware constraints.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4759,
+              "end": 4882,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 2,
+              "start": 4883,
+              "end": 4991,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 14
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 4993,
+          "end": 5123,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims optimization primitives with correctness validation.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4993,
+              "end": 5123,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 5125,
+          "end": 5195,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "Claims an automatic scheduler aware of tensorization.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5125,
+              "end": 5195,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 9
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 5197,
+          "end": 5447,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Reports compiler integration and comparative performance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5197,
+              "end": 5447,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 32
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "asplos-2023-tensorir",
+    "pdf_page": 1,
+    "kind": "concept",
+    "panels": 3,
+    "full_width": false,
+    "notes": "Three side-by-side conceptual examples of scalar, vector, and tensor computation; one column. Visually inspected rendered source PDF page.",
+    "metrics": {
+      "word_count": 52,
+      "sentence_count": 3,
+      "mean_sentence_words": 17.333333333333332,
+      "number_tokens": 1,
+      "numbers_per_100_words": 1.9230769230769231,
+      "connectors_per_100_words": 1.9230769230769231,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}

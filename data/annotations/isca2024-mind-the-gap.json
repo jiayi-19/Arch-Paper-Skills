@@ -1,0 +1,650 @@
+{
+  "paper_id": "isca2024-mind-the-gap",
+  "paper_url": "https://raw.githubusercontent.com/hqjenny/hqjenny.github.io/master/papers/2024ISCA/2024ISCA_Orojensis.pdf",
+  "annotation_method": "Model-agent source reading with deterministic structural checks; not human ground truth",
+  "source_version": "Author-hosted ISCA manuscript. A residual internal slide footer appears inside the Figure 1 image; use the public paper as a writing source, not as a clean artwork template.",
+  "cleaning_notes": [
+    "Annotation method: model agent read complete Abstract and Introduction and assigned each sentence primary and optional secondary functions manually under architecture-moves.v1; these labels are not human ground truth.",
+    "Page locators count physical PDF pages from one, including any cover page. Source words retained after whitespace, ligature, and line-wrap normalization; author blocks, major and run-in headings, footnotes, running headers, and captions are excluded.",
+    "Paragraphs follow PDF line geometry, indentation, visible spacing, and list boundaries. Column and page continuations are merged. Contribution bullets are separate paragraphs; an introductory clause ending with a colon remains a source unit.",
+    "Primary labels follow the main argumentative function rather than a lexical trigger. Explicit operational detail is mechanism; quantitative motivating properties are observation; evaluated end benefits are result. Contribution bullets can therefore have other primary labels and contribution secondary labels.",
+    "Introduction is complete through the final positioning paragraph, ending before Section II Motivation on physical PDF page 2. Its three indented architectural questions are separate list paragraphs.",
+    "Orojenesis paragraph combines operational description and contribution claims because the PDF presents one indented paragraph; no semantic splitting was imposed. Questions are problem statements under a contribution-level paragraph role.",
+    "Removed Orojenesis and Snowcat superscript footnote callouts. Retained source spelling Bellady and ligature-normalized naive typography without correcting the paper."
+  ],
+  "sections": [
+    {
+      "name": "abstract",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 299,
+        "sentence_count": 11,
+        "mean_sentence_words": 27.181818181818183,
+        "number_tokens": 4,
+        "numbers_per_100_words": 1.3377926421404682,
+        "connectors_per_100_words": 0.0,
+        "hedges_per_100_words": 0.33444816053511706,
+        "boosters_per_100_words": 0.0,
+        "trailing_participial_sentences_pct": 0.0,
+        "em_dashes_per_100_words": 0.6688963210702341,
+        "passive_proxy_per_100_words": 0.33444816053511706,
+        "paragraph_count": 3
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 469,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Useful exploration bounds must account for data movement rather than crude compulsory traffic.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 167,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 2,
+              "start": 168,
+              "end": 302,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 3,
+              "start": 303,
+              "end": 469,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 471,
+          "end": 1396,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "approach",
+          "summary": "Orojenesis derives capacity-dependent attainable traffic and exposes it as a design aid.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 471,
+              "end": 587,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 2,
+              "start": 588,
+              "end": 753,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 25
+            },
+            {
+              "sentence_index": 3,
+              "start": 754,
+              "end": 977,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 4,
+              "start": 978,
+              "end": 1136,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 5,
+              "start": 1137,
+              "end": 1285,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 6,
+              "start": 1286,
+              "end": 1396,
+              "primary": "insight",
+              "secondary": [],
+              "word_count": 15
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1398,
+          "end": 1986,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "evidence",
+          "summary": "Tensor workloads and model sequences reveal provisioning and fusion implications.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1398,
+              "end": 1591,
+              "primary": "methodology",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 2,
+              "start": 1592,
+              "end": 1986,
+              "primary": "result",
+              "secondary": [],
+              "word_count": 64
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "introduction",
+      "complete": true,
+      "offset_convention": "Zero-based Unicode codepoints in normalized section: sentences joined by one space, paragraphs by two newlines; end exclusive",
+      "metrics": {
+        "word_count": 879,
+        "sentence_count": 37,
+        "mean_sentence_words": 23.756756756756758,
+        "number_tokens": 12,
+        "numbers_per_100_words": 1.3651877133105803,
+        "connectors_per_100_words": 0.3412969283276451,
+        "hedges_per_100_words": 0.3412969283276451,
+        "boosters_per_100_words": 0.5688282138794084,
+        "trailing_participial_sentences_pct": 5.405405405405405,
+        "em_dashes_per_100_words": 0.5688282138794084,
+        "passive_proxy_per_100_words": 0.7963594994311718,
+        "paragraph_count": 12
+      },
+      "paragraphs": [
+        {
+          "paragraph_index": 1,
+          "start": 0,
+          "end": 896,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "setting",
+          "summary": "Technology trends make movement reduction necessary throughout the hierarchy.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 0,
+              "end": 111,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 15
+            },
+            {
+              "sentence_index": 2,
+              "start": 112,
+              "end": 204,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 13
+            },
+            {
+              "sentence_index": 3,
+              "start": 205,
+              "end": 439,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 4,
+              "start": 440,
+              "end": 588,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 24
+            },
+            {
+              "sentence_index": 5,
+              "start": 589,
+              "end": 729,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 18
+            },
+            {
+              "sentence_index": 6,
+              "start": 730,
+              "end": 764,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 4
+            },
+            {
+              "sentence_index": 7,
+              "start": 765,
+              "end": 896,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 19
+            }
+          ]
+        },
+        {
+          "paragraph_index": 2,
+          "start": 898,
+          "end": 1465,
+          "pdf_page_start": 1,
+          "pdf_page_end": 1,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Accelerator design and algorithm mapping jointly create a difficult search problem.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 898,
+              "end": 1170,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 38
+            },
+            {
+              "sentence_index": 2,
+              "start": 1171,
+              "end": 1465,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 3,
+          "start": 1467,
+          "end": 2789,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "gap",
+          "summary": "Common early-stage bounds fail to characterize capacity and mapping effects.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 1467,
+              "end": 1553,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 2,
+              "start": 1554,
+              "end": 1788,
+              "primary": "context",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 3,
+              "start": 1789,
+              "end": 1918,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 4,
+              "start": 1919,
+              "end": 2047,
+              "primary": "prior_work",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 5,
+              "start": 2048,
+              "end": 2250,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 33
+            },
+            {
+              "sentence_index": 6,
+              "start": 2251,
+              "end": 2491,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 37
+            },
+            {
+              "sentence_index": 7,
+              "start": 2492,
+              "end": 2582,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 16
+            },
+            {
+              "sentence_index": 8,
+              "start": 2583,
+              "end": 2789,
+              "primary": "limitation",
+              "secondary": [],
+              "word_count": 29
+            }
+          ]
+        },
+        {
+          "paragraph_index": 4,
+          "start": 2791,
+          "end": 4566,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "approach",
+          "summary": "A proxy architecture supports mapping-independent curves and fused-computation bounds.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 2791,
+              "end": 2918,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 2919,
+              "end": 3045,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 23
+            },
+            {
+              "sentence_index": 3,
+              "start": 3046,
+              "end": 3244,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 28
+            },
+            {
+              "sentence_index": 4,
+              "start": 3245,
+              "end": 3403,
+              "primary": "observation",
+              "secondary": [],
+              "word_count": 22
+            },
+            {
+              "sentence_index": 5,
+              "start": 3404,
+              "end": 3642,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 35
+            },
+            {
+              "sentence_index": 6,
+              "start": 3643,
+              "end": 3867,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 31
+            },
+            {
+              "sentence_index": 7,
+              "start": 3868,
+              "end": 3924,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 8
+            },
+            {
+              "sentence_index": 8,
+              "start": 3925,
+              "end": 4197,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 40
+            },
+            {
+              "sentence_index": 9,
+              "start": 4198,
+              "end": 4393,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 27
+            },
+            {
+              "sentence_index": 10,
+              "start": 4394,
+              "end": 4490,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 14
+            },
+            {
+              "sentence_index": 11,
+              "start": 4491,
+              "end": 4566,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 12
+            }
+          ]
+        },
+        {
+          "paragraph_index": 5,
+          "start": 4568,
+          "end": 4709,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The first advertised use is to answer architectural sizing questions.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4568,
+              "end": 4709,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 25
+            }
+          ]
+        },
+        {
+          "paragraph_index": 6,
+          "start": 4711,
+          "end": 4865,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A capacity-to-traffic query describes one bound supported by the approach.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4711,
+              "end": 4865,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 22
+            }
+          ]
+        },
+        {
+          "paragraph_index": 7,
+          "start": 4867,
+          "end": 4985,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A storage requirement query describes the endpoint of full reuse.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4867,
+              "end": 4985,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 17
+            }
+          ]
+        },
+        {
+          "paragraph_index": 8,
+          "start": 4987,
+          "end": 5092,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A marginal-capacity query describes the slope of the bound.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 4987,
+              "end": 5092,
+              "primary": "problem",
+              "secondary": [],
+              "word_count": 18
+            }
+          ]
+        },
+        {
+          "paragraph_index": 9,
+          "start": 5094,
+          "end": 5338,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "The analysis identifies when fusion constraints reduce its value.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5094,
+              "end": 5338,
+              "primary": "result",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 34
+            }
+          ]
+        },
+        {
+          "paragraph_index": 10,
+          "start": 5340,
+          "end": 5524,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "An LLM case study reports a capacity-dependent fusion benefit.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5340,
+              "end": 5524,
+              "primary": "result",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 35
+            }
+          ]
+        },
+        {
+          "paragraph_index": 11,
+          "start": 5526,
+          "end": 5797,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "contributions",
+          "summary": "A throughput model turns bounds into area allocation guidance.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5526,
+              "end": 5680,
+              "primary": "mechanism",
+              "secondary": [
+                "contribution"
+              ],
+              "word_count": 21
+            },
+            {
+              "sentence_index": 2,
+              "start": 5681,
+              "end": 5797,
+              "primary": "mechanism",
+              "secondary": [],
+              "word_count": 16
+            }
+          ]
+        },
+        {
+          "paragraph_index": 12,
+          "start": 5799,
+          "end": 6172,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "subsection": "",
+          "role": "scope",
+          "summary": "The authors position the approach against alternative early exploration methods.",
+          "sentences": [
+            {
+              "sentence_index": 1,
+              "start": 5799,
+              "end": 6172,
+              "primary": "contribution",
+              "secondary": [],
+              "word_count": 43
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "figure1": {
+    "paper_id": "isca2024-mind-the-gap",
+    "pdf_page": 1,
+    "kind": "concept",
+    "panels": 1,
+    "full_width": false,
+    "notes": "Original rendered PDF figure visually inspected. A single analytical bound plot illustrates the two conceptual gaps; concept versus motivation_plot is a judgment boundary.",
+    "metrics": {
+      "word_count": 56,
+      "sentence_count": 2,
+      "mean_sentence_words": 28.0,
+      "number_tokens": 3,
+      "numbers_per_100_words": 5.357142857142857,
+      "connectors_per_100_words": 0.0,
+      "hedges_per_100_words": 0.0,
+      "boosters_per_100_words": 0.0,
+      "trailing_participial_sentences_pct": 0.0,
+      "em_dashes_per_100_words": 0.0,
+      "passive_proxy_per_100_words": 0.0
+    }
+  }
+}
