@@ -1,5 +1,7 @@
 # Computer Architecture writing corpus
 
+This index covers the abstract and introduction corpus. A second corpus of 24 full-paper notes (overview, design, evaluation, benchmark writing) is in [full-paper-corpus](full-paper-corpus.md).
+
 Initial curated edition: 24 papers, six each from HPCA, ASPLOS, ISCA, and MICRO. Original publication years range from 2000 to 2025. Selection is purposeful rather than statistical; notable means a teaching selection, not a quantified fame ranking. Recognition was checked against official conference or society sources on 2026-11-10.
 
 Each record contains one short exact excerpt, its one-based PDF page and section, the inspected reading scope, source/version notes, an original writing analysis, and a transfer caveat. The original exemplar cards record their selected reading passages. Version 2 adds a complete Abstract/Introduction annotation pass for all 24 development papers, plus first-figure metadata; it does not claim full-paper annotation of every section. See [the measured profile](corpus-profile.md) and [annotation protocol](../data/annotation-protocol.md).

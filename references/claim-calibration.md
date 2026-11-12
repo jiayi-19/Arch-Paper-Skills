@@ -22,3 +22,6 @@ qualification with the headline when it changes what readers would conclude.
 Supported confidence and precise scope work together. Do not remove a critical
 condition to sound stronger. Literature originality, expansion beyond initial knobs,
 evaluator support and performance benefit require separate evidence.
+
+An author may ask for claims without hedging words. See [author preferences](author-preferences.md) for how to
+keep the scope exact without adding hedges.

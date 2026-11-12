@@ -13,3 +13,8 @@ Short attributed paper excerpts remain the property of their respective rights h
 ## Version 2 additions
 
 Version 2 extends the adaptation with a complete intake-to-delivery workflow, original architecture-specific form/plot/template assets, per-sentence and per-paragraph model annotations for complete development abstracts and introductions, transparent corpus measurements, first-figure metadata, independent annotation sampling, and a procedurally held-out writing comparison. Full paper passages/captions are not redistributed. Public labels, counts, offsets and curator paraphrases are original analytical data. The four new evaluation papers are excluded from normal retrieval and development statistics.
+
+## Version 3 additions
+
+Version 3 adds 24 full-paper reading notes (20 prize-level papers and four benchmark papers), guidance on the argument frame, contribution lists, overviews, design and evaluation structure, sentence patterns, benchmark writing, a review checklist and a notes search tool. The notes are original paraphrases, counts and patterns with blanks, with short attributed quotations of at most 25 words. No source passages, captions or PDFs are redistributed. Award metadata comes from the official listings recorded in `data/full-paper-index.json`. The MLPerf, ArchGym and RobotPerf papers were read as models of benchmark writing and no award is claimed for them. Their quotations remain the property of their rights holders.
+

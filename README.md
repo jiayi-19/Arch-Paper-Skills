@@ -29,6 +29,25 @@ about all award papers. The independent sample has 40/48 exact role agreement (8
 Cohen's kappa 0.806). Full source passages and captions are not redistributed: public
 records contain labels, offsets, lengths, source locators and original paraphrases.
 
+## Version 3: full-paper notes and an argument frame
+
+- **24 full-paper reading notes** (`references/full-paper-notes/`): 20 prize-level papers (ISCA, MICRO, HPCA,
+  ASPLOS Best Paper, Runner-up or Candidate, 2020 to 2026) and four benchmark papers read as models for benchmark
+  writing (MLPerf Inference, MLPerf Training, ArchGym, RobotPerf). Each note covers skeleton, abstract,
+  introduction chain, motivation, overview, design sections, evaluation, sentence habits and figures.
+  [Index](references/full-paper-corpus.md), [metadata](data/full-paper-index.json),
+  search with `scripts/find_notes.py`.
+- **New guidance that the first corpus could not give:** an [argument frame](references/argument-frame.md)
+  (one numbered list reused from the Introduction to the evaluation, found in about twelve of 20 papers),
+  [contribution craft](references/contributions.md), [whole-paper structure](references/full-paper-structure.md)
+  (overview, design, evaluation), [sentence patterns](references/sentence-patterns.md),
+  [benchmark papers](references/benchmark-papers.md), figure practices in
+  [figures](references/figures.md), a [review checklist](references/review-checklist.md) and how to honor an
+  [author's own rules](references/author-preferences.md).
+- **Not evaluated.** These additions are model-written readings of a second, mostly recent sample. They were not
+  run through the held-out protocol below, and the counts are approximate (PDF text extraction of two-column
+  layouts). Award status comes from the official listings named in the index.
+
 ## What the measured corpus says
 
 For these 24 selected papers, Abstract word count has median **226** and p10–p90
@@ -93,6 +112,8 @@ python3 scripts/intake_to_brief.py intake.json --out brief.md --ledger claims.js
 python3 scripts/find_exemplars.py --function limitation --section introduction
 python3 scripts/find_exemplars.py --paragraph gap --section introduction --limit 3
 python3 scripts/find_exemplars.py --id isca2016-eyeriss
+python3 scripts/find_notes.py --heading overview --type system
+python3 scripts/find_notes.py --query takeaway --heading evaluation
 python3 scripts/style_metrics.py abstract.tex --section abstract
 python3 scripts/check_draft.py abstract.tex --section abstract --brief brief.md
 python3 scripts/check_manuscript.py paper/main.tex
@@ -150,7 +171,9 @@ Read [all results, limitations and reproduction commands](evals/results-summary.
 
 - `SKILL.md`: scope-adaptive entrypoint.
 - `references/`: workflow, contribution routes, section guidance, empirical profile,
-  evaluation/figure rules and the source-located exemplar index.
+  evaluation/figure rules, the source-located exemplar index, the argument frame and the
+  full-paper structure and benchmark guidance.
+- `references/full-paper-notes/`, `data/full-paper-index.json`: 24 full-paper reading notes and metadata.
 - `data/annotations/`: text-free per-paper sentence/paragraph and first-figure records.
 - `data/corpus-stats.json`: development-only distributions, samples and move sequences.
 - `data/annotation-review.json`: independent sample and disagreements.

@@ -26,3 +26,14 @@ no universal ban on scope qualifiers, hypotheses or punctuation; corpus outliers
 advisory; user rendering/publication preferences are respected. A complete workflow
 does not imply measured writing superiority. The small held-out comparison did not
 show an advantage for the skill; see the retained results and protocol.
+
+## Version 3 additions (not part of the reference workflow)
+
+| Addition | Where | Scope |
+|---|---|---|
+| Argument frame and contribution craft | `references/argument-frame.md`, `references/contributions.md` | Observed in about twelve of 20 prize papers. Descriptive, not a law. |
+| Whole-paper structure, sentence patterns, figure practices | `references/full-paper-structure.md`, `references/sentence-patterns.md`, `references/figures.md` | Second sample of 24 papers, recent systems, accelerator and framework work. |
+| Benchmark paper guidance | `references/benchmark-papers.md` | Four benchmark papers plus the benchmark parts of three others. |
+| Full-paper notes and search | `references/full-paper-notes/`, `data/full-paper-index.json`, `scripts/find_notes.py` | Model-written readings, approximate counts. Not evaluated with the held-out protocol. |
+| Review checklist and author preferences | `references/review-checklist.md`, `references/author-preferences.md` | Argument-level checks and handling of an author's own rules. |
+

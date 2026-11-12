@@ -36,3 +36,71 @@ show controlled conditions in ablations, not only the preferred result.
 placeholders and asset paths without rendering. Macro-heavy sources, axis units,
 scientific content and actual layout still require inspection. First-caption
 percentile notes are development observations, not mandatory caption lengths.
+
+## Practices seen in the full-paper sample
+
+From the 24 full-paper notes (`full-paper-notes/`). These are observations, not rules.
+
+### The first figure
+
+In the 20 prize papers the first figure sets up the vocabulary or poses the gap. None puts the headline results
+there. Kinds seen:
+
+| Kind | Example |
+|---|---|
+| The setting made concrete | Fusion-3D (two users, a headset and 100 MB of photos), H2-LLM (edge LLM services with batch sizes) |
+| The problem and the answer on one timeline | Centauri (three timelines of the same layer: direct, fused, proposed) |
+| The central object of the paper | Mess (the family of bandwidth-latency curves, built and used in three panels) |
+| The gap drawn as a map | MoE patterns (models by release date and size, zones "no study" and "first profiled in our work") |
+| One tiny example that carries the insight | PF-LLM (a 20-line program with four accesses, each needing a different prefetch strategy) |
+| The vocabulary of the machine | vNPU, Cerberus, PIM Pathfinding, NoCap |
+| A table of real shapes or a regime comparison | SIGMA (real GEMM shapes), Lifetime (three regimes on four axes) |
+
+Choose the first figure by the question "what must the reader see before anything else makes sense?".
+
+### The overview figure
+
+- Number the steps with circles and cite them in the text and in the caption (vCXLGen, Centauri, Cerberus,
+  Constable, vNPU).
+- Tag blocks with the frame items: Fusion-3D marks which challenge and which technique sit where, with
+  section numbers on the blocks.
+- Colour what is new against what is inherited: MoE patterns highlights the added units in orange,
+  MetaSapiens colours baseline, foveation and load balance differently.
+- Draw a worked example inside the figure (Lifetime Figure 4 draws a food spoilage example in the framework
+  figure and shows the optimal core changing with shelf life).
+- Keep one figure for the whole system and put detail in later figures.
+
+### Comparison tables that carry novelty
+
+- Prior work as subsets of the proposed space (Centauri Table 1, check marks over four dimensions).
+- Industry practice, prior academic designs and the proposal in one grid of properties (Cerberus Table I).
+- A gap table whose rows become the components (Lifetime Table 1, three rows).
+- Desired feature, the limitation of the standard design, the proposed structure, the resulting property
+  (SIGMA Table I, repeated per prior accelerator in Table III).
+- Prior systems by one number that matters, with the paper's own row last (Fusion-3D Table I, off-chip
+  bandwidth assumed against what a real port offers).
+
+### Result figures
+
+- Identical axes across panels when comparing sources (Mess).
+- Failures and limits are drawn, not dropped: timeouts counted and shown in red (SmoothE), out-of-memory
+  bars labeled with the limit (vCXLGen), empty gray cells for violated constraints (DynamoLLM).
+- Per-bar numbers on the bars, a log axis stated in the caption, and the normalization baseline named.
+- Ablations as a staircase that adds one component at a time (MetaSapiens, SIGMA).
+- A decomposition table that splits a headline factor into named parts (Orion Table 4).
+- A trace figure with marked regions used to explain why the result happens (PF-LLM Figure 9).
+
+### Captions
+
+- About three quarters of captions are descriptive: what is plotted, the panel keys, the units.
+- Result captions often add the point: Mess "the simulator closely matches the actual curves", PF-LLM
+  Figure 4 states the final accuracy, Isaria states the trade-off the plot shows.
+- A long caption is acceptable when it makes the figure self-contained (Centauri Figure 3 explains all six
+  circled steps).
+- The takeaway for a figure usually appears in the text as a bold "Takeaway" line.
+
+### The reused example
+
+Draw one small example early and reuse it: Centauri reuses a four-matmul FSDP layer in Figures 1, 3, 5 and
+12, SmoothE reuses one e-graph in Figures 1 to 3 (sum the costs 32, 27, 19), SIGMA runs three tiny GEMMs
+through two designs. Each later idea then reads as a change to a picture the reader has seen.
